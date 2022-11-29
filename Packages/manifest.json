@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.av.smart-inspector": "0.6.0",
     "com.inspiaaa.unityhfsm": "https://github.com/Inspiaaa/UnityHFSM.git#upm",
     "com.rstar.rstarutility": "https://github.com/L1247/rStarUtility.git?path=Assets/rStarUtility",
     "com.smkplus.custom-toolbar": "https://github.com/smkplus/CustomToolbar.git#master",
