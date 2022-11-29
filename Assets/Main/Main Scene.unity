@@ -1408,13 +1408,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccef314d87b6d1741bc89170f74024c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationRate: 1080
+  rotationRate: 1620
   maxSpeed: 3
   acceleration: 30
   deceleration: 20
   groundFriction: 10
   airFriction: 0.5
-  jumpImpulse: 10
+  jumpImpulse: 5
   airControl: 0.3
   gravity: {x: 0, y: -19.62, z: 0}
 --- !u!114 &1753810743
@@ -1430,13 +1430,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _planeConstraint: 0
-  _rootTransform: {fileID: 1753810746}
+  _rootTransform: {fileID: 0}
   _rootTransformOffset: {x: 0, y: 0, z: 0}
-  _radius: 0.3
+  _radius: 0.08
   _height: 1
   _slopeLimit: 45
-  _stepOffset: 0.25
-  _perchOffset: 0.3
+  _stepOffset: 0.15
+  _perchOffset: 0
   _perchAdditionalHeight: 0.4
   _slopeLimitOverride: 0
   _useFlatTop: 0
@@ -1451,9 +1451,9 @@ MonoBehaviour:
     maxDepenetrationIterations: 2
     enablePhysicsInteraction: 0
     allowPushCharacters: 0
-    impartPlatformMovement: 0
-    impartPlatformRotation: 0
-    impartPlatformVelocity: 0
+    impartPlatformMovement: 1
+    impartPlatformRotation: 1
+    impartPlatformVelocity: 1
   _minSlopeLimit: 0.7069833
 --- !u!136 &1753810744
 CapsuleCollider:
@@ -1465,7 +1465,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
+  m_Radius: 0.08
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
