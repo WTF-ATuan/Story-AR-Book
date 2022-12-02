@@ -58,7 +58,7 @@ namespace EasyCharacterMovement.CharacterMovementExamples
 
             // Rotate towards movement direction
             
-            _characterMovement.RotateTowards(_movementDirection, rotationRate * Time.deltaTime);
+            // _characterMovement.RotateTowards(_movementDirection, rotationRate * Time.deltaTime);
 
             // Perform movement
             
