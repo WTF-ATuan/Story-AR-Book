@@ -33,7 +33,14 @@ namespace Core.Testing{
 			}
 		}
 
-		private void UpdateImage(ARTrackedImage trackedImage){ }
-		private void RemoveImage(ARTrackedImage trackedImage){ }
+		private void UpdateImage(ARTrackedImage trackedImage){
+			var trackedTransform = trackedImage.transform;
+			var trackedName = trackedImage.name;
+		}
+
+		private void RemoveImage(ARTrackedImage trackedImage){
+			var trackedTransform = trackedImage.transform;
+			var trackedName = trackedImage.name;
+		}
 	}
 }

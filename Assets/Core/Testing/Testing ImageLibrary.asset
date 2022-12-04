@@ -37,13 +37,3 @@ MonoBehaviour:
     m_SpecifySize: 1
     m_Name: spiderMan Black
     m_Texture: {fileID: 0}
-  - m_SerializedGuid:
-      m_GuidLow: 5396609038544795909
-      m_GuidHigh: 16956635898405577623
-    m_SerializedTextureGuid:
-      m_GuidLow: 15885439214185842542
-      m_GuidHigh: 109718709061059019
-    m_Size: {x: 0.05, y: 0.05}
-    m_SpecifySize: 1
-    m_Name: Chatacter
-    m_Texture: {fileID: 0}
