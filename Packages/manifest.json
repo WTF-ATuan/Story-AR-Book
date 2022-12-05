@@ -35,9 +35,14 @@
         "com.cysharp.messagepipe",
         "com.cysharp.messagepipe.zenject",
         "com.neuecc.unirx",
-        "com.inspiaaa.unityhfsm",
-        "com.av.smart-hierarchy",
-        "com.av.smart-inspector"
+        "com.inspiaaa.unityhfsm"
+      ]
+    },
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com/",
+      "scopes": [
+        "com.av"
       ]
     }
   ]

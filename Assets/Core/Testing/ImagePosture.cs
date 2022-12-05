@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.XR.ARFoundation;
 
 namespace Core.Testing{
@@ -7,8 +10,19 @@ namespace Core.Testing{
 	public class ImagePosture : MonoBehaviour{
 		private ARTrackedImageManager _imageTracker;
 
-		private void Start(){
+		[Header("Spawn Object")] [SerializeField]
+		private List<GameObject> spawnPrefabList;
+
+		private readonly List<GameObject> _referenceList = new();
+
+		private void Awake(){
 			_imageTracker = GetComponent<ARTrackedImageManager>();
+			foreach(var prefab in spawnPrefabList){
+				var instantiate = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+				instantiate.name = prefab.name;
+				instantiate.SetActive(false);
+				_referenceList.Add(instantiate);
+			}
 		}
 
 		private void OnEnable(){
@@ -34,13 +48,15 @@ namespace Core.Testing{
 		}
 
 		private void UpdateImage(ARTrackedImage trackedImage){
-			var trackedTransform = trackedImage.transform;
-			var trackedName = trackedImage.name;
+			var detectObject = _referenceList.Find(x => x.name == trackedImage.referenceImage.name);
+			detectObject.SetActive(true);
+			detectObject.transform.position = trackedImage.transform.position;
 		}
 
 		private void RemoveImage(ARTrackedImage trackedImage){
-			var trackedTransform = trackedImage.transform;
-			var trackedName = trackedImage.name;
+			var detectObject = _referenceList.Find(x => x.name == trackedImage.referenceImage.name);
+			detectObject.SetActive(false);
+			detectObject.transform.position = Vector3.zero;
 		}
 	}
 }
