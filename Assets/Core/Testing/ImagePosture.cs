@@ -41,22 +41,17 @@ namespace Core.Testing{
 			foreach(var trackedImage in obj.updated){
 				UpdateImage(trackedImage);
 			}
-
-			foreach(var trackedImage in obj.removed){
-				RemoveImage(trackedImage);
-			}
 		}
 
 		private void UpdateImage(ARTrackedImage trackedImage){
 			var detectObject = _referenceList.Find(x => x.name == trackedImage.referenceImage.name);
 			detectObject.SetActive(true);
 			detectObject.transform.position = trackedImage.transform.position;
-		}
-
-		private void RemoveImage(ARTrackedImage trackedImage){
-			var detectObject = _referenceList.Find(x => x.name == trackedImage.referenceImage.name);
-			detectObject.SetActive(false);
-			detectObject.transform.position = Vector3.zero;
+			foreach(var go in _referenceList){
+				if(go.name != trackedImage.referenceImage.name){
+					go.SetActive(false);
+				}
+			}
 		}
 	}
 }
