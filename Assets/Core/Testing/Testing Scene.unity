@@ -853,9 +853,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 873bf4d7e8c74365a21e9fcaab82e889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPrefabList:
-  - {fileID: 2144947908510126706, guid: 3621766071bdce44bbf6ad332316cbdd, type: 3}
+  placeablePrefabs:
   - {fileID: 1851258073431580525, guid: b72e7a8c89a7fdd47803fb3557994567, type: 3}
+  - {fileID: 2144947908510126706, guid: 3621766071bdce44bbf6ad332316cbdd, type: 3}
 --- !u!1 &1092186928
 GameObject:
   m_ObjectHideFlags: 0

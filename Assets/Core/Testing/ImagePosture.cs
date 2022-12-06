@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.XR.ARFoundation;
 
 namespace Core.Testing{
@@ -11,17 +9,16 @@ namespace Core.Testing{
 		private ARTrackedImageManager _imageTracker;
 
 		[Header("Spawn Object")] [SerializeField]
-		private List<GameObject> spawnPrefabList;
+		private List<GameObject> placeablePrefabs;
 
-		private readonly List<GameObject> _referenceList = new();
+		private Dictionary<string, GameObject> _spawnedObjectFinder = new();
 
 		private void Awake(){
 			_imageTracker = GetComponent<ARTrackedImageManager>();
-			foreach(var prefab in spawnPrefabList){
-				var instantiate = Instantiate(prefab, Vector3.zero, Quaternion.identity);
-				instantiate.name = prefab.name;
-				instantiate.SetActive(false);
-				_referenceList.Add(instantiate);
+			foreach(var prefab in placeablePrefabs){
+				var newPrefab = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+				newPrefab.name = prefab.name;
+				_spawnedObjectFinder.Add(prefab.name, newPrefab);
 			}
 		}
 
@@ -41,16 +38,21 @@ namespace Core.Testing{
 			foreach(var trackedImage in obj.updated){
 				UpdateImage(trackedImage);
 			}
+
+			foreach(var trackedImage in obj.removed){
+				_spawnedObjectFinder[trackedImage.name].SetActive(false);
+			}
 		}
 
 		private void UpdateImage(ARTrackedImage trackedImage){
-			var detectObject = _referenceList.Find(x => x.name == trackedImage.referenceImage.name);
-			detectObject.SetActive(true);
-			detectObject.transform.position = trackedImage.transform.position;
-			foreach(var go in _referenceList){
-				if(go.name != trackedImage.referenceImage.name){
-					go.SetActive(false);
-				}
+			var imageName = trackedImage.referenceImage.name;
+			var position = trackedImage.transform.position;
+
+			var prefab = _spawnedObjectFinder[imageName];
+			prefab.transform.position = position;
+			prefab.SetActive(true);
+			foreach(var go in _spawnedObjectFinder.Values.Where(go => go.name != imageName)){
+				go.SetActive(false);
 			}
 		}
 	}
