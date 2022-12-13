@@ -13,6 +13,6 @@ pipeline {
 
   }
   environment {
-    WORK_SPACE = "${WORKSPACE}" .replace("\\", "/")
+    WORK_SPACE = "${WORKSPACE}".replace("\\", "/")
   }
 }
