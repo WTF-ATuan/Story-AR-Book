@@ -14,6 +14,8 @@ pipeline {
     stage('Build Android') {
       environment {
         SYMBOL_CONFIG = 'Release'
+        BUILD_TARGET = 'Android'
+        UNITY_BUILD_METHOD = 'Core.Project.ProjectBuilder.BuildProject'
       }
       steps {
         echo "Build ${SYMBOL_CONFIG} ${BUILD_TARGET} with Unity (${UNITY_PATH})"
@@ -28,8 +30,6 @@ pipeline {
     WORK_SPACE = "${WORKSPACE}".replace("\\", "/")
     UNITY_PATH = '"C:/Program Files/Unity/Hub/Editor/2022.2.0f1/Editor/Unity.exe"'
     UNITY_PROJECT_DIR = "${WORK_SPACE}"
-    BUILD_TARGET = 'Android'
-    UNITY_BUILD_METHOD = 'Core.Project.ProjectBuilder.BuildProject'
     OUTPUT_PATH = "${WORK_SPACE}/Artifacts"
   }
 }
