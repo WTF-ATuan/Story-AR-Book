@@ -7,7 +7,7 @@ using UnityEditor.Build.Reporting;
 using UnityEngine;
 
 namespace Core.Project{
-	public class ProjectBuilder{
+	public static class ProjectBuilder{
 		[MenuItem("Project Builder/Build project Default", false, 0)]
 		public static void BuildProject(){
 			var target = EditorUserBuildSettings.activeBuildTarget;
@@ -82,8 +82,8 @@ namespace Core.Project{
 		}
 
 		private static string GetFileExtension(BuildTarget target){
+			// ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
 			switch(target){
-				case BuildTarget.StandaloneWindows:
 				case BuildTarget.StandaloneWindows64:
 					return ".exe";
 				case BuildTarget.StandaloneOSX:
@@ -97,8 +97,7 @@ namespace Core.Project{
 				case BuildTarget.iOS:
 					return ".iosversion";
 				default:
-					Debug.LogError("No corresponding extension!");
-					return "";
+					throw new Exception("No corresponding extension!");
 			}
 		}
 
