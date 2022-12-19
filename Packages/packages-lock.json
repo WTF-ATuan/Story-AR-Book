@@ -35,6 +35,14 @@
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
+    "com.ptc.vuforia.engine": {
+      "version": "file:com.ptc.vuforia.engine-10.12.3.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      }
+    },
     "com.rstar.rstarutility": {
       "version": "https://github.com/L1247/rStarUtility.git?path=Assets/rStarUtility",
       "depth": 0,

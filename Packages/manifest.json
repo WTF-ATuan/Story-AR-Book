@@ -1,5 +1,27 @@
 {
-  "dependencies": {
+    "scopedRegistries": [
+        {
+            "name": "package.openupm.com",
+            "url": "https://package.openupm.com",
+            "scopes": [
+                "com.svermeulen.extenject",
+                "com.cysharp.unitask",
+                "com.cysharp.messagepipe",
+                "com.cysharp.messagepipe.zenject",
+                "com.neuecc.unirx",
+                "com.inspiaaa.unityhfsm"
+            ]
+        },
+        {
+            "name": "OpenUPM",
+            "url": "https://package.openupm.com/",
+            "scopes": [
+                "com.av"
+            ]
+        }
+    ],
+    "dependencies": {
+    "com.ptc.vuforia.engine": "file:com.ptc.vuforia.engine-10.12.3.tgz",
     "com.inspiaaa.unityhfsm": "https://github.com/Inspiaaa/UnityHFSM.git#upm",
     "com.rstar.rstarutility": "https://github.com/L1247/rStarUtility.git?path=Assets/rStarUtility",
     "com.smkplus.custom-toolbar": "https://github.com/smkplus/CustomToolbar.git#master",
@@ -25,26 +47,5 @@
     "com.unity.modules.uielements": "1.0.0",
     "com.unity.modules.unitywebrequest": "1.0.0",
     "com.unity.modules.unitywebrequestwww": "1.0.0"
-  },
-  "scopedRegistries": [
-    {
-      "name": "package.openupm.com",
-      "url": "https://package.openupm.com",
-      "scopes": [
-        "com.svermeulen.extenject",
-        "com.cysharp.unitask",
-        "com.cysharp.messagepipe",
-        "com.cysharp.messagepipe.zenject",
-        "com.neuecc.unirx",
-        "com.inspiaaa.unityhfsm"
-      ]
-    },
-    {
-      "name": "OpenUPM",
-      "url": "https://package.openupm.com/",
-      "scopes": [
-        "com.av"
-      ]
-    }
-  ]
+  }
 }
