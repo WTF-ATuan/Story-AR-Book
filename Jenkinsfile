@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo "Clean workspace. (${WORK_SPACE})"
         dir(path: "${WORK_SPACE}") {
-          bat 'git clean -f -d -x -e /[Ll]ibrary/ /Packages/com.ptc.vuforia.engine-10.12.3.tgz / '
+          bat 'git clean -f -d -x -e /[Ll]ibrary/ /[Pp]ackages/'
         }
 
         bat 'curl -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage -d parse_mode=markdown -d chat_id=987110561 -d text='+"\"Build pipeline starts! - *${JOB_NAME} #${BUILD_NUMBER}* - ([Go to Jenkins](${BUILD_URL}))\""
