@@ -12,26 +12,9 @@ pipeline {
       }
     }
 
-    stage('Test') {
-      environment {
-        TEST_PLATFORM = 'EditMode'
-        REPORT_PATH = "${OUTPUT_PATH}/Test/editmode.xml"
-      }
-      steps {
-        echo "Run ${TEST_PLATFORM} tests with Unity (${UNITY_PATH})"
-        echo "Project path: ${UNITY_PROJECT_DIR}"
-        echo "Report path: ${REPORT_PATH}"
-        warnError(message: 'Unity test failed!') {
-          bat "${UNITY_PATH} -runTests -testPlatform ${TEST_PLATFORM} -projectPath ${UNITY_PROJECT_DIR} -testResults ${REPORT_PATH} -logFile - -batchmode -nographics"
-        }
-
-        nunit(testResultsPattern: '**/editmode.xml')
-      }
-    }
-
     stage('Build & Analyze') {
       parallel {
-        stage('Build Win x64') {
+        stage('Build Android') {
           environment {
             SYMBOL_CONFIG = 'Release'
             BUILD_TARGET = 'Android'
