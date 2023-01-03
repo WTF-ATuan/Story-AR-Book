@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Core/Testing/Second Review (No AR).unity
-    guid: 4c13de3c451603045849e7d7789c256b
+    path: Assets/Core/Testing/Area Detecting.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: e155e3d28b4a853429d1bbfba2d11fda, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 0167265ad9616e640898b2ae64d86043, type: 2}

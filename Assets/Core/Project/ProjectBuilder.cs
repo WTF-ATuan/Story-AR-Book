@@ -124,7 +124,7 @@ namespace Core.Project{
 		}
 
 		public static readonly Dictionary<DefineSymbolConfig, string> symbolConfigToDefineSymbol =
-				new(){
+				new Dictionary<DefineSymbolConfig, string>{
 					[DefineSymbolConfig.Debug] = "Debug;",
 					[DefineSymbolConfig.Release] = "Release;"
 				};
