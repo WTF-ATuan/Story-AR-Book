@@ -34,6 +34,7 @@ MonoBehaviour:
     - com.cysharp.messagepipe.zenject
     - com.neuecc.unirx
     - com.inspiaaa.unityhfsm
+    - com.av.smart-hierarchy
     m_IsDefault: 0
     m_Capabilities: 0
   - m_Id: scoped:OpenUPM
@@ -43,21 +44,33 @@ MonoBehaviour:
     - com.av
     m_IsDefault: 0
     m_Capabilities: 0
-  m_UserSelectedRegistryName: OpenUPM
+  m_UserSelectedRegistryName: package.openupm.com
   m_UserAddingNewScopedRegistry: 0
   m_RegistryInfoDraft:
     m_ErrorMessage: 
     m_Original:
-      m_Id: scoped:OpenUPM
-      m_Name: OpenUPM
+      m_Id: scoped:package.openupm.com
+      m_Name: package.openupm.com
       m_Url: https://package.openupm.com
       m_Scopes:
-      - com.av
+      - com.svermeulen.extenject
+      - com.cysharp.unitask
+      - com.cysharp.messagepipe
+      - com.cysharp.messagepipe.zenject
+      - com.neuecc.unirx
+      - com.inspiaaa.unityhfsm
+      - com.av.smart-hierarchy
       m_IsDefault: 0
       m_Capabilities: 0
     m_Modified: 0
-    m_Name: OpenUPM
+    m_Name: package.openupm.com
     m_Url: https://package.openupm.com
     m_Scopes:
-    - com.av
+    - com.svermeulen.extenject
+    - com.cysharp.unitask
+    - com.cysharp.messagepipe
+    - com.cysharp.messagepipe.zenject
+    - com.neuecc.unirx
+    - com.inspiaaa.unityhfsm
+    - com.av.smart-hierarchy
     m_SelectedScopeIndex: 0

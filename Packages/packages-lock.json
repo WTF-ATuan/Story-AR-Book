@@ -1,22 +1,15 @@
 {
   "dependencies": {
-    "com.cysharp.messagepipe": {
-      "version": "1.7.4",
-      "depth": 1,
+    "com.av.smart-hierarchy": {
+      "version": "0.3.1",
+      "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
-    "com.cysharp.messagepipe.zenject": {
-      "version": "1.7.4",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://package.openupm.com"
-    },
-    "com.cysharp.unitask": {
-      "version": "2.3.1",
-      "depth": 1,
+    "com.av.smart-inspector": {
+      "version": "0.8.0-pre.1",
+      "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
@@ -30,7 +23,7 @@
     },
     "com.neuecc.unirx": {
       "version": "7.1.0",
-      "depth": 1,
+      "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
@@ -43,19 +36,6 @@
         "com.unity.ugui": "1.0.0"
       }
     },
-    "com.rstar.rstarutility": {
-      "version": "https://github.com/L1247/rStarUtility.git?path=Assets/rStarUtility",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.svermeulen.extenject": "9.2.0-stcf3",
-        "com.cysharp.unitask": "2.3.1",
-        "com.cysharp.messagepipe": "1.7.4",
-        "com.cysharp.messagepipe.zenject": "1.7.4",
-        "com.neuecc.unirx": "7.1.0"
-      },
-      "hash": "96dd6ce35b3fb5c98a753af3d13da7c024b1b708"
-    },
     "com.smkplus.custom-toolbar": {
       "version": "https://github.com/smkplus/CustomToolbar.git#master",
       "depth": 0,
@@ -65,7 +45,7 @@
     },
     "com.svermeulen.extenject": {
       "version": "9.2.0-stcf3",
-      "depth": 1,
+      "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
