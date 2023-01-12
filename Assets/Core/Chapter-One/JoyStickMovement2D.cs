@@ -10,23 +10,6 @@ namespace Core.Testing{
 		public float acceleration = 20.0f;
 		public float deceleration = 20.0f;
 
-		public float groundFriction = 8.0f;
-		public float airFriction = 0.5f;
-
-		public float jumpImpulse = 6.5f;
-
-		[Range(0.0f, 1.0f)] public float airControl = 0.3f;
-
-		public Vector3 gravity = Vector3.down * 9.81f;
-
-		private CharacterMovement _characterMovement;
-
-		private Vector3 _movementDirection;
-
-		private void Awake(){
-			_characterMovement = GetComponent<CharacterMovement>();
-		}
-
 		private void Update(){
 			// Read Input values
 
@@ -35,31 +18,18 @@ namespace Core.Testing{
 
 			// Create a movement direction vector (in world space)
 
-			_movementDirection = Vector3.zero;
-			_movementDirection += transform.forward * vertical;
-			_movementDirection += transform.right * horizontal;
+			var movementDirection = Vector3.zero;
+			movementDirection += transform.forward * vertical;
+			movementDirection += transform.right * horizontal;
 
 			// Make Sure it won't move faster diagonally
 
-			_movementDirection = Vector3.ClampMagnitude(_movementDirection, 1.0f);
-
-			// Jump
-			if(_characterMovement.isGrounded && Input.GetButton($"Jump")){
-				_characterMovement.PauseGroundConstraint();
-				_characterMovement.LaunchCharacter(Vector3.up * jumpImpulse, true);
-			}
+			movementDirection = Vector3.ClampMagnitude(movementDirection, 1.0f);
 			
 			// Perform movement
 
-			var desiredVelocity = _movementDirection * maxSpeed;
-
-			var actualAcceleration = _characterMovement.isGrounded ? acceleration : acceleration * airControl;
-			var actualDeceleration = _characterMovement.isGrounded ? deceleration : 0.0f;
-
-			var actualFriction = _characterMovement.isGrounded ? groundFriction : airFriction;
-
-			_characterMovement.SimpleMove(desiredVelocity, maxSpeed, actualAcceleration, actualDeceleration,
-				actualFriction, actualFriction, gravity);
+			var desiredVelocity = movementDirection * maxSpeed * Time.fixedDeltaTime;
+			transform.localPosition += desiredVelocity;
 		}
 	}
 }
