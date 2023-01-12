@@ -1760,7 +1760,7 @@ namespace EasyCharacterMovement
 
                 case PlaneConstraint.ConstrainXAxis:
                     {
-                        _constraintPlaneNormal = Vector3.right;
+                        _constraintPlaneNormal = Vector3.right * Math.Abs(transform.localScale.x);
 
                         if (_rigidbody)
                             _rigidbody.constraints = RigidbodyConstraints.FreezePositionX;
@@ -2068,7 +2068,7 @@ namespace EasyCharacterMovement
 
             _capsuleCollider.radius = _radius + mtdInflation * 1.0f;
             _capsuleCollider.height = _height + mtdInflation * 2.0f;
-
+            Debug.Log($"{_capsuleCollider.radius} {_capsuleCollider.height}");
             bool mtdResult = Physics.ComputePenetration(_capsuleCollider, characterPosition, characterRotation,
                 hitCollider, hitTransform.position, hitTransform.rotation, out Vector3 recoverDirection, out float recoverDistance);
 
@@ -2174,13 +2174,13 @@ namespace EasyCharacterMovement
                         if (_collisionCount < kMaxCollisionCount)
                         {
                             Vector3 point;
-
+                            var localScale = transform.localScale;
                             if (hitLocation == HitLocation.Above)
-                                point = updatedPosition + _transformedCapsuleTopCenter - recoverDirection * _radius;
+                                point = updatedPosition + _transformedCapsuleTopCenter - recoverDirection * _radius * localScale.y;
                             else if (hitLocation == HitLocation.Below)
-                                point = updatedPosition + _transformedCapsuleBottomCenter - recoverDirection * _radius;
+                                point = updatedPosition + _transformedCapsuleBottomCenter - recoverDirection * _radius * localScale.y;
                             else
-                                point = updatedPosition + _transformedCapsuleCenter - recoverDirection * _radius;
+                                point = updatedPosition + _transformedCapsuleCenter - recoverDirection * _radius * localScale.y;
 
                             CollisionResult collisionResult = new CollisionResult
                             {
@@ -2221,7 +2221,6 @@ namespace EasyCharacterMovement
 
             Vector3 top = characterPosition + characterRotation * topCenter;
             Vector3 bottom = characterPosition + characterRotation * bottomCenter;
-
             int rawOverlapCount =
                 Physics.OverlapCapsuleNonAlloc(bottom, top, testRadius, results, layerMask, queryTriggerInteraction);
 
@@ -2477,12 +2476,13 @@ namespace EasyCharacterMovement
                         HitLocation hitLocation = ComputeHitLocation(mtdDirection);
 
                         Vector3 point;
+                        var localScale = transform.localScale;
                         if (hitLocation == HitLocation.Above)
-                            point = characterPosition + _transformedCapsuleTopCenter - mtdDirection * _radius;
+                            point = characterPosition + _transformedCapsuleTopCenter - mtdDirection * _radius * Math.Abs(localScale.y);
                         else if (hitLocation == HitLocation.Below)
-                            point = characterPosition + _transformedCapsuleBottomCenter - mtdDirection * _radius;
+                            point = characterPosition + _transformedCapsuleBottomCenter - mtdDirection * _radius * Math.Abs(localScale.y);
                         else
-                            point = characterPosition + _transformedCapsuleCenter - mtdDirection * _radius;
+                            point = characterPosition + _transformedCapsuleCenter - mtdDirection * _radius * Math.Abs(localScale.y);
 
                         Vector3 impactNormal = ComputeBlockingNormal(mtdDirection, IsWalkable(hit.collider, mtdDirection));
 
@@ -4332,7 +4332,7 @@ namespace EasyCharacterMovement
 
         public Vector3 GetFootPosition()
         {
-            return transform.position - transform.up * kAvgGroundDistance;
+            return transform.position - transform.up * kAvgGroundDistance * transform.localScale.y;
         }
 
         /// <summary>
@@ -4786,8 +4786,11 @@ namespace EasyCharacterMovement
             Vector3 footPosition = GetFootPosition();
 
             Gizmos.color = new Color(0.569f, 0.957f, 0.545f, 0.5f);
-            Gizmos.DrawLine(footPosition + Vector3.left * skinRadius, footPosition + Vector3.right * skinRadius);
-            Gizmos.DrawLine(footPosition + Vector3.back * skinRadius, footPosition + Vector3.forward * skinRadius);
+            var localScale = transform.localScale;
+            Gizmos.DrawLine(footPosition + Vector3.left * skinRadius * Mathf.Abs(localScale.x), 
+                footPosition + Vector3.right * skinRadius * Mathf.Abs(localScale.x));
+            Gizmos.DrawLine(footPosition + Vector3.back * skinRadius * Mathf.Abs(localScale.z), 
+                footPosition + Vector3.forward * skinRadius * Mathf.Abs(localScale.z));
 
             // Draw perch offset radius
 
@@ -4801,7 +4804,7 @@ namespace EasyCharacterMovement
 
             if (stepOffset > 0.0f)
             {
-                DrawDisc(footPosition + transform.up * stepOffset, rotation, radius * 1.15f,
+                DrawDisc(footPosition + transform.up * stepOffset, rotation, radius * 1.15f * Mathf.Abs(localScale.y),
                     new Color(0.569f, 0.957f, 0.545f, 0.75f), false);
             }
         }
