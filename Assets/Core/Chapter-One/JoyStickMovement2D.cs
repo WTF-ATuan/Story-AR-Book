@@ -1,5 +1,4 @@
-﻿using EasyCharacterMovement;
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Core.Testing{
