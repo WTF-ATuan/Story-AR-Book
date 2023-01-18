@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactButton: {fileID: 158774578}
   debugText: {fileID: 1669049765}
+  interactRepository: {fileID: 0}
 --- !u!114 &61636115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,7 +613,7 @@ GameObject:
   - component: {fileID: 597270810}
   m_Layer: 0
   m_Name: Closet
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -921,7 +922,7 @@ Transform:
   - {fileID: 806636701}
   - {fileID: 61636118}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &754297168
 GameObject:
@@ -936,7 +937,7 @@ GameObject:
   - component: {fileID: 754297170}
   m_Layer: 0
   m_Name: Lamp
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1532,7 +1533,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1134161724
 GameObject:
@@ -1547,7 +1548,7 @@ GameObject:
   - component: {fileID: 1134161726}
   m_Layer: 0
   m_Name: Paper
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1691,8 +1692,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167199201}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.23232812, y: -0.50926375, z: 0.14572261, w: -0.8157444}
+  m_LocalPosition: {x: -0.13195688, y: 0.3630813, z: -0.49178106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1711,7 +1712,7 @@ GameObject:
   - component: {fileID: 1281577447}
   m_Layer: 0
   m_Name: Alarm
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2609,8 +2610,8 @@ GameObject:
   - component: {fileID: 5671686691986229534}
   - component: {fileID: 4107837083950608604}
   m_Layer: 0
-  m_Name: radio
-  m_TagString: Untagged
+  m_Name: Radio
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2624,6 +2625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1770069242141972252}
+  - component: {fileID: 1430838686891101607}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -2631,6 +2633,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1430838686891101607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430838686891101606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773c82f4bcf64c3691a6292d95eea223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactObject:
+  - {fileID: 377150796823422387}
+  - {fileID: 8078665571428988979}
+  - {fileID: 4107837083950608604}
+  - {fileID: 6574320701148738148}
+  - {fileID: 2271500070854649924}
+  - {fileID: 1134161726}
+  - {fileID: 597270810}
+  - {fileID: 1498550920}
+  - {fileID: 754297170}
+  - {fileID: 1281577447}
+  - {fileID: 981918388}
+  - {fileID: 1805349499}
+  - {fileID: 972135881}
+  - {fileID: 49847570}
+  - {fileID: 880053657}
 --- !u!1 &1483468138628039315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,7 +2793,7 @@ GameObject:
   - component: {fileID: 6574320701148738148}
   m_Layer: 0
   m_Name: Chair
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2781,7 +2811,7 @@ GameObject:
   - component: {fileID: 377150796823422387}
   m_Layer: 0
   m_Name: TV
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3018,7 +3048,7 @@ GameObject:
   - component: {fileID: 2271500070854649924}
   m_Layer: 0
   m_Name: Fan
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
