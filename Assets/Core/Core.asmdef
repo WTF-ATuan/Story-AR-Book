@@ -1,12 +1,13 @@
 {
-    "name": "Project",
+    "name": "Core",
     "rootNamespace": "",
     "references": [
-        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4"
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:a2f745be9ca2ad04d9999eda961eb7b0",
+        "GUID:940ab8a3f18261b4d838397695dce944"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

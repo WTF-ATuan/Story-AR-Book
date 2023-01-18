@@ -16,3 +16,7 @@ MonoBehaviour:
   soundDataSet:
     soundDataList: []
     dataPath: Assets/Core/Testing
+  playerMoveData:
+    <Acceleration>k__BackingField: 0.12
+    <DeAcceleration>k__BackingField: 0.1
+    <MoveClamp>k__BackingField: 0.5
