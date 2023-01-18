@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using Sirenix.OdinInspector;
-using Sirenix.Utilities;
 using UnityEngine;
 
-namespace Core.Project{
+namespace Core{
 	[System.Serializable]
 	public class SoundDataSet{
 		public List<SoundData> soundDataList = new List<SoundData>();
@@ -19,7 +18,7 @@ namespace Core.Project{
 
 		public void GetSoundData(){
 			var audioClips = Resources.LoadAll<AudioClip>(dataPath);
-			if(audioClips.IsNullOrEmpty()){
+			if(audioClips.Length < 1){
 				Debug.Log($"{dataPath} have no AudioClip");
 				return;
 			}

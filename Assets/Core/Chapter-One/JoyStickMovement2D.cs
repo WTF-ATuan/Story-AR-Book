@@ -1,9 +1,8 @@
-﻿using Core.Project;
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
-namespace Core.Testing{
+namespace Core{
 	public class JoyStickMovement2D : MonoBehaviour{
 		[Required] public VariableJoystick variableJoystick;
 		[Required] public Transform playerRoot;

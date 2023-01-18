@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Core.Project{
+namespace Core{
 	[System.Serializable]
 	public class PlayerMoveData{
 		[field: SerializeField]
