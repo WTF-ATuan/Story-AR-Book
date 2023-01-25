@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 namespace Core{
 	[Serializable]
 	public class InteractDataSet{
-		[ListDrawerSettings(NumberOfItemsPerPage = 5, ShowItemCount = true)] [SerializeField]
+		[Searchable] [ListDrawerSettings(NumberOfItemsPerPage = 5, ShowItemCount = true)] [SerializeField]
 		private List<InteractData> interactDataList;
 
 		public bool CheckCorrect(string objID){
