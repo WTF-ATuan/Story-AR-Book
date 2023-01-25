@@ -22,29 +22,21 @@ MonoBehaviour:
     <MoveClamp>k__BackingField: 0.5
   interactDataSet:
     interactDataList:
-    - name: TV
-      tag: 0
-      instanceID: 33650
-    - name: Radio
-      tag: 0
-      instanceID: 33626
-    - name: Chair
-      tag: 0
-      instanceID: 33648
-    - name: Fan
-      tag: 0
-      instanceID: 33688
-    - name: Closet
-      tag: 0
-      instanceID: 33408
-    - name: Lamp
-      tag: 0
-      instanceID: 33440
-    - name: Alarm
-      tag: 0
-      instanceID: 33514
     - name: News
       tag: 1
-      instanceID: 17266
+      instanceID: 30256
+      image: {fileID: 21300000, guid: 78d4aab568ecfdf4d8fc0751147b4115, type: 3}
+      animationClip: {fileID: 7400000, guid: 1b6d7755e1bb1ce4da62e2305fe33fe9, type: 2}
+      buttonTransform: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 9bcf49dae3b54c542b0936d5266c877e, type: 3}
+    - name: Chair
+      tag: 2
+      instanceID: 30416
+      image: {fileID: 21300000, guid: f8464394534d4db4fa4a0c849d155261, type: 3}
+      animationClip: {fileID: 7400000, guid: 7bee7f9421e00904bbb3ea94fc75af3e, type: 2}
+      buttonTransform: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: be11f1e9e91b1274ca581923f67cb781, type: 3}
     tag: Interact
-    gameObjects: []
+    gameObjects:
+    - {fileID: 0}
+    - {fileID: 0}
