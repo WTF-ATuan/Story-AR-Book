@@ -34,9 +34,6 @@ MonoBehaviour:
     - name: Fan
       tag: 0
       instanceID: 33688
-    - name: Paper
-      tag: 0
-      instanceID: 33494
     - name: Closet
       tag: 0
       instanceID: 33408
@@ -46,5 +43,8 @@ MonoBehaviour:
     - name: Alarm
       tag: 0
       instanceID: 33514
+    - name: News
+      tag: 1
+      instanceID: 17266
     tag: Interact
     gameObjects: []

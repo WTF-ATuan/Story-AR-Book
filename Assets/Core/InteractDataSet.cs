@@ -2,20 +2,35 @@
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Core{
 	[Serializable]
 	public class InteractDataSet{
-		[ListDrawerSettings(NumberOfItemsPerPage = 5, ShowItemCount = true)]
-		public List<InteractData> interactDataList;
+		[ListDrawerSettings(NumberOfItemsPerPage = 5, ShowItemCount = true)] [SerializeField]
+		private List<InteractData> interactDataList;
+
+		public bool CheckCorrect(string objID){
+			var interactData = interactDataList.Find(x => x.name == objID);
+			if(interactData is null){
+				throw new Exception($"Can,t find {objID}");
+			}
+
+			return interactData.tag == InteractTag.Success;
+		}
+
+		#region Editor
 
 		[TitleGroup("Create With Tag")]
 		[InlineButton("CreateWithTag", SdfIconType.Tag, "Invoke")]
 		[ValueDropdown("GetAllTag")]
-		public string tag = "Interact";
+		[SerializeField]
+		private string tag = "Interact";
 
-		[TitleGroup("Create With GameObjects")] [InlineButton("CreateWithGameObject", SdfIconType.Box, "Invoke")]
-		public GameObject[] gameObjects;
+		[TitleGroup("Create With GameObjects")]
+		[InlineButton("CreateWithGameObject", SdfIconType.Box, "Invoke")]
+		[SerializeField]
+		private GameObject[] gameObjects;
 
 		private void CreateWithTag(){
 			var foundWithTag = GameObject.FindGameObjectsWithTag(tag);
@@ -65,6 +80,8 @@ namespace Core{
 				};
 			}
 		}
+
+		#endregion
 	}
 
 	public enum InteractTag{
