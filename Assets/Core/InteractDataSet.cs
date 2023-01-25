@@ -19,6 +19,15 @@ namespace Core{
 			return interactData.tag == InteractTag.Success;
 		}
 
+		public InteractData FindData(string objID){
+			var interactData = interactDataList.Find(x => x.name == objID);
+			if(interactData is null){
+				throw new Exception($"Can,t find {objID}");
+			}
+
+			return interactData;
+		}
+
 		#region Editor
 
 		[TitleGroup("Create With Tag")]
@@ -66,10 +75,14 @@ namespace Core{
 
 		[Serializable]
 		public class InteractData{
-			[LabelText("Object Name")] [ReadOnly] public string name;
+			[LabelText("Object Name")] [ReadOnly][GUIColor(1, 0.6f, 0.4f)] public string name;
 			[ValueDropdown("GetDataTag")] public InteractTag tag = InteractTag.None;
 			[ReadOnly] public int instanceID;
-			public Action InteractCallback;
+
+			[FoldoutGroup("UI Component")] public Sprite image;
+			[FoldoutGroup("UI Component")] public AnimationClip animationClip;
+			[FoldoutGroup("UI Component")] public RectTransform buttonTransform;
+			[FoldoutGroup("UI Component")] public AudioClip audioClip;
 
 
 			private List<ValueDropdownItem> GetDataTag(){
