@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c349619cca341d28cba4e9c9237bd3a, type: 3}
   m_Name: GameSetting
   m_EditorClassIdentifier: 
-  platform: 0
+  platform: 2
   soundDataSet:
     soundDataList: []
     dataPath: Assets/Core/Testing
@@ -20,3 +20,31 @@ MonoBehaviour:
     <Acceleration>k__BackingField: 0.12
     <DeAcceleration>k__BackingField: 0.1
     <MoveClamp>k__BackingField: 0.5
+  interactDataSet:
+    interactDataList:
+    - name: TV
+      tag: 0
+      instanceID: 33650
+    - name: Radio
+      tag: 0
+      instanceID: 33626
+    - name: Chair
+      tag: 0
+      instanceID: 33648
+    - name: Fan
+      tag: 0
+      instanceID: 33688
+    - name: Paper
+      tag: 0
+      instanceID: 33494
+    - name: Closet
+      tag: 0
+      instanceID: 33408
+    - name: Lamp
+      tag: 0
+      instanceID: 33440
+    - name: Alarm
+      tag: 0
+      instanceID: 33514
+    tag: Interact
+    gameObjects: []

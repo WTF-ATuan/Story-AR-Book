@@ -62,8 +62,6 @@ namespace Core{
 					new ValueDropdownItem("None", InteractTag.None),
 					new ValueDropdownItem("Success ", InteractTag.Success),
 					new ValueDropdownItem("Failure ", InteractTag.Failure),
-					new ValueDropdownItem("Teleport", InteractTag.Teleport),
-					new ValueDropdownItem("Exit", InteractTag.Exit)
 				};
 			}
 		}
@@ -73,7 +71,5 @@ namespace Core{
 		None,
 		Success,
 		Failure,
-		Teleport,
-		Exit,
 	}
 }

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 49847569}
   - component: {fileID: 49847571}
   - component: {fileID: 49847570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactButton: {fileID: 158774578}
   debugText: {fileID: 1669049765}
+  interactNames: []
   interactRepository: {fileID: 1430838686891101607}
+  paper: {fileID: 0}
 --- !u!114 &61636115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,7 +473,7 @@ GameObject:
   - component: {fileID: 263252761}
   - component: {fileID: 263252760}
   m_Layer: 5
-  m_Name: Sound Effect
+  m_Name: Debug Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -746,7 +748,7 @@ GameObject:
   - component: {fileID: 597270809}
   - component: {fileID: 597270811}
   - component: {fileID: 597270810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Closet
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -1084,7 +1086,7 @@ GameObject:
   - component: {fileID: 754297169}
   - component: {fileID: 754297171}
   - component: {fileID: 754297170}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lamp
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -1171,7 +1173,7 @@ GameObject:
   - component: {fileID: 880053656}
   - component: {fileID: 880053658}
   - component: {fileID: 880053657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1433,7 +1435,7 @@ GameObject:
   - component: {fileID: 972135880}
   - component: {fileID: 972135882}
   - component: {fileID: 972135881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Phonograph
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1486,7 +1488,7 @@ GameObject:
   - component: {fileID: 981918387}
   - component: {fileID: 981918389}
   - component: {fileID: 981918388}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1528,6 +1530,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981918386}
   m_Mesh: {fileID: -7670247711816762793, guid: b91b9d0a89ae0374a91479d60f625021, type: 3}
+--- !u!1 &1008521060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1008521061}
+  - component: {fileID: 1008521063}
+  - component: {fileID: 1008521062}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1008521061
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008521060}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1466154679}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1008521062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008521060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1008521063
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008521060}
+  m_CullTransparentMesh: 1
 --- !u!1 &1066904627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,7 +1772,7 @@ GameObject:
   - component: {fileID: 1134161725}
   - component: {fileID: 1134161727}
   - component: {fileID: 1134161726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Paper
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -1859,7 +1936,7 @@ GameObject:
   - component: {fileID: 1281577446}
   - component: {fileID: 1281577448}
   - component: {fileID: 1281577447}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alarm
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -2174,6 +2251,7 @@ RectTransform:
   - {fileID: 1923443254}
   - {fileID: 158774577}
   - {fileID: 263252759}
+  - {fileID: 1008521061}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2288,7 +2366,7 @@ GameObject:
   - component: {fileID: 1498550919}
   - component: {fileID: 1498550921}
   - component: {fileID: 1498550920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2400,7 +2478,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Sound
+  m_Text: Debug Text
 --- !u!222 &1669049766
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2420,7 +2498,7 @@ GameObject:
   - component: {fileID: 1805349498}
   - component: {fileID: 1805349500}
   - component: {fileID: 1805349499}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2841,7 +2919,7 @@ GameObject:
   - component: {fileID: 4556756227065702446}
   - component: {fileID: 5671686691986229534}
   - component: {fileID: 4107837083950608604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Radio
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -3023,7 +3101,7 @@ GameObject:
   - component: {fileID: 4852409372998626634}
   - component: {fileID: 1679164962038344109}
   - component: {fileID: 6574320701148738148}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Chair
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -3041,7 +3119,7 @@ GameObject:
   - component: {fileID: 3322376660924808477}
   - component: {fileID: 6678702932627006996}
   - component: {fileID: 377150796823422387}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TV
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -3247,7 +3325,7 @@ GameObject:
   - component: {fileID: 2342652880367016195}
   - component: {fileID: 8846057810806600872}
   - component: {fileID: 8078665571428988979}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3278,7 +3356,7 @@ GameObject:
   - component: {fileID: 71049092932076139}
   - component: {fileID: 4445044653568549400}
   - component: {fileID: 2271500070854649924}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fan
   m_TagString: Interact
   m_Icon: {fileID: 0}
