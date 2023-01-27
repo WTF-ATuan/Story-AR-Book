@@ -25,9 +25,10 @@ namespace Core.Chapter_1{
 
 
 		private AnimatorOverrideController _overrideController;
+		private string _currentObjID;
 
 		[Inject] private readonly InteractDataSet _interactDataSet;
-		private string _currentObjID;
+		[Inject] private readonly PlayerData _playerData;
 
 		private void Start(){
 			image = imageComponent.sprite;
@@ -69,10 +70,11 @@ namespace Core.Chapter_1{
 
 		private void OnInteractButtonClick(){
 			if(_interactDataSet.CheckCorrect(_currentObjID)){
-				Debug.Log($"找到錯誤音效! 給予一個 '通關條件' ");
+				Debug.Log("找到錯誤音效! 給予一個 '通關條件'");
+				_playerData.SaveSuccessResult(_currentObjID);
 			}
 			else{
-				Debug.Log($"這是正確的音效");
+				Debug.Log("這是正確的音效，沒有問題");
 			}
 
 			SetComponentActive(false);

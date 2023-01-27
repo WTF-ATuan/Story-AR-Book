@@ -211,7 +211,7 @@ MonoBehaviour:
   debugText: {fileID: 1669049765}
   interactNames: []
   interactRepository: {fileID: 1430838686891101607}
-  interactUI: {fileID: 0}
+  interactUI: {fileID: 1008521065}
 --- !u!114 &61636115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1651,7 +1651,7 @@ GameObject:
   - component: {fileID: 972135882}
   - component: {fileID: 972135881}
   m_Layer: 6
-  m_Name: Phonograph
+  m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1823,6 +1823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1066904629}
   - component: {fileID: 1066904628}
+  - component: {fileID: 1066904630}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -1844,7 +1845,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers:
   - {fileID: 11400000, guid: 1653daaede092ed418e2375cbd96e711, type: 2}
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 1066904630}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -1876,6 +1878,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1066904630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066904627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11060c0bb43348c19fe0c6859bd491f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1133151313
 GameObject:
   m_ObjectHideFlags: 0

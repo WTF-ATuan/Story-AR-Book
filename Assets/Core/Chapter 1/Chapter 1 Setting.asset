@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Chapter 1 Setting
   m_EditorClassIdentifier: 
   platform: 2
-  soundDataSet:
-    soundDataList: []
-    dataPath: Assets/Core/Testing
+  targetData:
+    <PassCount>k__BackingField: 0
   playerMoveData:
     <Acceleration>k__BackingField: 0.12
     <DeAcceleration>k__BackingField: 0.1
@@ -37,6 +36,4 @@ MonoBehaviour:
       buttonTransform: {fileID: 0}
       audioClip: {fileID: 8300000, guid: be11f1e9e91b1274ca581923f67cb781, type: 3}
     tag: Interact
-    gameObjects:
-    - {fileID: 0}
-    - {fileID: 0}
+    gameObjects: []
