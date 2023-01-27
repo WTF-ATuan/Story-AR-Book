@@ -58,12 +58,14 @@ namespace Core{
 			foreach(var gameObject in gameObjects){
 				var interactData = new InteractData{
 					name = gameObject.name,
-					instanceID = gameObject.GetInstanceID(),
+					instanceID = gameObject.GetInstanceID()
 				};
 				if(!interactDataList.Exists(x => x.name == interactData.name)){
 					interactDataList.Add(interactData);
 				}
 			}
+
+			gameObjects = Array.Empty<GameObject>();
 		}
 
 		private List<ValueDropdownItem> GetAllTag(){
@@ -75,9 +77,12 @@ namespace Core{
 
 		[Serializable]
 		public class InteractData{
-			[LabelText("Object Name")] [ReadOnly][GUIColor(1, 0.6f, 0.4f)] public string name;
-			[ValueDropdown("GetDataTag")] public InteractTag tag = InteractTag.None;
-			[ReadOnly] public int instanceID;
+			[ReadOnly] [HideInInspector] public string name;
+
+			[TitleGroup("$name", "$instanceID", TitleAlignments.Split, boldTitle: true)] [ValueDropdown("GetDataTag")]
+			public InteractTag tag = InteractTag.None;
+
+			[ReadOnly] [HideInInspector] public int instanceID;
 
 			[FoldoutGroup("UI Component")] public Sprite image;
 			[FoldoutGroup("UI Component")] public AnimationClip animationClip;
