@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Core.Chapter_1;
 using Sirenix.OdinInspector;
@@ -21,19 +22,29 @@ namespace Core.Testing{
 		[Inject] private readonly TargetData _targetData;
 		private int _successCount;
 		private InteractState _interactState;
+		private Vector3 _teleportTarget;
 
 		private void Start(){
 			interactRepository = FindObjectOfType<InteractRepository>();
 			interactUI = FindObjectOfType<InteractUI>(true);
-			interactButton.OnClickAsObservable().Subscribe(x => OnClick());
+			interactButton.OnClickAsObservable().Subscribe(x => Interact());
+			//----
 			interactRepository.RegisterWithTag("Interact", true, TriggerEnter);
 			interactRepository.RegisterWithTag("Interact", false, TriggerExit);
+			interactRepository.RegisterWithName("Stairs", true, (obj, id) => TeleportCondition("Stairs Target"));
+			interactRepository.RegisterWithName("Stairs Target", true, (obj, id) => TeleportCondition("Stairs"));
 			interactRepository.RegisterWithName("Target", TargetCondition);
 		}
 
-		private void TargetCondition(Collider obj, bool enterOrExit){
+		private void TeleportCondition(string targetID){
+			var target = interactRepository.interactObject.Find(x => x.name == targetID);
+			if(!target){
+				throw new Exception($"Can,t teleport to {targetID} ");
+			}
+
 			interactButton.gameObject.SetActive(true);
-			_interactState = InteractState.Condition;
+			_teleportTarget = target.transform.position;
+			_interactState = InteractState.Teleport;
 		}
 
 		private void TriggerEnter(Collider obj, string objID){
@@ -56,7 +67,12 @@ namespace Core.Testing{
 				debugText.text = interactNames.First();
 		}
 
-		private void OnClick(){
+		private void TargetCondition(string objID, bool enterOrExit){
+			interactButton.gameObject.SetActive(true);
+			_interactState = InteractState.Condition;
+		}
+
+		private void Interact(){
 			if(_interactState == InteractState.Interact){
 				ShowInteractUI();
 			}
@@ -65,6 +81,11 @@ namespace Core.Testing{
 				_successCount = _playerData.GetSuccessCount();
 				Debug.Log(_successCount > _targetData.PassCount ? "Pass" : "Not Pass");
 			}
+
+			if(_interactState == InteractState.Teleport){
+				transform.position = _teleportTarget;
+			}
+
 
 			interactButton.gameObject.SetActive(false);
 		}
@@ -77,6 +98,7 @@ namespace Core.Testing{
 
 	public enum InteractState{
 		Interact,
-		Condition
+		Condition,
+		Teleport,
 	}
 }

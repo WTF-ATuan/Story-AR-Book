@@ -10,14 +10,14 @@ namespace Core{
 		public List<Collider> interactObject;
 
 
-		public void RegisterWithName(string id, Action<Collider, bool> callback){
+		public void RegisterWithName(string id, Action<string, bool> callback){
 			var foundCollider = interactObject.Find(x => x.name == id);
 			if(!foundCollider){
 				throw new Exception($"can,t find {id}");
 			}
 
-			foundCollider.OnTriggerEnterAsObservable().Subscribe(x => callback(x, true));
-			foundCollider.OnTriggerExitAsObservable().Subscribe(x => callback(x, false));
+			foundCollider.OnTriggerEnterAsObservable().Subscribe(x => callback(x.name, true));
+			foundCollider.OnTriggerExitAsObservable().Subscribe(x => callback(x.name, false));
 		}
 
 		public void RegisterWithName(string id, bool enterOrExit, Action<Collider, string> callback){
@@ -47,6 +47,18 @@ namespace Core{
 				else{
 					collider.OnTriggerExitAsObservable().Subscribe(x => callback(x, collider.name));
 				}
+			}
+		}
+
+		public void RegisterWithTag(string objectTag, Action<string, bool> callback){
+			var foundCollider = interactObject.FindAll(x => x.CompareTag(objectTag));
+			if(foundCollider.IsEmpty()){
+				throw new Exception($"can,t find {objectTag}");
+			}
+
+			foreach(var collider in foundCollider){
+				collider.OnTriggerEnterAsObservable().Subscribe(x => callback(x.name, true));
+				collider.OnTriggerExitAsObservable().Subscribe(x => callback(x.name, false));
 			}
 		}
 	}
