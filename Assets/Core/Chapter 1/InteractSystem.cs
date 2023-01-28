@@ -19,7 +19,6 @@ namespace Core.Testing{
 		[SerializeField] private InteractUI interactUI;
 
 		[Inject] private readonly PlayerData _playerData;
-		[Inject] private readonly TargetData _targetData;
 
 
 		private int _successCount;
@@ -79,7 +78,7 @@ namespace Core.Testing{
 				}
 				case InteractState.Condition:
 					_successCount = _playerData.GetSuccessCount();
-					Debug.Log(_successCount > _targetData.PassCount ? "Pass" : "Not Pass");
+					Debug.Log(_successCount > 0 ? "Pass" : "Not Pass");
 					break;
 				case InteractState.Teleport:
 					transform.position = _teleportTarget;
