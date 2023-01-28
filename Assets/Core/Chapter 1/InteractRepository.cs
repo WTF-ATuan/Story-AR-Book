@@ -57,8 +57,8 @@ namespace Core{
 			}
 
 			foreach(var collider in foundCollider){
-				collider.OnTriggerEnterAsObservable().Subscribe(x => callback(x.name, true));
-				collider.OnTriggerExitAsObservable().Subscribe(x => callback(x.name, false));
+				collider.OnTriggerEnterAsObservable().Subscribe(x => callback(collider.name, true));
+				collider.OnTriggerExitAsObservable().Subscribe(x => callback(collider.name, false));
 			}
 		}
 	}
