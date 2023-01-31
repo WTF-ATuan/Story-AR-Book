@@ -8,5 +8,6 @@ namespace Core{
 		public AnimationClip animationClip;
 		public AudioClip audioClip;
 		public bool correctAnswer = true;
+		public string objID;
 	}
 }

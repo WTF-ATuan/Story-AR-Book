@@ -20,9 +20,8 @@ namespace Core.Chapter_1{
 		[SerializeField] [Required] private AudioSource audioComponent;
 
 
-		private string _currentObjID;
+		private AnimationData _data;
 
-		[Inject] private readonly InteractDataSet _interactDataSet;
 		[Inject] private readonly PlayerData _playerData;
 
 		private void Start(){
@@ -31,14 +30,16 @@ namespace Core.Chapter_1{
 			audioClip = audioComponent.clip;
 			buttonComponent.OnClickAsObservable().Subscribe(x => OnInteractButtonClick());
 		}
+		
 
-		[Button]
-		public void ChangeUIData(string objID){
-			var interactData = _interactDataSet.FindData(objID);
-			image = interactData.image;
-			animationClip = interactData.animationClip;
-			audioClip = interactData.audioClip;
-			_currentObjID = objID;
+		public void SetData(AnimationData data){
+			image = data.image;
+			animationClip = data.animationClip;
+			audioClip = data.audioClip;
+			_data = data;
+		}
+
+		public void ShowUI(){
 			SetDataToComponent();
 			SetComponentActive(true);
 		}
@@ -53,15 +54,14 @@ namespace Core.Chapter_1{
 		private void SetDataToComponent(){
 			imageComponent.sprite = image;
 			animationComponent.clip = animationClip;
-			animationComponent.Play(_currentObjID);
 			//Button .....
 			audioComponent.clip = audioClip;
 		}
 
 		private void OnInteractButtonClick(){
-			if(_interactDataSet.CheckCorrect(_currentObjID)){
+			if(_data.correctAnswer){
 				Debug.Log("找到錯誤音效! 給予一個 '通關條件'");
-				_playerData.SaveSuccessResult(_currentObjID);
+				_playerData.SaveSuccessResult(_data.objID);
 			}
 			else{
 				Debug.Log("這是正確的音效，沒有問題");

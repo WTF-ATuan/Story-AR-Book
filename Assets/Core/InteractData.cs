@@ -12,11 +12,7 @@ namespace Core{
 		public InteractTag tag = InteractTag.None;
 
 		[ReadOnly] [HideInInspector] public int instanceID;
-
-		[FoldoutGroup("UI Component")] public Sprite image;
-		[FoldoutGroup("UI Component")] public AnimationClip animationClip;
-		[FoldoutGroup("UI Component")] public AudioClip audioClip;
-
+		
 		[ShowIf("tag", InteractTag.Teleport)] [BoxGroup("Teleport"), HideLabel]
 		public TeleportData teleportData;
 

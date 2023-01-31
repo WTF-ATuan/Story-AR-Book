@@ -34,50 +34,41 @@ namespace Core.Testing{
 		private void Register(){
 			interactButton.OnClickAsObservable().Subscribe(x => Interact());
 			interactRepository.RegisterWithTag("Interact", CompareData);
-			// interactRepository.RegisterWithName("Stairs", true, (obj, id) => CompareData(id, true));
-			// interactRepository.RegisterWithName("Stairs Target", true, (obj, id) => CompareData(id, true));
-			// interactRepository.RegisterWithName("Target", TargetCondition);
 		}
 
 		private void CompareData(string objID, bool enterOrExit){
 			var interactData = _interactDataSet.FindData(objID);
 			_interactTag = interactData.tag;
-			if(interactData.tag == InteractTag.Teleport){
-				var targetObjID = interactData.teleportData.target;
-				TeleportCondition(targetObjID);
-			}
+			switch(interactData.tag){
+				case InteractTag.Teleport:{
+					var targetObjID = interactData.teleportData.target;
+					var target = interactRepository.interactObject.Find(x => x.name == targetObjID);
+					if(!target){
+						throw new Exception($"Can,t teleport to {targetObjID} ");
+					}
 
-			if(interactData.tag == InteractTag.InteractAnimation){
-				InteractCondition(objID, enterOrExit);
-			}
+					interactButton.gameObject.SetActive(true);
+					_teleportTarget = target.transform.position;
+					break;
+				}
+				case InteractTag.InteractAnimation:{
+					if(enterOrExit){
+						interactNames.Insert(0, objID);
+					}
+					else{
+						if(interactNames.Contains(objID)){
+							interactNames.Remove(objID);
+						}
+					}
 
-		}
-
-		private void InteractCondition(string objID, bool exitOrEnter){
-			if(exitOrEnter){
-				interactNames.Insert(0, objID);
-			}
-			else{
-				if(interactNames.Contains(objID)){
-					interactNames.Remove(objID);
+					interactButton.gameObject.SetActive(interactNames.Count > 0);
+					if(interactNames.Count > 0)
+						debugText.text = interactNames.First();
+					interactUI.SetData(interactData.animationData);
+					break;
 				}
 			}
-
-			interactButton.gameObject.SetActive(interactNames.Count > 0);
-			if(interactNames.Count > 0)
-				debugText.text = interactNames.First();
 		}
-
-		private void TeleportCondition(string targetID){
-			var target = interactRepository.interactObject.Find(x => x.name == targetID);
-			if(!target){
-				throw new Exception($"Can,t teleport to {targetID} ");
-			}
-
-			interactButton.gameObject.SetActive(true);
-			_teleportTarget = target.transform.position;
-		}
-
 
 		private void TargetCondition(string objID, bool enterOrExit){
 			interactButton.gameObject.SetActive(true);
@@ -86,8 +77,7 @@ namespace Core.Testing{
 		private void Interact(){
 			switch(_interactTag){
 				case InteractTag.InteractAnimation:{
-					var currentInteract = interactNames.First();
-					interactUI.ChangeUIData(currentInteract);
+					interactUI.ShowUI();
 					break;
 				}
 				case InteractTag.Condition:
