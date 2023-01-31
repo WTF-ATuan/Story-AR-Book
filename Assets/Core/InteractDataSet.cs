@@ -86,7 +86,6 @@ namespace Core{
 
 			[FoldoutGroup("UI Component")] public Sprite image;
 			[FoldoutGroup("UI Component")] public AnimationClip animationClip;
-			[FoldoutGroup("UI Component")] public RectTransform buttonTransform;
 			[FoldoutGroup("UI Component")] public AudioClip audioClip;
 
 
