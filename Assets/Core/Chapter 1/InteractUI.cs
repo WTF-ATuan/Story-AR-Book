@@ -39,7 +39,7 @@ namespace Core.Chapter_1{
 			_data = data;
 		}
 
-		public void ShowUI(){
+		public void Interact(){
 			SetDataToComponent();
 			SetComponentActive(true);
 		}

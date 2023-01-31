@@ -15,40 +15,28 @@ namespace Core.Testing{
 
 		[SerializeField] [ReadOnly] private List<string> interactNames = new List<string>();
 
-		public InteractRepository interactRepository;
-		[SerializeField] private InteractUI interactUI;
-
+		[Inject] public InteractRepository interactRepository;
+		[Inject] private InteractUI _interactUI;
 		[Inject] private readonly PlayerData _playerData;
 		[Inject] private readonly InteractDataSet _interactDataSet;
 
-
-		private Vector3 _teleportTarget;
+		private Teleport _teleport;
 		private InteractTag _interactTag;
 
 		private void Start(){
-			interactRepository = FindObjectOfType<InteractRepository>();
-			interactUI = FindObjectOfType<InteractUI>(true);
-			Register();
+			interactButton.OnClickAsObservable().Subscribe(x => Interact());
+			interactRepository.RegisterAll(CompareData);
+			_teleport = new Teleport(transform, interactRepository);
 		}
 
-		private void Register(){
-			interactButton.OnClickAsObservable().Subscribe(x => Interact());
-			interactRepository.RegisterWithTag("Interact", CompareData);
-		}
 
 		private void CompareData(string objID, bool enterOrExit){
 			var interactData = _interactDataSet.FindData(objID);
 			_interactTag = interactData.tag;
 			switch(interactData.tag){
 				case InteractTag.Teleport:{
-					var targetObjID = interactData.teleportData.target;
-					var target = interactRepository.interactObject.Find(x => x.name == targetObjID);
-					if(!target){
-						throw new Exception($"Can,t teleport to {targetObjID} ");
-					}
-
+					_teleport.SetData(interactData.teleportData);
 					interactButton.gameObject.SetActive(true);
-					_teleportTarget = target.transform.position;
 					break;
 				}
 				case InteractTag.InteractAnimation:{
@@ -64,7 +52,7 @@ namespace Core.Testing{
 					interactButton.gameObject.SetActive(interactNames.Count > 0);
 					if(interactNames.Count > 0)
 						debugText.text = interactNames.First();
-					interactUI.SetData(interactData.animationData);
+					_interactUI.SetData(interactData.animationData);
 					break;
 				}
 			}
@@ -73,7 +61,7 @@ namespace Core.Testing{
 		private void Interact(){
 			switch(_interactTag){
 				case InteractTag.InteractAnimation:{
-					interactUI.ShowUI();
+					_interactUI.Interact();
 					break;
 				}
 				case InteractTag.Condition:
@@ -82,7 +70,7 @@ namespace Core.Testing{
 					debugText.text = successCount > 0 ? "通關成功" : "未找齊所有物件";
 					break;
 				case InteractTag.Teleport:
-					transform.position = _teleportTarget;
+					_teleport.Interact();
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
