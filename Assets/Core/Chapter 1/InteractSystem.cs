@@ -19,9 +19,9 @@ namespace Core.Testing{
 		[SerializeField] private InteractUI interactUI;
 
 		[Inject] private readonly PlayerData _playerData;
+		[Inject] private readonly InteractDataSet _interactDataSet;
 
 
-		private int _successCount;
 		private InteractState _interactState;
 		private Vector3 _teleportTarget;
 		
@@ -34,12 +34,17 @@ namespace Core.Testing{
 		private void Register(){
 			interactButton.OnClickAsObservable().Subscribe(x => Interact());
 			interactRepository.RegisterWithTag("Interact", InteractCondition);
-			interactRepository.RegisterWithName("Stairs", true, (obj, id) => TeleportCondition("Stairs Target"));
-			interactRepository.RegisterWithName("Stairs Target", true, (obj, id) => TeleportCondition("Stairs"));
+			interactRepository.RegisterWithName("Stairs", true, (obj, id) => CompareData(id));
+			interactRepository.RegisterWithName("Stairs Target", true, (obj, id) => CompareData(id));
 			interactRepository.RegisterWithName("Target", TargetCondition);
-			interactRepository.RegisterWithName("Exit" , (objID, exitOrEnter) => {
-				debugText.text = _playerData.GetSuccessCount() > 1 ? "成功脫逃" : "尚未觸發";
-			});
+		}
+
+		private void CompareData(string objID){
+			var interactData = _interactDataSet.FindData(objID);
+			if(interactData.tag == InteractTag.Teleport){
+				var targetObjID = interactData.teleportData.target;
+				TeleportCondition(targetObjID);
+			}
 		}
 
 		private void InteractCondition(string objID, bool exitOrEnter){
@@ -80,9 +85,9 @@ namespace Core.Testing{
 					break;
 				}
 				case InteractState.Condition:
-					_successCount = _playerData.GetSuccessCount();
-					Debug.Log(_successCount > 0 ? "Pass" : "Not Pass");
-					debugText.text = _successCount > 0 ? "通關成功" : "未找齊所有物件";
+					var successCount = _playerData.GetSuccessCount();
+					Debug.Log(successCount > 0 ? "Pass" : "Not Pass");
+					debugText.text = successCount > 0 ? "通關成功" : "未找齊所有物件";
 					break;
 				case InteractState.Teleport:
 					transform.position = _teleportTarget;

@@ -257,6 +257,11 @@ Transform:
   m_Father: {fileID: 749360603}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &80525183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2760035568308427401, guid: 1cc213f00d109f447a46f13c7c0a3678, type: 3}
+  m_PrefabInstance: {fileID: 1865828369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &158774576
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +726,7 @@ MonoBehaviour:
   mobileCamera: {fileID: 1301381159}
   switchObjectList:
   - {fileID: 1430838686891101606}
-  - {fileID: 0}
+  - {fileID: 80525183}
   - {fileID: 806636700}
   - {fileID: 61636113}
 --- !u!4 &377188095
