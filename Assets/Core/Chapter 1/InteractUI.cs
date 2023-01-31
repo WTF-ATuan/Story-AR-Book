@@ -1,4 +1,6 @@
-﻿using Sirenix.OdinInspector;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Sirenix.OdinInspector;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,11 +20,12 @@ namespace Core.Chapter_1{
 		[SerializeField] [Required] private Animation animationComponent;
 		[SerializeField] [Required] private Button buttonComponent;
 		[SerializeField] [Required] private AudioSource audioComponent;
-
+		[Inject] private readonly PlayerData _playerData;
 
 		private AnimationData _data;
-
-		[Inject] private readonly PlayerData _playerData;
+		[TitleGroup("Debug")]
+		[SerializeField] [ReadOnly] private List<string> interactNames = new List<string>();
+		[SerializeField] private Text debugText;
 
 		private void Start(){
 			image = imageComponent.sprite;
@@ -30,18 +33,42 @@ namespace Core.Chapter_1{
 			audioClip = audioComponent.clip;
 			buttonComponent.OnClickAsObservable().Subscribe(x => OnInteractButtonClick());
 		}
-		
 
-		public void SetData(AnimationData data){
-			image = data.image;
-			animationClip = data.animationClip;
-			audioClip = data.audioClip;
-			_data = data;
+
+		public void SetData(InteractData data, bool enterOrExit){
+			var animationData = data.animationData;
+			image = animationData.image;
+			animationClip = animationData.animationClip;
+			audioClip = animationData.audioClip;
+			_data = animationData;
+
+			UpdateDebugUI(data, enterOrExit);
 		}
 
 		public void Interact(){
-			SetDataToComponent();
+			imageComponent.sprite = image;
+			animationComponent.clip = animationClip;
+			audioComponent.clip = audioClip;
 			SetComponentActive(true);
+		}
+
+		public bool InteractObjectExist(){
+			return interactNames.Count > 0;
+		}
+
+		private void UpdateDebugUI(InteractData data, bool enterOrExit){
+			var objID = data.name;
+			if(enterOrExit){
+				interactNames.Insert(0, objID);
+			}
+			else{
+				if(interactNames.Contains(objID)){
+					interactNames.Remove(objID);
+				}
+			}
+
+			if(interactNames.Count > 0)
+				debugText.text = interactNames.First();
 		}
 
 		private void SetComponentActive(bool active){
@@ -49,13 +76,6 @@ namespace Core.Chapter_1{
 			animationComponent.gameObject.SetActive(active);
 			buttonComponent.gameObject.SetActive(active);
 			audioComponent.gameObject.SetActive(active);
-		}
-
-		private void SetDataToComponent(){
-			imageComponent.sprite = image;
-			animationComponent.clip = animationClip;
-			//Button .....
-			audioComponent.clip = audioClip;
 		}
 
 		private void OnInteractButtonClick(){
