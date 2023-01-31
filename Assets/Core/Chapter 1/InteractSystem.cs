@@ -37,6 +37,9 @@ namespace Core.Testing{
 			interactRepository.RegisterWithName("Stairs", true, (obj, id) => TeleportCondition("Stairs Target"));
 			interactRepository.RegisterWithName("Stairs Target", true, (obj, id) => TeleportCondition("Stairs"));
 			interactRepository.RegisterWithName("Target", TargetCondition);
+			interactRepository.RegisterWithName("Exit" , (objID, exitOrEnter) => {
+				debugText.text = _playerData.GetSuccessCount() > 1 ? "成功脫逃" : "尚未觸發";
+			});
 		}
 
 		private void InteractCondition(string objID, bool exitOrEnter){
@@ -79,6 +82,7 @@ namespace Core.Testing{
 				case InteractState.Condition:
 					_successCount = _playerData.GetSuccessCount();
 					Debug.Log(_successCount > 0 ? "Pass" : "Not Pass");
+					debugText.text = _successCount > 0 ? "通關成功" : "未找齊所有物件";
 					break;
 				case InteractState.Teleport:
 					transform.position = _teleportTarget;

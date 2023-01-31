@@ -8,7 +8,7 @@ AnimationClip:
   m_PrefabAsset: {fileID: 0}
   m_Name: Chair
   serializedVersion: 6
-  m_Legacy: 0
+  m_Legacy: 1
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -39,20 +39,8 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 2015549526
-      script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-      typeID: 114
-      customType: 0
-      isPPtrCurve: 1
-    pptrCurveMapping:
-    - {fileID: 21300000, guid: f8464394534d4db4fa4a0c849d155261, type: 3}
-    - {fileID: 21300000, guid: 60d680a03615e0e4e8e41003e19751ab, type: 3}
-    - {fileID: 21300000, guid: 86188511a24c7f548bdec3ceb701356f, type: 3}
-    - {fileID: 21300000, guid: 94a20fd3b8c3cd048b296030ad9c1b37, type: 3}
-    - {fileID: 21300000, guid: 139bed94104fd3d458b1e45467a32955, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
