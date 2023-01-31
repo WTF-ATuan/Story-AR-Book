@@ -22,9 +22,9 @@ namespace Core.Testing{
 		[Inject] private readonly InteractDataSet _interactDataSet;
 
 
-		private InteractState _interactState;
 		private Vector3 _teleportTarget;
-		
+		private InteractTag _interactTag;
+
 		private void Start(){
 			interactRepository = FindObjectOfType<InteractRepository>();
 			interactUI = FindObjectOfType<InteractUI>(true);
@@ -33,18 +33,24 @@ namespace Core.Testing{
 
 		private void Register(){
 			interactButton.OnClickAsObservable().Subscribe(x => Interact());
-			interactRepository.RegisterWithTag("Interact", InteractCondition);
-			interactRepository.RegisterWithName("Stairs", true, (obj, id) => CompareData(id));
-			interactRepository.RegisterWithName("Stairs Target", true, (obj, id) => CompareData(id));
-			interactRepository.RegisterWithName("Target", TargetCondition);
+			interactRepository.RegisterWithTag("Interact", CompareData);
+			// interactRepository.RegisterWithName("Stairs", true, (obj, id) => CompareData(id, true));
+			// interactRepository.RegisterWithName("Stairs Target", true, (obj, id) => CompareData(id, true));
+			// interactRepository.RegisterWithName("Target", TargetCondition);
 		}
 
-		private void CompareData(string objID){
+		private void CompareData(string objID, bool enterOrExit){
 			var interactData = _interactDataSet.FindData(objID);
+			_interactTag = interactData.tag;
 			if(interactData.tag == InteractTag.Teleport){
 				var targetObjID = interactData.teleportData.target;
 				TeleportCondition(targetObjID);
 			}
+
+			if(interactData.tag == InteractTag.InteractAnimation){
+				InteractCondition(objID, enterOrExit);
+			}
+
 		}
 
 		private void InteractCondition(string objID, bool exitOrEnter){
@@ -57,7 +63,9 @@ namespace Core.Testing{
 				}
 			}
 
-			UpdateUIElement();
+			interactButton.gameObject.SetActive(interactNames.Count > 0);
+			if(interactNames.Count > 0)
+				debugText.text = interactNames.First();
 		}
 
 		private void TeleportCondition(string targetID){
@@ -68,28 +76,26 @@ namespace Core.Testing{
 
 			interactButton.gameObject.SetActive(true);
 			_teleportTarget = target.transform.position;
-			_interactState = InteractState.Teleport;
 		}
 
 
 		private void TargetCondition(string objID, bool enterOrExit){
 			interactButton.gameObject.SetActive(true);
-			_interactState = InteractState.Condition;
 		}
 
 		private void Interact(){
-			switch(_interactState){
-				case InteractState.Interact:{
+			switch(_interactTag){
+				case InteractTag.InteractAnimation:{
 					var currentInteract = interactNames.First();
 					interactUI.ChangeUIData(currentInteract);
 					break;
 				}
-				case InteractState.Condition:
+				case InteractTag.Condition:
 					var successCount = _playerData.GetSuccessCount();
 					Debug.Log(successCount > 0 ? "Pass" : "Not Pass");
 					debugText.text = successCount > 0 ? "通關成功" : "未找齊所有物件";
 					break;
-				case InteractState.Teleport:
+				case InteractTag.Teleport:
 					transform.position = _teleportTarget;
 					break;
 				default:
@@ -99,18 +105,5 @@ namespace Core.Testing{
 
 			interactButton.gameObject.SetActive(false);
 		}
-
-		private void UpdateUIElement(){
-			interactButton.gameObject.SetActive(interactNames.Count > 0);
-			_interactState = InteractState.Interact;
-			if(interactNames.Count > 0)
-				debugText.text = interactNames.First();
-		}
-	}
-
-	public enum InteractState{
-		Interact,
-		Condition,
-		Teleport,
 	}
 }

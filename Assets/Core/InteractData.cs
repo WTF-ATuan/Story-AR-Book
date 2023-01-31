@@ -16,12 +16,18 @@ namespace Core{
 		[FoldoutGroup("UI Component")] public Sprite image;
 		[FoldoutGroup("UI Component")] public AnimationClip animationClip;
 		[FoldoutGroup("UI Component")] public AudioClip audioClip;
-		[ShowIf("tag" , InteractTag.Teleport)] public TeleportData teleportData;
+
+		[ShowIf("tag", InteractTag.Teleport)] [BoxGroup("Teleport"), HideLabel]
+		public TeleportData teleportData;
+
+		[ShowIf("tag", InteractTag.InteractAnimation)] [BoxGroup("InteractAnimation"), HideLabel]
+		public AnimationData animationData;
 
 
 		private List<ValueDropdownItem> GetDataTag(){
 			return new List<ValueDropdownItem>{
 				new ValueDropdownItem("None", InteractTag.None),
+				new ValueDropdownItem("InteractAnimation", InteractTag.InteractAnimation),
 				new ValueDropdownItem("Success ", InteractTag.Success),
 				new ValueDropdownItem("Failure ", InteractTag.Failure),
 				new ValueDropdownItem("Teleport ", InteractTag.Teleport),
@@ -33,6 +39,8 @@ namespace Core{
 		None,
 		Success,
 		Failure,
-		Teleport
+		Teleport,
+		InteractAnimation,
+		Condition
 	}
 }

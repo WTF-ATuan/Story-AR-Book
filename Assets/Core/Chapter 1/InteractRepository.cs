@@ -9,6 +9,12 @@ namespace Core{
 	public class InteractRepository : MonoBehaviour{
 		public List<Collider> interactObject;
 
+		public void RegisterAll(Action<string , bool> callback ){
+			foreach(var obj in interactObject){
+				obj.OnTriggerEnterAsObservable().Subscribe(x => callback(obj.name, true));
+				obj.OnTriggerExitAsObservable().Subscribe(x => callback(obj.name, false));
+			}
+		}
 
 		public void RegisterWithName(string id, Action<string, bool> callback){
 			var foundCollider = interactObject.Find(x => x.name == id);
