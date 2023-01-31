@@ -70,10 +70,6 @@ namespace Core.Testing{
 			}
 		}
 
-		private void TargetCondition(string objID, bool enterOrExit){
-			interactButton.gameObject.SetActive(true);
-		}
-
 		private void Interact(){
 			switch(_interactTag){
 				case InteractTag.InteractAnimation:{

@@ -24,8 +24,6 @@ namespace Core{
 			return new List<ValueDropdownItem>{
 				new ValueDropdownItem("None", InteractTag.None),
 				new ValueDropdownItem("InteractAnimation", InteractTag.InteractAnimation),
-				new ValueDropdownItem("Success ", InteractTag.Success),
-				new ValueDropdownItem("Failure ", InteractTag.Failure),
 				new ValueDropdownItem("Teleport ", InteractTag.Teleport),
 			};
 		}
@@ -33,8 +31,6 @@ namespace Core{
 
 	public enum InteractTag{
 		None,
-		Success,
-		Failure,
 		Teleport,
 		InteractAnimation,
 		Condition

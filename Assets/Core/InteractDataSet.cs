@@ -11,15 +11,6 @@ namespace Core{
 		[Searchable] [ListDrawerSettings(NumberOfItemsPerPage = 5, ShowItemCount = true)] [SerializeField]
 		private List<InteractData> interactDataList;
 
-		public bool CheckCorrect(string objID){
-			var interactData = interactDataList.Find(x => x.name == objID);
-			if(interactData is null){
-				throw new Exception($"Can,t find {objID}");
-			}
-
-			return interactData.tag == InteractTag.Success;
-		}
-
 		public InteractData FindData(string objID){
 			var interactData = interactDataList.Find(x => x.name == objID);
 			if(interactData is null){
