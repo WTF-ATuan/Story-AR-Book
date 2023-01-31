@@ -20,10 +20,6 @@ namespace Core{
 			return interactData;
 		}
 
-		public string[] GetAllDataID(){
-			return interactDataList.Select(x => x.name).ToArray();
-		}
-
 		#region Editor
 
 		[TitleGroup("Create With Tag")]

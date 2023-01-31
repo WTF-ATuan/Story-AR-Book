@@ -22,9 +22,11 @@ namespace Core.Chapter_1{
 		[SerializeField] [Required] private AudioSource audioComponent;
 		[Inject] private readonly PlayerData _playerData;
 
-		private AnimationData _data;
-		[TitleGroup("Debug")]
-		[SerializeField] [ReadOnly] private List<string> interactNames = new List<string>();
+		private InteractData _data;
+
+		[TitleGroup("Debug")] [SerializeField] [ReadOnly]
+		private List<string> interactNames = new List<string>();
+
 		[SerializeField] private Text debugText;
 
 		private void Start(){
@@ -36,11 +38,11 @@ namespace Core.Chapter_1{
 
 
 		public void SetData(InteractData data, bool enterOrExit){
-			var animationData = data.animationData;
+			var animationData = data.interactAnimationData;
 			image = animationData.image;
 			animationClip = animationData.animationClip;
 			audioClip = animationData.audioClip;
-			_data = animationData;
+			_data = data;
 
 			UpdateDebugUI(data, enterOrExit);
 		}
@@ -79,9 +81,9 @@ namespace Core.Chapter_1{
 		}
 
 		private void OnInteractButtonClick(){
-			if(_data.correctAnswer){
+			if(_data.interactAnimationData.correctAnswer){
 				Debug.Log("找到錯誤音效! 給予一個 '通關條件'");
-				_playerData.SaveSuccessResult(_data.objID);
+				_playerData.SaveSuccessResult(_data.name);
 			}
 			else{
 				Debug.Log("這是正確的音效，沒有問題");

@@ -17,7 +17,7 @@ namespace Core{
 		public TeleportData teleportData;
 
 		[ShowIf("tag", InteractTag.InteractAnimation)] [BoxGroup("InteractAnimation"), HideLabel]
-		public AnimationData animationData;
+		public InteractAnimationData interactAnimationData;
 
 
 		private List<ValueDropdownItem> GetDataTag(){
