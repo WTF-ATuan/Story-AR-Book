@@ -29,6 +29,8 @@ namespace Core.Chapter_1{
 
 		[SerializeField] private Text debugText;
 
+		private readonly List<GameObject> _levelRootList = new List<GameObject>();
+
 		private void Start(){
 			image = imageComponent.sprite;
 			animationClip = animationComponent.clip;
@@ -48,10 +50,29 @@ namespace Core.Chapter_1{
 		}
 
 		public void Interact(){
-			imageComponent.sprite = image;
-			animationComponent.clip = animationClip;
-			audioComponent.clip = audioClip;
-			SetComponentActive(true);
+			if(_data.interactAnimationData.correctAnswer){
+				imageComponent.sprite = image;
+				animationComponent.clip = animationClip;
+				audioComponent.clip = audioClip;
+				SetComponentActive(true);
+			}
+			else{
+				CreateLevel(_data.interactAnimationData.interactiveRoot);
+			}
+		}
+
+		private void CreateLevel(InteractiveRoot root){
+			var levelRoot = Instantiate(root, transform);
+			levelRoot.name = root.name;
+			levelRoot.targetFound.AddListener(() => OnLevelPass(root.name));
+			_levelRootList.Add(levelRoot.gameObject);
+		}
+
+		private void OnLevelPass(string rootName){
+			var foundRoot = _levelRootList.Find(x => x.name == rootName);
+			Debug.Log("找到錯誤音效! 給予一個 '通關條件'");
+			_playerData.SaveSuccessResult(_data.name);
+			foundRoot.SetActive(false);
 		}
 
 		public bool InteractObjectExist(){
@@ -81,14 +102,7 @@ namespace Core.Chapter_1{
 		}
 
 		private void OnInteractButtonClick(){
-			if(_data.interactAnimationData.correctAnswer){
-				Debug.Log("找到錯誤音效! 給予一個 '通關條件'");
-				_playerData.SaveSuccessResult(_data.name);
-			}
-			else{
-				Debug.Log("這是正確的音效，沒有問題");
-			}
-
+			Debug.Log("這是正確的音效，沒有問題");
 			SetComponentActive(false);
 		}
 	}

@@ -25,59 +25,65 @@ MonoBehaviour:
       teleportData:
         target: 
       interactAnimationData:
+        correctAnswer: 0
         image: {fileID: 21300000, guid: 78d4aab568ecfdf4d8fc0751147b4115, type: 3}
         animationClip: {fileID: 7400000, guid: 1b6d7755e1bb1ce4da62e2305fe33fe9, type: 2}
         audioClip: {fileID: 8300000, guid: 9bcf49dae3b54c542b0936d5266c877e, type: 3}
-        correctAnswer: 1
+        interactiveRoot: {fileID: 6771335898428096232, guid: 569f3d807e71ab84a915a44960768e89, type: 3}
     - name: Chair
       tag: 2
       instanceID: 30416
       teleportData:
         target: 
       interactAnimationData:
+        correctAnswer: 1
         image: {fileID: 21300000, guid: f8464394534d4db4fa4a0c849d155261, type: 3}
         animationClip: {fileID: 7400000, guid: 7bee7f9421e00904bbb3ea94fc75af3e, type: 2}
         audioClip: {fileID: 8300000, guid: be11f1e9e91b1274ca581923f67cb781, type: 3}
-        correctAnswer: 0
+        interactiveRoot: {fileID: 0}
     - name: TV
       tag: 2
       instanceID: 17424
       teleportData:
         target: 
       interactAnimationData:
+        correctAnswer: 1
         image: {fileID: 21300000, guid: 0147a0ce5a1a013488078179251baea3, type: 3}
         animationClip: {fileID: 7400000, guid: 7e2765a82b0ff3d478908f983f136363, type: 2}
         audioClip: {fileID: 8300000, guid: a4eb059ed6d01334a81f5c8a56eaffb3, type: 3}
-        correctAnswer: 1
+        interactiveRoot: {fileID: 0}
     - name: Fan
       tag: 2
       instanceID: 17462
       teleportData:
         target: 
       interactAnimationData:
-        image: {fileID: 21300000, guid: af9733a6f0e10804e89f2a87d35edf78, type: 3}
+        correctAnswer: 0
+        image: {fileID: 21300000, guid: 74bf6545bbd014f40845d14485396095, type: 3}
         animationClip: {fileID: 7400000, guid: d3b5193a7e9515d40bc92a480552276e, type: 2}
         audioClip: {fileID: 8300000, guid: 0880aa86e74b3604fbf8425cee486a30, type: 3}
-        correctAnswer: 0
+        interactiveRoot: {fileID: 1526452321, guid: cf746d04b500e174e822ca8e67994318, type: 3}
     - name: Stairs
       tag: 1
       instanceID: 58596
       teleportData:
         target: Stairs Target
       interactAnimationData:
+        correctAnswer: 1
         image: {fileID: 0}
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
-        correctAnswer: 1
+        interactiveRoot: {fileID: 0}
     - name: Stairs Target
       tag: 1
       instanceID: 58446
       teleportData:
         target: Stairs
       interactAnimationData:
+        correctAnswer: 1
         image: {fileID: 0}
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
-        correctAnswer: 1
+        interactiveRoot: {fileID: 0}
     tag: Interact
     gameObjects: []
