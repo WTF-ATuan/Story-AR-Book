@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Sirenix.OdinInspector;
 using UniRx;
 using UnityEngine;
@@ -24,11 +23,6 @@ namespace Core.Chapter_1{
 
 		private InteractData _data;
 
-		[TitleGroup("Debug")] [SerializeField] [ReadOnly]
-		private List<string> interactNames = new List<string>();
-
-		[SerializeField] private Text debugText;
-
 		private readonly List<GameObject> _levelRootList = new List<GameObject>();
 
 		private void Start(){
@@ -39,14 +33,12 @@ namespace Core.Chapter_1{
 		}
 
 
-		public void SetData(InteractData data, bool enterOrExit){
+		public void SetData(InteractData data){
 			var animationData = data.interactAnimationData;
 			image = animationData.image;
 			animationClip = animationData.animationClip;
 			audioClip = animationData.audioClip;
 			_data = data;
-
-			UpdateDebugUI(data, enterOrExit);
 		}
 
 		public void Interact(){
@@ -73,25 +65,6 @@ namespace Core.Chapter_1{
 			Debug.Log("找到錯誤音效! 給予一個 '通關條件'");
 			_playerData.SaveSuccessResult(_data.name);
 			foundRoot.SetActive(false);
-		}
-
-		public bool InteractObjectExist(){
-			return interactNames.Count > 0;
-		}
-
-		private void UpdateDebugUI(InteractData data, bool enterOrExit){
-			var objID = data.name;
-			if(enterOrExit){
-				interactNames.Insert(0, objID);
-			}
-			else{
-				if(interactNames.Contains(objID)){
-					interactNames.Remove(objID);
-				}
-			}
-
-			if(interactNames.Count > 0)
-				debugText.text = interactNames.First();
 		}
 
 		private void SetComponentActive(bool active){

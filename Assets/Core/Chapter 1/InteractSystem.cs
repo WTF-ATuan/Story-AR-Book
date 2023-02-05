@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Core.Chapter_1;
+using Sirenix.OdinInspector;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,10 +18,16 @@ namespace Core.Testing{
 
 		private Teleport _teleport;
 		private InteractTag _interactTag;
+		
+		[TitleGroup("Debug")] [SerializeField] [ReadOnly]
+		private List<string> interactNames = new List<string>();
+
+		[SerializeField] private Text debugText;
 
 		private void Start(){
 			interactButton.OnClickAsObservable().Subscribe(x => Interact());
 			interactRepository.RegisterAll(CompareData);
+			interactRepository.RegisterAll(UpdateInteract);
 			_teleport = new Teleport(transform, interactRepository);
 		}
 
@@ -28,13 +37,11 @@ namespace Core.Testing{
 			_interactTag = interactData.tag;
 			switch(interactData.tag){
 				case InteractTag.InteractAnimation:{
-					_interactUI.SetData(interactData, enterOrExit);
-					interactButton.gameObject.SetActive(_interactUI.InteractObjectExist());
+					_interactUI.SetData(interactData);
 					break;
 				}
 				case InteractTag.Teleport:{
 					_teleport.SetData(interactData.teleportData);
-					interactButton.gameObject.SetActive(true);
 					break;
 				}
 			}
@@ -56,5 +63,19 @@ namespace Core.Testing{
 
 			interactButton.gameObject.SetActive(false);
 		}
+		private void UpdateInteract(string objID, bool enterOrExit){
+			if(enterOrExit){
+				interactNames.Insert(0, objID);
+			}
+			else{
+				if(interactNames.Contains(objID)){
+					interactNames.Remove(objID);
+				}
+			}
+			interactButton.gameObject.SetActive(interactNames.Count > 0);
+			if(interactNames.Count > 0)
+				debugText.text = interactNames.First();
+		}
+
 	}
 }

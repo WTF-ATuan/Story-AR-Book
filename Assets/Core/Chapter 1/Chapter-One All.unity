@@ -209,6 +209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactButton: {fileID: 158774578}
   interactRepository: {fileID: 1430838686891101607}
+  interactNames: []
+  debugText: {fileID: 1669049765}
 --- !u!114 &61636115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1740,8 +1742,6 @@ MonoBehaviour:
   animationComponent: {fileID: 324607725}
   buttonComponent: {fileID: 922612541}
   audioComponent: {fileID: 1355814257}
-  interactNames: []
-  debugText: {fileID: 1669049765}
 --- !u!1 &1066904627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,8 +1940,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134161724}
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1571, y: 0.0479, z: 0.0932}
-  m_LocalScale: {x: 63.684, y: 63.684, z: 63.684}
+  m_LocalPosition: {x: 0.1571, y: 0.0389, z: 0.0958}
+  m_LocalScale: {x: 40.393112, y: 40.393112, z: 40.393112}
   m_Children: []
   m_Father: {fileID: 1770069242141972252}
   m_RootOrder: 5
@@ -3551,8 +3551,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3449529431252470958}
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1108, y: 0.0479, z: 0.0449}
-  m_LocalScale: {x: 63.684, y: 63.684, z: 63.684}
+  m_LocalPosition: {x: 0.1103, y: 0.0391, z: 0.0449}
+  m_LocalScale: {x: 37.920147, y: 37.920147, z: 37.920147}
   m_Children: []
   m_Father: {fileID: 1770069242141972252}
   m_RootOrder: 3
