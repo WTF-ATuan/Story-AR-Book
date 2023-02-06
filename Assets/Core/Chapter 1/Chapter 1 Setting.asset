@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c349619cca341d28cba4e9c9237bd3a, type: 3}
   m_Name: Chapter 1 Setting
   m_EditorClassIdentifier: 
-  platform: 0
+  platform: 1
   playerMoveData:
     <Acceleration>k__BackingField: 0.12
     <DeAcceleration>k__BackingField: 0.1
@@ -85,5 +85,27 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 0}
+    - name: Radio
+      tag: 2
+      instanceID: 30314
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 0
+        image: {fileID: 0}
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 8686251698883289002, guid: 8dbc17bec02c8ac4393334a4d9a40427, type: 3}
+    - name: Wardrobe
+      tag: 2
+      instanceID: 30074
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 0
+        image: {fileID: 0}
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 4534355535649463223, guid: cae65720a656588498fc97bf8e8f586b, type: 3}
     tag: Interact
     gameObjects: []
