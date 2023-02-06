@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Vuforia;
-using Zenject;
 
 namespace Core.Chapter_One{
 	public class PlatformSwitcher : MonoBehaviour{
@@ -15,12 +14,7 @@ namespace Core.Chapter_One{
 
 		[TitleGroup("Switch Object")] [InlineButton("GetFromChild")]
 		public List<GameObject> switchObjectList;
-
-		[Inject] private PlatformType _platformType;
-
-		private void Awake(){
-			SwitchPlatform();
-		}
+		
 
 		private void GetFromChild(){
 			for(var i = 0; i < transform.childCount; i++){
@@ -30,10 +24,9 @@ namespace Core.Chapter_One{
 				}
 			}
 		}
-
-		[Button]
-		private void SwitchPlatform(){
-			switch(_platformType){
+		
+		public void SwitchPlatform(PlatformType type){
+			switch(type){
 				case PlatformType.ArBuild:
 					SetArActive(true);
 					SetEditorActive(false);
