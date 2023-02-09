@@ -29,6 +29,7 @@
     "com.smkplus.custom-toolbar": "https://github.com/smkplus/CustomToolbar.git#master",
     "com.svermeulen.extenject": "9.2.0-stcf3",
     "com.unity.2d.sprite": "1.0.0",
+    "com.unity.device-simulator": "3.0.3-preview",
     "com.unity.ide.rider": "3.0.18",
     "com.unity.test-framework": "1.1.33",
     "com.unity.textmeshpro": "3.0.6",
