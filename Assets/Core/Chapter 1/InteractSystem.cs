@@ -17,11 +17,9 @@ namespace Core.Testing{
 		[Inject] private readonly InteractDataSet _interactDataSet;
 		private Teleport _teleport;
 		private InteractTag _interactTag;
-
-		[TitleGroup("Debug")] [SerializeField] [ReadOnly]
-		private List<string> interactNames = new List<string>();
-
-		[SerializeField] private Text debugText;
+		
+		private List<string> _interactNames = new List<string>();
+		[SerializeField] private Text nameTag;
 
 		private void Start(){
 			interactButton.OnPointerClickAsObservable().Subscribe(x => Interact());
@@ -62,17 +60,17 @@ namespace Core.Testing{
 
 		private void UpdateInteract(string objID, bool enterOrExit){
 			if(enterOrExit){
-				interactNames.Insert(0, objID);
+				_interactNames.Insert(0, objID);
 			}
 			else{
-				if(interactNames.Contains(objID)){
-					interactNames.Remove(objID);
+				if(_interactNames.Contains(objID)){
+					_interactNames.Remove(objID);
 				}
 			}
 
 			var activeObj = interactButton.transform.GetChild(0).gameObject;
-			if(interactNames.Count > 0){
-				debugText.text = interactNames.First();
+			if(_interactNames.Count > 0){
+				nameTag.text = _interactNames.First();
 				activeObj.SetActive(true);
 			}
 			else{
