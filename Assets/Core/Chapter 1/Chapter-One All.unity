@@ -2010,8 +2010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8849c1203f9a4795a3bff5d8a8f9b817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationComponent: {fileID: 324607725}
-  audioComponent: {fileID: 1355814257}
 --- !u!1 &1036974804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3205,14 +3203,16 @@ MonoBehaviour:
   nameTagView: {fileID: 997973389}
   nameTag: {fileID: 1221747209}
   setting: {fileID: 491186513}
+  interactBackGround: {fileID: 1421452403}
+  exitButton: {fileID: 1749652475}
+  levelAnimator: {fileID: 324607725}
+  levelAudio: {fileID: 1355814257}
   completePartList:
   - {fileID: 123436351}
   - {fileID: 476483009}
   - {fileID: 34695768}
   - {fileID: 199077904}
   - {fileID: 1861008568}
-  interactBackGround: {fileID: 1421452403}
-  exitButton: {fileID: 1749652475}
 --- !u!1 &1466910650
 GameObject:
   m_ObjectHideFlags: 0
