@@ -10,7 +10,7 @@ using Zenject;
 namespace Core.Testing{
 	public class InteractSystem : MonoBehaviour{
 		[Inject] private InteractRepository _interactRepository;
-		[Inject] private InteractUI _interactUI;
+		[Inject] private InteractLevel _interactLevel;
 		[Inject] private readonly InteractDataSet _interactDataSet;
 		[Inject] private readonly UIPresenter _presenter;
 
@@ -36,7 +36,7 @@ namespace Core.Testing{
 		private void Interact(){
 			switch(_interactTag){
 				case InteractTag.InteractAnimation:{
-					_interactUI.Interact(_currentInteractData.interactAnimationData);
+					_interactLevel.Interact(_currentInteractData.interactAnimationData);
 					_presenter.SwitchMode(UIMode.Focus);
 					break;
 				}

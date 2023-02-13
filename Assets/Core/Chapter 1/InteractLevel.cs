@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using Zenject;
 
 namespace Core.Chapter_1{
-	public class InteractUI : MonoBehaviour{
+	public class InteractLevel : MonoBehaviour{
 		[TitleGroup("Components")] [SerializeField] [Required]
 		private Image imageComponent;
 
