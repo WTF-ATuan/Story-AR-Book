@@ -2,30 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core.Chapter_1;
-using Sirenix.OdinInspector;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
-using UnityEngine.UI;
 using Zenject;
 
 namespace Core.Testing{
 	public class InteractSystem : MonoBehaviour{
-		[SerializeField] private Image interactButton;
-		[Inject] public InteractRepository interactRepository;
+		[Inject] private InteractRepository _interactRepository;
 		[Inject] private InteractUI _interactUI;
 		[Inject] private readonly InteractDataSet _interactDataSet;
+		[Inject] private readonly UIPresenter _presenter;
+
 		private Teleport _teleport;
 		private InteractTag _interactTag;
-		
+
 		private readonly List<string> _interactNames = new List<string>();
-		[SerializeField] private Text nameTag;
 
 		private void Start(){
-			interactButton.OnPointerClickAsObservable().Subscribe(x => Interact());
-			interactRepository.RegisterAll(CompareData);
-			interactRepository.RegisterAll(UpdateInteract);
-			_teleport = new Teleport(transform, interactRepository);
+			_presenter.findIcon.OnPointerClickAsObservable().Subscribe(x => Interact());
+			_interactRepository.RegisterAll(CompareData);
+			_interactRepository.RegisterAll(UpdateInteract);
+			_teleport = new Teleport(transform, _interactRepository);
 		}
 
 
@@ -68,14 +66,11 @@ namespace Core.Testing{
 				}
 			}
 
-			var activeObj = interactButton.transform.GetChild(0).gameObject;
 			if(_interactNames.Count > 0){
-				nameTag.text = _interactNames.First();
-				activeObj.SetActive(true);
+				_presenter.ModifyNameTag(_interactNames.First());
 			}
-			else{
-				activeObj.SetActive(false);
-			}
+
+			_presenter.SetFindState(_interactNames.Count > 0);
 		}
 	}
 }

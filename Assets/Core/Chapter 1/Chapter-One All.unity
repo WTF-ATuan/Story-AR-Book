@@ -357,9 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ce30e749dc4f708053f6fb2a178ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactButton: {fileID: 857591695}
   interactRepository: {fileID: 1430838686891101607}
-  nameTag: {fileID: 1221747209}
 --- !u!114 &61636115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2337,6 +2335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRepository: {fileID: 0}
   interactUI: {fileID: 0}
+  uiPresenter: {fileID: 0}
 --- !u!1 &1133151313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2606,7 +2605,7 @@ GameObject:
   - component: {fileID: 1221747210}
   - component: {fileID: 1221747209}
   m_Layer: 5
-  m_Name: Text
+  m_Name: NameTag Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3330,8 +3329,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   findIcon: {fileID: 857591695}
-  nameTag: {fileID: 997973389}
+  nameTagView: {fileID: 0}
+  nameTag: {fileID: 1221747209}
   setting: {fileID: 491186513}
+  completePartList:
+  - {fileID: 123436351}
+  - {fileID: 476483009}
+  - {fileID: 34695768}
+  - {fileID: 199077904}
+  - {fileID: 1861008568}
   interactBackGround: {fileID: 1421452403}
 --- !u!1 &1466910650
 GameObject:
