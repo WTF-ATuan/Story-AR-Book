@@ -18,7 +18,7 @@ namespace Core.Testing{
 		private Teleport _teleport;
 		private InteractTag _interactTag;
 		
-		private List<string> _interactNames = new List<string>();
+		private readonly List<string> _interactNames = new List<string>();
 		[SerializeField] private Text nameTag;
 
 		private void Start(){

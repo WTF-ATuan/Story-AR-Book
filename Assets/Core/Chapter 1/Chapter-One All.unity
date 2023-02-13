@@ -3222,7 +3222,7 @@ GameObject:
   - component: {fileID: 1466154676}
   - component: {fileID: 1466154680}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas Prensenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3333,7 +3333,6 @@ MonoBehaviour:
   nameTag: {fileID: 997973389}
   setting: {fileID: 491186513}
   interactBackGround: {fileID: 1421452403}
-  interactController: {fileID: 1008521060}
 --- !u!1 &1466910650
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,11 +49,17 @@ namespace Core.Chapter_1{
 				SetComponentActive(true);
 			}
 			else{
-				CreateLevel(_data.interactAnimationData.interactiveRoot);
+				CreateOrOpenLevel(_data.interactAnimationData.interactiveRoot);
 			}
 		}
 
-		private void CreateLevel(InteractiveRoot root){
+		private void CreateOrOpenLevel(InteractiveRoot root){
+			var existLevel = _levelRootList.Find(x => x.name == root.name);
+			if(existLevel){
+				existLevel.SetActive(true);
+				return;
+			}
+
 			var levelRoot = Instantiate(root, transform);
 			levelRoot.name = root.name;
 			levelRoot.targetFound.AddListener(() => OnLevelPass(root.name));

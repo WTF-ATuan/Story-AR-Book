@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -6,11 +7,11 @@ using UnityEngine.UI;
 
 namespace Core.Chapter_1{
 	public class UIPresenter : MonoBehaviour{
-		[TabGroup("Play Mode")] public Image findIcon;
-		[TabGroup("Play Mode")] public Image nameTag;
-		[TabGroup("Play Mode")] public Image setting;
-		[TabGroup("Interact Focus")] public Image interactBackGround;
-		[TabGroup("Interact Focus")] public GameObject interactController;
+		[TitleGroup("Play Mode")] public Image findIcon;
+		[TitleGroup("Play Mode")] public Image nameTag;
+		[TitleGroup("Play Mode")] public Image setting;
+		[TitleGroup("Play Mode")] public List<Image> completePartList;
+		[TitleGroup("Interact Focus")] public Image interactBackGround;
 
 		[Button]
 		public void SwitchMode(UIMode mode){
@@ -31,7 +32,6 @@ namespace Core.Chapter_1{
 					throw new ArgumentOutOfRangeException(nameof(mode), mode, null);
 			}
 		}
-
 	}
 
 	public enum UIMode{
