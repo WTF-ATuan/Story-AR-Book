@@ -6,10 +6,19 @@ using UnityEngine;
 namespace Core{
 	[Serializable]
 	public class InteractAnimationData{
-		public bool correctAnswer = true;
-		public Sprite image;
-		public AnimationClip animationClip;
-		public AudioClip audioClip;
+		[OnValueChanged("ClearField")] public bool correctAnswer = true;
+		[ShowIf("$correctAnswer")] public AnimationClip animationClip;
+		[ShowIf("$correctAnswer")] public AudioClip audioClip;
 		[HideIf("$correctAnswer")] public InteractiveRoot interactiveRoot;
+
+		private void ClearField(){
+			if(correctAnswer){
+				interactiveRoot = null;
+			}
+			else{
+				animationClip = null;
+				audioClip = null;
+			}
+		}
 	}
 }

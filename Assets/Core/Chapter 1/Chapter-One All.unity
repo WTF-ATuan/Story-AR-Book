@@ -2010,7 +2010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8849c1203f9a4795a3bff5d8a8f9b817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageComponent: {fileID: 324607723}
   animationComponent: {fileID: 324607725}
   audioComponent: {fileID: 1355814257}
 --- !u!1 &1036974804
