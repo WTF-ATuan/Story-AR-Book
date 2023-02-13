@@ -13,6 +13,7 @@ namespace Core.Chapter_1{
 		[TitleGroup("Play Mode")] public Image setting;
 		[TitleGroup("Play Mode")] public List<Image> completePartList;
 		[TitleGroup("Interact Focus")] public Image interactBackGround;
+		[TitleGroup("Interact Focus")] public Image exitButton;
 
 		[Button]
 		public void SwitchMode(UIMode mode){

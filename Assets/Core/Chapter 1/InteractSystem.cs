@@ -16,7 +16,7 @@ namespace Core.Testing{
 
 		private Teleport _teleport;
 		private InteractTag _interactTag;
-
+		private InteractData _currentInteractData;
 		private readonly List<string> _interactNames = new List<string>();
 
 		private void Start(){
@@ -30,26 +30,17 @@ namespace Core.Testing{
 		private void CompareData(string objID, bool enterOrExit){
 			var interactData = _interactDataSet.FindData(objID);
 			_interactTag = interactData.tag;
-			switch(interactData.tag){
-				case InteractTag.InteractAnimation:{
-					_interactUI.SetData(interactData);
-					break;
-				}
-				case InteractTag.Teleport:{
-					_teleport.SetData(interactData.teleportData);
-					break;
-				}
-			}
+			_currentInteractData = interactData;
 		}
 
 		private void Interact(){
 			switch(_interactTag){
 				case InteractTag.InteractAnimation:{
-					_interactUI.Interact();
+					_interactUI.Interact(_currentInteractData.interactAnimationData);
 					break;
 				}
 				case InteractTag.Teleport:
-					_teleport.Interact();
+					_teleport.Interact(_currentInteractData.teleportData);
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
