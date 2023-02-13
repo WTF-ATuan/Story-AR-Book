@@ -18,7 +18,6 @@ namespace Core.Chapter_1{
 		[FoldoutGroup("Interact Focus")] public AudioSource levelAudio;
 		[FoldoutGroup("Goal")] public List<Image> completePartList;
 
-		[Button]
 		public void SwitchMode(UIMode mode){
 			switch(mode){
 				case UIMode.PlayMode:
