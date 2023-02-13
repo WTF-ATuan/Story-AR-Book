@@ -167,6 +167,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  switchClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4336092377292952604
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,3 +460,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  switchClick:
+    m_PersistentCalls:
+      m_Calls: []

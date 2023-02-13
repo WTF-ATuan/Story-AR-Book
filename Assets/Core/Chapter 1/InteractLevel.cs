@@ -16,7 +16,6 @@ namespace Core.Chapter_1{
 		[Inject] private readonly PlayerData _playerData;
 		[Inject] private readonly UIPresenter _presenter;
 		private readonly List<GameObject> _levelRootList = new List<GameObject>();
-
 		private void Start(){
 			_presenter.exitButton.OnPointerClickAsObservable().Subscribe(x => ExitFocusMode());
 		}
@@ -42,12 +41,11 @@ namespace Core.Chapter_1{
 
 			var levelRoot = Instantiate(root, transform);
 			levelRoot.name = root.name;
-			levelRoot.targetFound.AddListener(() => OnLevelPass(root.name));
+			levelRoot.targetFound.AddListener(() => PassLevel(root.name));
 			_levelRootList.Add(levelRoot.gameObject);
 		}
 
-		private void OnLevelPass(string rootName){
-			Debug.Log("找到錯誤音效! 給予一個 '通關條件'");
+		private void PassLevel(string rootName){
 			_playerData.SaveSuccessResult(rootName);
 			ExitFocusMode();
 		}

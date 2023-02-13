@@ -37,6 +37,7 @@ namespace Core.Testing{
 			switch(_interactTag){
 				case InteractTag.InteractAnimation:{
 					_interactUI.Interact(_currentInteractData.interactAnimationData);
+					_presenter.SwitchMode(UIMode.Focus);
 					break;
 				}
 				case InteractTag.Teleport:

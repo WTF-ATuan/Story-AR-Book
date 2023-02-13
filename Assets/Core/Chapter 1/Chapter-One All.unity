@@ -3325,7 +3325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   findIcon: {fileID: 857591695}
-  nameTagView: {fileID: 0}
+  nameTagView: {fileID: 997973389}
   nameTag: {fileID: 1221747209}
   setting: {fileID: 491186513}
   completePartList:
