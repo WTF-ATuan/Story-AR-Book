@@ -99,5 +99,25 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 4534355535649463223, guid: cae65720a656588498fc97bf8e8f586b, type: 3}
+    - name: Alarm
+      tag: 2
+      instanceID: 27160
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 1
+        animationClip: {fileID: 7400000, guid: a0432cba94791114ba55b2c27c51a423, type: 2}
+        audioClip: {fileID: 8300000, guid: 99db0277a04fc6d44ad8d6be9b21ea20, type: 3}
+        interactiveRoot: {fileID: 0}
+    - name: Lamp
+      tag: 2
+      instanceID: 27040
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 0
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 0}
     tag: Interact
     gameObjects: []
