@@ -26,8 +26,8 @@ MonoBehaviour:
         target: 
       interactAnimationData:
         correctAnswer: 0
-        animationClip: {fileID: 7400000, guid: 1b6d7755e1bb1ce4da62e2305fe33fe9, type: 2}
-        audioClip: {fileID: 8300000, guid: 9bcf49dae3b54c542b0936d5266c877e, type: 3}
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
         interactiveRoot: {fileID: 6771335898428096232, guid: 569f3d807e71ab84a915a44960768e89, type: 3}
     - name: Chair
       tag: 2
@@ -118,6 +118,6 @@ MonoBehaviour:
         correctAnswer: 0
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 0}
+        interactiveRoot: {fileID: 1482731769079118450, guid: 1933b8dc50fd6374abc1550fbb79d387, type: 3}
     tag: Interact
     gameObjects: []
