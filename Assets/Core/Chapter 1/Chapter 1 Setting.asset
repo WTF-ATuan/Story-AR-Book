@@ -19,6 +19,26 @@ MonoBehaviour:
     <MoveClamp>k__BackingField: 0.5
   interactDataSet:
     interactDataList:
+    - name: Stairs
+      tag: 1
+      instanceID: 58596
+      teleportData:
+        target: Stairs Target
+      interactAnimationData:
+        correctAnswer: 1
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 0}
+    - name: Stairs Target
+      tag: 1
+      instanceID: 58446
+      teleportData:
+        target: Stairs
+      interactAnimationData:
+        correctAnswer: 1
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 0}
     - name: News
       tag: 2
       instanceID: 30256
@@ -59,26 +79,6 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 1526452321, guid: cf746d04b500e174e822ca8e67994318, type: 3}
-    - name: Stairs
-      tag: 1
-      instanceID: 58596
-      teleportData:
-        target: Stairs Target
-      interactAnimationData:
-        correctAnswer: 1
-        animationClip: {fileID: 0}
-        audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 0}
-    - name: Stairs Target
-      tag: 1
-      instanceID: 58446
-      teleportData:
-        target: Stairs
-      interactAnimationData:
-        correctAnswer: 1
-        animationClip: {fileID: 0}
-        audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 0}
     - name: Radio
       tag: 2
       instanceID: 30314
@@ -119,5 +119,15 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 1482731769079118450, guid: 1933b8dc50fd6374abc1550fbb79d387, type: 3}
+    - name: Phonograph
+      tag: 2
+      instanceID: 53764
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 0
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 8474033113562073538, guid: d59730d3272292a4a94eb74ce1de08cb, type: 3}
     tag: Interact
     gameObjects: []

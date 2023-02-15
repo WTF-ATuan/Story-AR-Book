@@ -8,7 +8,10 @@ using Object = UnityEngine.Object;
 namespace Core{
 	[Serializable]
 	public class InteractDataSet{
-		[Searchable] [ListDrawerSettings(NumberOfItemsPerPage = 5, ShowItemCount = true)] [SerializeField]
+		[InlineButton("Sort")]
+		[Searchable]
+		[ListDrawerSettings(NumberOfItemsPerPage = 5, ShowItemCount = true)]
+		[SerializeField]
 		private List<InteractData> interactDataList;
 
 		public InteractData FindData(string objID){
@@ -65,6 +68,10 @@ namespace Core{
 				new ValueDropdownItem("Interact", "Interact"),
 				new ValueDropdownItem("Story", "Story"),
 			};
+		}
+
+		private void Sort(){
+			interactDataList = interactDataList.OrderBy(x => x.tag).ToList();
 		}
 
 		#endregion
