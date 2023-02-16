@@ -8,25 +8,23 @@ using UnityEngine.UI;
 
 namespace Core.Chapter_1{
 	public class ImageCollision : MonoBehaviour{
-		public Image trackImage;
-		public UnityEvent onDrop;
+		[Required] public Image trackImage;
+		public float distance = 150;
+		public UnityEvent<bool> onDrop;
 
 		private void Start(){
 			trackImage.OnEndDragAsObservable().Subscribe(OnTargetEndDrag);
 		}
 
 		private void OnTargetEndDrag(PointerEventData obj){
-			var image = GetComponent<RectTransform>();
-			var rectSize = image.rect.size;
-			Debug.Log($"{rectSize}");
-			Debug.Log($"{obj.pointerCurrentRaycast.gameObject}");
+			var rect = GetComponent<RectTransform>();
+			var targetPosition = obj.pointerDrag.GetComponent<RectTransform>().position;
+			onDrop?.Invoke(Vector3.Distance(targetPosition, rect.position) < distance);
 		}
+
 		[Button]
 		public void Test(){
 			GetComponent<Image>().color = Color.red;
-			var image = GetComponent<RectTransform>();
-			var rectSize = image.rect.size;
-			Debug.Log($"{rectSize}");
 		}
 	}
 }
