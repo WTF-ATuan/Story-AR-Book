@@ -57,7 +57,7 @@ MonoBehaviour:
       interactAnimationData:
         correctAnswer: 1
         animationClip: {fileID: 7400000, guid: 7bee7f9421e00904bbb3ea94fc75af3e, type: 2}
-        audioClip: {fileID: 8300000, guid: be11f1e9e91b1274ca581923f67cb781, type: 3}
+        audioClip: {fileID: 8300000, guid: cc270b5458b622740b67ac570b9f76a5, type: 3}
         interactiveRoot: {fileID: 0}
     - name: TV
       tag: 2
@@ -67,7 +67,7 @@ MonoBehaviour:
       interactAnimationData:
         correctAnswer: 1
         animationClip: {fileID: 7400000, guid: 7e2765a82b0ff3d478908f983f136363, type: 2}
-        audioClip: {fileID: 8300000, guid: a4eb059ed6d01334a81f5c8a56eaffb3, type: 3}
+        audioClip: {fileID: 8300000, guid: 90e3f45c6b348fb4cb6fc64cab5b9693, type: 3}
         interactiveRoot: {fileID: 0}
     - name: Fan
       tag: 2
@@ -107,7 +107,7 @@ MonoBehaviour:
       interactAnimationData:
         correctAnswer: 1
         animationClip: {fileID: 7400000, guid: a0432cba94791114ba55b2c27c51a423, type: 2}
-        audioClip: {fileID: 8300000, guid: 99db0277a04fc6d44ad8d6be9b21ea20, type: 3}
+        audioClip: {fileID: 8300000, guid: b977647cef4de4449ab344e755f7fc1b, type: 3}
         interactiveRoot: {fileID: 0}
     - name: Lamp
       tag: 2
