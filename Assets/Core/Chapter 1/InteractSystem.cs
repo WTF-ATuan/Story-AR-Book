@@ -20,7 +20,7 @@ namespace Core.Testing{
 		private readonly List<string> _interactNames = new List<string>();
 
 		private void Start(){
-			_presenter.findIcon.OnPointerClickAsObservable().Subscribe(x => Interact());
+			_presenter.SubscribeFindIcon(Interact);
 			_interactRepository.RegisterAll(CompareData);
 			_interactRepository.RegisterAll(UpdateInteract);
 			_teleport = new Teleport(transform, _interactRepository);
@@ -60,6 +60,9 @@ namespace Core.Testing{
 
 			if(_interactNames.Count > 0){
 				_presenter.ModifyNameTag(_interactNames.First());
+			}
+			else{
+				_presenter.ModifyNameTag("無", false);
 			}
 
 			_presenter.SetFindState(_interactNames.Count > 0);

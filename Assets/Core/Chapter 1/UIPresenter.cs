@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using UniRx;
+using UniRx.Triggers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,14 +39,21 @@ namespace Core.Chapter_1{
 			}
 		}
 
-		public void ModifyNameTag(string message){
+		public void SubscribeFindIcon(Action callback){
+			var children = findIcon.GetComponentInChildren<Image>();
+			children.OnPointerClickAsObservable().Subscribe(x => callback());
+		}
+
+		public void ModifyNameTag(string message, bool showNameTag = true){
 			nameTag.text = message;
+			nameTagView.gameObject.SetActive(showNameTag);
 		}
 
 		public void SetFindState(bool active){
 			var activeObj = findIcon.transform.GetChild(0);
 			activeObj.gameObject.SetActive(active);
 		}
+
 		public void SetAnimation(AnimationClip clip){
 			var overrideController = new AnimatorOverrideController(levelAnimator.runtimeAnimatorController);
 			var animations = overrideController.animationClips.Select(animationClip =>
