@@ -17,6 +17,7 @@ namespace Core.Chapter_1{
 
 		private void OnTargetFound(PointerEventData obj){
 			targetFound?.Invoke();
+			target.gameObject.SetActive(false);
 		}
 	}
 }

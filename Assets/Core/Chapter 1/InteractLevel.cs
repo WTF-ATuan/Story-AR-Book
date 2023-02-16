@@ -40,7 +40,6 @@ namespace Core.Chapter_1{
 
 		private void PassLevel(string rootName){
 			_playerData.SaveSuccessResult(rootName);
-			ExitFocusMode();
 		}
 
 		private void ExitFocusMode(){
