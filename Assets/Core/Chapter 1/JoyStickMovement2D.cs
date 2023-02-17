@@ -17,27 +17,19 @@ namespace Core{
 		}
 
 		private void Update(){
-			CheckCollision();
 			CalculateMoveDirection();
 			Move();
-		}
-
-		private void CheckCollision(){
-			var position = playerRoot.position;
-			Physics.Raycast(position, playerRoot.forward, 0.5f);
-			Physics.Raycast(position, -playerRoot.forward, 0.5f);
-			Physics.Raycast(position, playerRoot.right, 0.5f);
-			Physics.Raycast(position, -playerRoot.right, 0.5f);
 		}
 
 		private void CalculateMoveDirection(){
 			var horizontal = variableJoystick.Horizontal;
 			var vertical = variableJoystick.Vertical;
 			if(horizontal != 0 || vertical != 0){
-				_movementDirection += playerRoot.forward * vertical;
-				_movementDirection += playerRoot.right * horizontal;
+				_movementDirection += -playerRoot.forward * vertical;
+				_movementDirection += -playerRoot.right * horizontal;
 				_movementDirection = _movementDirection * _moveData.Acceleration * Time.deltaTime;
 				_movementDirection = Vector3.ClampMagnitude(_movementDirection, _moveData.MoveClamp);
+				// CheckCollision();
 			}
 			else{
 				_movementDirection.x =
@@ -49,6 +41,15 @@ namespace Core{
 
 		private void Move(){
 			_rigidbody.MovePosition(_rigidbody.position + transform.TransformDirection(_movementDirection));
+		}
+
+		private void OnDrawGizmos(){
+			if(!(_moveData is{ EnableGizmos: true })){
+				return;
+			}
+
+			Gizmos.color = Color.red;
+			Gizmos.DrawRay(playerRoot.position, _movementDirection.normalized * _moveData.DetectRange);
 		}
 	}
 }

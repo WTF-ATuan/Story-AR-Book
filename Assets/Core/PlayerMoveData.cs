@@ -11,5 +11,11 @@ namespace Core{
 
 		[field: SerializeField]
 		public float MoveClamp{ get; set; }
+
+		[field: SerializeField]
+		public float DetectRange{ get; set; }
+
+		[field: SerializeField]
+		public bool EnableGizmos{ get; set; }
 	}
 }
