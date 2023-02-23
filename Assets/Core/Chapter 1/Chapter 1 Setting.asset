@@ -18,7 +18,6 @@ MonoBehaviour:
     <DeAcceleration>k__BackingField: 0.1
     <MoveClamp>k__BackingField: 0.5
     <DetectRange>k__BackingField: 0.03
-    <DetectRadius>k__BackingField: 0.02
     <EnableGizmos>k__BackingField: 1
   interactDataSet:
     interactDataList:
