@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 namespace Core.Chapter_1{
 	public class InteractiveRoot : MonoBehaviour{
-		[Required] [ChildGameObjectsOnly] public Image target;
+		public bool invokeFromEvent = false;
+		[Required] [ChildGameObjectsOnly] [HideIf("invokeFromEvent")] public Image target;
 		public UnityEvent targetFound;
 
 		private void Start(){
@@ -16,6 +17,10 @@ namespace Core.Chapter_1{
 		}
 
 		private void OnTargetFound(PointerEventData obj){
+			targetFound?.Invoke();
+			target.gameObject.SetActive(false);
+		}
+		public void PassLevel(){
 			targetFound?.Invoke();
 			target.gameObject.SetActive(false);
 		}

@@ -130,6 +130,6 @@ MonoBehaviour:
         correctAnswer: 0
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 8474033113562073538, guid: d59730d3272292a4a94eb74ce1de08cb, type: 3}
+        interactiveRoot: {fileID: 8464487170352765991, guid: d59730d3272292a4a94eb74ce1de08cb, type: 3}
     tag: Interact
     gameObjects: []

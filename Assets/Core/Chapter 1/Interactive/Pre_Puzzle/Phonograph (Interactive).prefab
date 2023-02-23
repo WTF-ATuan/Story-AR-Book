@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 2094552267069050688}
   - component: {fileID: 996630587086451233}
   - component: {fileID: 3556802182132899892}
+  - component: {fileID: 8464487170352765991}
   m_Layer: 5
   m_Name: Phonograph (Interactive)
   m_TagString: Untagged
@@ -547,6 +548,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8464487170352765991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094552267069050690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce3c26e646f840fb9e3ef15758efb789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invokeFromEvent: 1
+  target: {fileID: 0}
+  targetFound:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2094552268666222248
 GameObject:
   m_ObjectHideFlags: 0
