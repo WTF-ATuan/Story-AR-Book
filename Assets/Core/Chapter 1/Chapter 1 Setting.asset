@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c349619cca341d28cba4e9c9237bd3a, type: 3}
   m_Name: Chapter 1 Setting
   m_EditorClassIdentifier: 
-  platform: 1
+  platform: 2
   playerMoveData:
     <Acceleration>k__BackingField: 0.12
     <DeAcceleration>k__BackingField: 0.1

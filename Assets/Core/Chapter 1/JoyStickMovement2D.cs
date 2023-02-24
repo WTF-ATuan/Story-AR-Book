@@ -25,11 +25,10 @@ namespace Core{
 			var horizontal = variableJoystick.Horizontal;
 			var vertical = variableJoystick.Vertical;
 			if(horizontal != 0 || vertical != 0){
-				_movementDirection += -playerRoot.forward * vertical;
-				_movementDirection += -playerRoot.right * horizontal;
+				_movementDirection += playerRoot.forward * vertical;
+				_movementDirection += playerRoot.right * horizontal;
 				_movementDirection = _movementDirection * _moveData.Acceleration * Time.deltaTime;
 				_movementDirection = Vector3.ClampMagnitude(_movementDirection, _moveData.MoveClamp);
-				// CheckCollision();
 			}
 			else{
 				_movementDirection.x =
