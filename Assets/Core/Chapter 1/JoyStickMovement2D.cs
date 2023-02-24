@@ -8,17 +8,26 @@ namespace Core{
 		[Required] public Transform playerRoot;
 
 		private Rigidbody _rigidbody;
+		private Animator _animator;
 		private Vector3 _movementDirection = Vector3.zero;
 
 		[Inject] private PlayerMoveData _moveData;
 
+		private static readonly int Walk = Animator.StringToHash("walk");
+		private static readonly int FaceFront = Animator.StringToHash("isFaceFront");
+		private float _startScaleX;
+
 		private void Start(){
 			_rigidbody = GetComponent<Rigidbody>();
+			_animator = GetComponentInChildren<Animator>();
+			_startScaleX = playerRoot.localScale.x;
 		}
 
 		private void Update(){
 			CalculateMoveDirection();
 			Move();
+			PlayAnimation();
+			FlipDirection();
 		}
 
 		private void CalculateMoveDirection(){
@@ -40,6 +49,27 @@ namespace Core{
 
 		private void Move(){
 			_rigidbody.MovePosition(_rigidbody.position + transform.TransformDirection(_movementDirection));
+		}
+
+		private void PlayAnimation(){
+			var isWalking = _movementDirection.magnitude > 0f;
+			var isFacingFront = (_movementDirection * _moveData.Direction).z > 0;
+			_animator.SetBool(Walk, isWalking);
+			_animator.SetBool(FaceFront, isFacingFront);
+		}
+
+		private void FlipDirection(){
+			var isFaceRight = (_movementDirection * _moveData.Direction).x > 0;
+			if(isFaceRight){
+				var localScale = playerRoot.localScale;
+				localScale = new Vector3(_startScaleX, localScale.y, localScale.z);
+				playerRoot.localScale = localScale;
+			}
+			else{
+				var localScale = playerRoot.localScale;
+				localScale = new Vector3(-_startScaleX, localScale.y, localScale.z);
+				playerRoot.localScale = localScale;
+			}
 		}
 
 		private void OnDrawGizmos(){
