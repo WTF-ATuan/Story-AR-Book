@@ -17,5 +17,9 @@ namespace Core{
 
 		[field: SerializeField]
 		public bool EnableGizmos{ get; set; }
+
+		[field: SerializeField]
+		[field: Range(-1, 1)]
+		public int Direction{ get; set; }
 	}
 }

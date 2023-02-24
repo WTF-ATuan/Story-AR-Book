@@ -564,6 +564,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &251317673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7646510238210423760, guid: 49e16cc6fae87364aa82b51d9d75f9d2, type: 3}
+  m_PrefabInstance: {fileID: 7646510238104234318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &260262678 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2721358555593094488, guid: 8ccd4da08d7905947b324b6dd6025f93, type: 3}
@@ -753,7 +758,7 @@ MonoBehaviour:
   switchObjectList:
   - {fileID: 1430838686891101606}
   - {fileID: 80525183}
-  - {fileID: 0}
+  - {fileID: 251317673}
   - {fileID: 260262678}
 --- !u!4 &377188095
 Transform:

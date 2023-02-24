@@ -19,6 +19,7 @@ MonoBehaviour:
     <MoveClamp>k__BackingField: 0.5
     <DetectRange>k__BackingField: 0.03
     <EnableGizmos>k__BackingField: 1
+    <Direction>k__BackingField: -1
   interactDataSet:
     interactDataList:
     - name: Stairs
