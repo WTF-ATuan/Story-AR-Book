@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
@@ -8,10 +9,13 @@ namespace Core.Chapter_1{
 	public class InteractLevel : MonoBehaviour{
 		[Inject] private readonly PlayerData _playerData;
 		[Inject] private readonly UIPresenter _presenter;
-		private readonly List<GameObject> _levelRootList = new List<GameObject>();
+		[SerializeField] private List<GameObject> startLoadingList;
+		
+		private List<GameObject> _levelRootList = new List<GameObject>();
 
 		private void Start(){
 			_presenter.exitButton.OnPointerClickAsObservable().Subscribe(x => ExitFocusMode());
+			_levelRootList = _levelRootList.Concat(startLoadingList).ToList();
 		}
 
 		public void Interact(InteractAnimationData data){
