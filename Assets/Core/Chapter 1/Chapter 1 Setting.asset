@@ -132,5 +132,25 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 8464487170352765991, guid: d59730d3272292a4a94eb74ce1de08cb, type: 3}
+    - name: Bed
+      tag: 0
+      instanceID: 33400
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 1
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 0}
+    - name: Book
+      tag: 0
+      instanceID: 33276
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 1
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 0}
     tag: Interact
     gameObjects: []
