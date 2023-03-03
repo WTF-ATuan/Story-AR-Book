@@ -11,14 +11,20 @@ namespace Core.Chapter_1{
 		[Inject] private readonly UIPresenter _presenter;
 
 		private List<StoryGuideData.StoryData> _currentStoryClone;
+		private List<string> _idList = new List<string>();
 
 		private void Start(){
 			_presenter.storyBackGround.OnPointerClickAsObservable().Subscribe(x => NextStory());
 		}
 
-		public void ShowStory(StoryGuideData storyData){
+		public void ShowStory(StoryGuideData storyData, string objID){
+			if(storyData.showOnes && _idList.Contains(objID)){
+				return;
+			}
+
 			_presenter.SwitchMode(UIMode.StoryMode);
 			_currentStoryClone = new List<StoryGuideData.StoryData>(storyData.storyContext);
+			_idList.Add(objID);
 			NextStory();
 		}
 

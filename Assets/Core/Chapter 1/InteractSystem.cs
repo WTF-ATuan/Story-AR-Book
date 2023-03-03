@@ -31,7 +31,7 @@ namespace Core.Testing{
 		private void CompareData(string objID, bool enterOrExit){
 			var interactData = _interactDataSet.FindData(objID);
 			if(interactData.tag == InteractTag.StoryGuide){
-				_storyRoot.ShowStory(interactData.storyGuideData);
+				_storyRoot.ShowStory(interactData.storyGuideData , objID);
 			}
 			_interactTag = interactData.tag;
 			_currentInteractData = interactData;
