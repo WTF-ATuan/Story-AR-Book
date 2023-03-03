@@ -7,6 +7,7 @@ namespace Core.Chapter_1{
 		[SerializeField, ReadOnly] private InteractRepository interactRepository;
 		[SerializeField, ReadOnly] private InteractLevel interactLevel;
 		[SerializeField, ReadOnly] private UIPresenter uiPresenter;
+		[SerializeField, ReadOnly] private StoryRoot storyRoot;
 
 
 		public override void InstallBindings(){
@@ -15,12 +16,14 @@ namespace Core.Chapter_1{
 			Container.Bind<InteractRepository>().FromInstance(interactRepository).AsSingle();
 			Container.Bind<InteractLevel>().FromInstance(interactLevel).AsSingle();
 			Container.Bind<UIPresenter>().FromInstance(uiPresenter).AsSingle();
+			Container.Bind<StoryRoot>().FromInstance(storyRoot).AsSingle();
 		}
 
 		private void GetSceneData(){
 			interactRepository = FindObjectOfType<InteractRepository>(true);
 			interactLevel = FindObjectOfType<InteractLevel>(true);
 			uiPresenter = FindObjectOfType<UIPresenter>(true);
+			storyRoot = FindObjectOfType<StoryRoot>();
 		}
 	}
 }

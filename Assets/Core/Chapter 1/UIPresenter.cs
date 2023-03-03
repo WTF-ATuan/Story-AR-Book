@@ -26,7 +26,6 @@ namespace Core.Chapter_1{
 
 		private UIMode _exitMode = UIMode.PlayMode;
 
-		[Button]
 		public void SwitchMode(UIMode mode){
 			switch(_exitMode){
 				case UIMode.PlayMode:

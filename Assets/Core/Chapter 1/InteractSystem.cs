@@ -11,6 +11,7 @@ namespace Core.Testing{
 	public class InteractSystem : MonoBehaviour{
 		[Inject] private InteractRepository _interactRepository;
 		[Inject] private InteractLevel _interactLevel;
+		[Inject] private readonly StoryRoot _storyRoot;
 		[Inject] private readonly InteractDataSet _interactDataSet;
 		[Inject] private readonly UIPresenter _presenter;
 
@@ -29,6 +30,9 @@ namespace Core.Testing{
 
 		private void CompareData(string objID, bool enterOrExit){
 			var interactData = _interactDataSet.FindData(objID);
+			if(interactData.tag == InteractTag.StoryGuide){
+				_storyRoot.ShowStory(interactData.storyGuideData);
+			}
 			_interactTag = interactData.tag;
 			_currentInteractData = interactData;
 		}
