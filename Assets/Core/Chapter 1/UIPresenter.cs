@@ -18,25 +18,53 @@ namespace Core.Chapter_1{
 		[FoldoutGroup("Interact Focus")] public Image exitButton;
 		[FoldoutGroup("Interact Focus")] public Animator levelAnimator;
 		[FoldoutGroup("Interact Focus")] public AudioSource levelAudio;
+		[FoldoutGroup("Story Mode")] public Text upStoryText;
+		[FoldoutGroup("Story Mode")] public Text downStoryText;
+		[FoldoutGroup("Story Mode")] public Image storyBackGround;
 		[FoldoutGroup("Goal")] public List<Image> completePartList;
 
+
+		private UIMode _exitMode = UIMode.PlayMode;
+
+		[Button]
 		public void SwitchMode(UIMode mode){
+			switch(_exitMode){
+				case UIMode.PlayMode:
+					findIcon.gameObject.SetActive(false);
+					nameTagView.gameObject.SetActive(false);
+					break;
+				case UIMode.Focus:
+					interactBackGround.gameObject.SetActive(false);
+					break;
+				case UIMode.StoryMode:
+					upStoryText.gameObject.SetActive(false);
+					downStoryText.gameObject.SetActive(false);
+					storyBackGround.gameObject.SetActive(false);
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
+
 			switch(mode){
 				case UIMode.PlayMode:
 					findIcon.gameObject.SetActive(true);
 					nameTagView.gameObject.SetActive(true);
-					interactBackGround.gameObject.SetActive(false);
 					setting.transform.DOMoveX(-150, 0.5f);
 					break;
 				case UIMode.Focus:
-					findIcon.gameObject.SetActive(false);
-					nameTagView.gameObject.SetActive(false);
 					interactBackGround.gameObject.SetActive(true);
 					setting.transform.DOMoveX(1, 0.5f);
+					break;
+				case UIMode.StoryMode:
+					upStoryText.gameObject.SetActive(true);
+					downStoryText.gameObject.SetActive(true);
+					storyBackGround.gameObject.SetActive(true);
 					break;
 				default:
 					throw new ArgumentOutOfRangeException(nameof(mode), mode, null);
 			}
+
+			_exitMode = mode;
 		}
 
 		public void SubscribeFindIcon(Action callback){
@@ -74,6 +102,7 @@ namespace Core.Chapter_1{
 
 	public enum UIMode{
 		PlayMode,
-		Focus
+		Focus,
+		StoryMode
 	}
 }
