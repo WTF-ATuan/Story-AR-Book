@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c349619cca341d28cba4e9c9237bd3a, type: 3}
   m_Name: Chapter 1 Setting
   m_EditorClassIdentifier: 
-  platform: 2
+  platform: 1
   playerMoveData:
     <Acceleration>k__BackingField: 0.12
     <DeAcceleration>k__BackingField: 0.1
@@ -22,6 +22,36 @@ MonoBehaviour:
     <Direction>k__BackingField: -1
   interactDataSet:
     interactDataList:
+    - name: Bed
+      tag: 0
+      instanceID: 33400
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 1
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 0}
+    - name: Book
+      tag: 0
+      instanceID: 33276
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 1
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 0}
+    - name: Bear
+      tag: 0
+      instanceID: 33526
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 1
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 0}
     - name: Stairs
       tag: 1
       instanceID: 58596
@@ -132,25 +162,5 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 8464487170352765991, guid: d59730d3272292a4a94eb74ce1de08cb, type: 3}
-    - name: Bed
-      tag: 0
-      instanceID: 33400
-      teleportData:
-        target: 
-      interactAnimationData:
-        correctAnswer: 1
-        animationClip: {fileID: 0}
-        audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 0}
-    - name: Book
-      tag: 0
-      instanceID: 33276
-      teleportData:
-        target: 
-      interactAnimationData:
-        correctAnswer: 1
-        animationClip: {fileID: 0}
-        audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 0}
     tag: Interact
     gameObjects: []
