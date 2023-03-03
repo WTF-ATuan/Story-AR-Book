@@ -30,9 +30,10 @@ namespace Core.Testing{
 
 		private void CompareData(string objID, bool enterOrExit){
 			var interactData = _interactDataSet.FindData(objID);
-			if(interactData.tag == InteractTag.StoryGuide){
-				_storyRoot.ShowStory(interactData.storyGuideData , objID);
+			if(interactData.tag == InteractTag.StoryGuide && !interactData.storyGuideData.interact){
+				_storyRoot.ShowStory(interactData.storyGuideData, objID);
 			}
+
 			_interactTag = interactData.tag;
 			_currentInteractData = interactData;
 		}
@@ -47,6 +48,10 @@ namespace Core.Testing{
 				case InteractTag.Teleport:
 					_teleport.Interact(_currentInteractData.teleportData);
 					break;
+				case InteractTag.StoryGuide:
+					_storyRoot.ShowStory(_currentInteractData.storyGuideData, _currentInteractData.name);
+					break;
+
 				default:
 					throw new ArgumentOutOfRangeException();
 			}
