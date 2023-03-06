@@ -42,6 +42,10 @@ namespace Core.Testing{
 			switch(_interactTag){
 				case InteractTag.InteractAnimation:{
 					_interactLevel.Interact(_currentInteractData.interactAnimationData);
+					if(_currentInteractData.storyGuide){
+						_storyRoot.InteractWithLevel(_currentInteractData.storyGuideData);
+					}
+
 					break;
 				}
 				case InteractTag.Teleport:

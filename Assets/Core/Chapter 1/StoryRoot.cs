@@ -13,6 +13,8 @@ namespace Core.Chapter_1{
 		private List<StoryGuideData.StoryData> _currentStoryClone;
 		private readonly List<string> _idList = new List<string>();
 
+		private UIMode _exitMode = UIMode.PlayMode;
+
 		private void Start(){
 			_presenter.storyBackGround.OnPointerClickAsObservable().Subscribe(x => NextStory());
 		}
@@ -24,6 +26,7 @@ namespace Core.Chapter_1{
 
 			var dataID = data.GetHashCode();
 			ShowStory(data, dataID.ToString());
+			_exitMode = UIMode.PlayMode;
 		}
 
 		public void Interact(StoryGuideData data){
@@ -33,6 +36,13 @@ namespace Core.Chapter_1{
 
 			var dataID = data.GetHashCode();
 			ShowStory(data, dataID.ToString());
+			_exitMode = UIMode.PlayMode;
+		}
+
+		public void InteractWithLevel(StoryGuideData data){
+			var dataID = data.GetHashCode();
+			ShowStory(data, dataID.ToString());
+			_exitMode = UIMode.Focus;
 		}
 
 		private void ShowStory(StoryGuideData storyData, string objID){
@@ -48,7 +58,7 @@ namespace Core.Chapter_1{
 
 		private void NextStory(){
 			if(_currentStoryClone.Count < 1){
-				_presenter.SwitchMode(UIMode.PlayMode);
+				_presenter.SwitchMode(_exitMode);
 				return;
 			}
 

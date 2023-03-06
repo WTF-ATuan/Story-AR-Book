@@ -194,13 +194,17 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 1526452321, guid: cf746d04b500e174e822ca8e67994318, type: 3}
-      storyGuide: 0
+      storyGuide: 1
       storyGuideData:
         interact: 0
-        showOnes: 0
+        showOnes: 1
         storyContext:
         - upOrDown: 0
-          storyText: 
+          storyText: "\u6E2C\u8A66\u7528123"
+        - upOrDown: 1
+          storyText: "\u6E2C\u8A66\u7528456"
+        - upOrDown: 0
+          storyText: "\u6E2C\u8A66\u7528456"
     - name: Radio
       tag: 2
       instanceID: 30314
