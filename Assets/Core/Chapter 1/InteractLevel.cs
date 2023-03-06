@@ -27,6 +27,7 @@ namespace Core.Chapter_1{
 			else{
 				CreateOrOpenLevel(data.interactiveRoot);
 			}
+			_presenter.SwitchMode(UIMode.Focus);
 		}
 
 		private void CreateOrOpenLevel(InteractiveRoot root){
