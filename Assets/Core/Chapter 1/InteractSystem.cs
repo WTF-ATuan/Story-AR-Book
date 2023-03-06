@@ -30,8 +30,8 @@ namespace Core.Testing{
 
 		private void CompareData(string objID, bool enterOrExit){
 			var interactData = _interactDataSet.FindData(objID);
-			if(interactData.tag == InteractTag.StoryGuide && !interactData.storyGuideData.interact){
-				_storyRoot.ShowStory(interactData.storyGuideData, objID);
+			if(interactData.tag == InteractTag.StoryGuide){
+				_storyRoot.Contact(interactData.storyGuideData);
 			}
 
 			_interactTag = interactData.tag;
@@ -49,7 +49,7 @@ namespace Core.Testing{
 					_teleport.Interact(_currentInteractData.teleportData);
 					break;
 				case InteractTag.StoryGuide:
-					_storyRoot.ShowStory(_currentInteractData.storyGuideData, _currentInteractData.name);
+					_storyRoot.Interact(_currentInteractData.storyGuideData);
 					break;
 
 				default:

@@ -17,7 +17,25 @@ namespace Core.Chapter_1{
 			_presenter.storyBackGround.OnPointerClickAsObservable().Subscribe(x => NextStory());
 		}
 
-		public void ShowStory(StoryGuideData storyData, string objID){
+		public void Contact(StoryGuideData data){
+			if(data.interact){
+				return;
+			}
+
+			var dataID = data.GetHashCode();
+			ShowStory(data, dataID.ToString());
+		}
+
+		public void Interact(StoryGuideData data){
+			if(!data.interact){
+				return;
+			}
+
+			var dataID = data.GetHashCode();
+			ShowStory(data, dataID.ToString());
+		}
+
+		private void ShowStory(StoryGuideData storyData, string objID){
 			if(storyData.showOnes && _idList.Contains(objID)){
 				return;
 			}
