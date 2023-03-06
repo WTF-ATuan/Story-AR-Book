@@ -20,7 +20,7 @@ namespace Core{
 		private void Start(){
 			_rigidbody = GetComponent<Rigidbody>();
 			_animator = GetComponentInChildren<Animator>();
-			_startScaleX = playerRoot.localScale.x;
+			_startScaleX = transform.localScale.x;
 		}
 
 		private void Update(){
@@ -61,14 +61,16 @@ namespace Core{
 		private void FlipDirection(){
 			var isFaceRight = (_movementDirection * _moveData.Direction).x > 0;
 			if(isFaceRight){
-				var localScale = playerRoot.localScale;
+				var root = transform;
+				var localScale = root.localScale;
 				localScale = new Vector3(_startScaleX, localScale.y, localScale.z);
-				playerRoot.localScale = localScale;
+				root.localScale = localScale;
 			}
 			else{
-				var localScale = playerRoot.localScale;
+				var root = transform;
+				var localScale = root.localScale;
 				localScale = new Vector3(-_startScaleX, localScale.y, localScale.z);
-				playerRoot.localScale = localScale;
+				root.localScale = localScale;
 			}
 		}
 

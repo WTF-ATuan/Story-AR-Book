@@ -11,7 +11,7 @@ namespace Core.Chapter_1{
 		[Inject] private readonly UIPresenter _presenter;
 
 		private List<StoryGuideData.StoryData> _currentStoryClone;
-		private List<string> _idList = new List<string>();
+		private readonly List<string> _idList = new List<string>();
 
 		private void Start(){
 			_presenter.storyBackGround.OnPointerClickAsObservable().Subscribe(x => NextStory());
