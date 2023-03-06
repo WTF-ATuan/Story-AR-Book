@@ -48,6 +48,7 @@ namespace Core{
 		}
 
 		private void Move(){
+			_rigidbody.velocity = Vector3.zero;
 			_rigidbody.MovePosition(_rigidbody.position + transform.TransformDirection(_movementDirection));
 		}
 
