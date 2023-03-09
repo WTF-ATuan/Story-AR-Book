@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core.Chapter_1;
-using UniRx;
-using UniRx.Triggers;
 using UnityEngine;
 using Zenject;
 
