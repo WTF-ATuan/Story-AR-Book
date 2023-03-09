@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Core/Chapter 1/Chapter-One All (New Detect).unity
-    guid: a5297be9d2c6e204c845a67577c17ab5
+    path: Assets/Core/Chapter 1/Demo-Light.unity
+    guid: 34cb25e2a20117744a29d980d54f25a8
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: e155e3d28b4a853429d1bbfba2d11fda, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 0167265ad9616e640898b2ae64d86043, type: 2}
