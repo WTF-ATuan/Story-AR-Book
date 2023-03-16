@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c349619cca341d28cba4e9c9237bd3a, type: 3}
   m_Name: Chapter 1 Setting
   m_EditorClassIdentifier: 
-  platform: 1
+  platform: 0
   playerMoveData:
     <Acceleration>k__BackingField: 0.12
     <DeAcceleration>k__BackingField: 0.1
@@ -259,7 +259,7 @@ MonoBehaviour:
         correctAnswer: 0
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 1482731769079118450, guid: 1933b8dc50fd6374abc1550fbb79d387, type: 3}
+        interactiveRoot: {fileID: 4276346525377725668, guid: e68775306608a904297a40250f7aa2f4, type: 3}
       storyGuide: 0
       storyGuideData:
         interact: 0
