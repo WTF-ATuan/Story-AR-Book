@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Core{
 	[Serializable]
 	public class InteractDataSet{
-		[InlineButton("Sort")]
-		[Searchable]
-		[ListDrawerSettings(NumberOfItemsPerPage = 3, ShowItemCount = true)]
-		[SerializeField]
+		[SerializeField] [FoldoutGroup("Replace")] [ValueDropdown("GetData")]
+		private string replaceID;
+
+		[SerializeField] [FoldoutGroup("Replace")]
+		private GameObject selectedObject;
+
+		[SerializeField] [FoldoutGroup("Replace")]
+		private string replaceShowsName;
+
+
+		[Searchable] [ListDrawerSettings(NumberOfItemsPerPage = 3, ShowItemCount = true)] [SerializeField]
 		private List<InteractData> interactDataList;
 
 		public InteractData FindData(string objID){
@@ -70,8 +76,24 @@ namespace Core{
 			};
 		}
 
+		private List<ValueDropdownItem> GetData(){
+			return interactDataList.Select(data => new ValueDropdownItem(data.name, data.name)).ToList();
+		}
+
+		[Button]
 		private void Sort(){
 			interactDataList = interactDataList.OrderBy(x => x.tag).ToList();
+		}
+
+		[Button, FoldoutGroup("Replace")]
+		private void Replace(){
+			var foundData = FindData(replaceID);
+			foundData.name = selectedObject.name;
+			foundData.instanceID = selectedObject.GetInstanceID();
+			foundData.showsName = replaceShowsName;
+			replaceID = string.Empty;
+			selectedObject = null;
+			replaceShowsName = string.Empty;
 		}
 
 		#endregion
