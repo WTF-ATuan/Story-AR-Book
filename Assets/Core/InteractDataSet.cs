@@ -10,7 +10,7 @@ namespace Core{
 	public class InteractDataSet{
 		[InlineButton("Sort")]
 		[Searchable]
-		[ListDrawerSettings(NumberOfItemsPerPage = 5, ShowItemCount = true)]
+		[ListDrawerSettings(NumberOfItemsPerPage = 3, ShowItemCount = true)]
 		[SerializeField]
 		private List<InteractData> interactDataList;
 

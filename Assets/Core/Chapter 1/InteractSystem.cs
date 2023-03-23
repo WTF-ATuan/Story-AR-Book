@@ -69,7 +69,8 @@ namespace Core.Testing{
 			}
 
 			if(_interactNames.Count > 0){
-				_presenter.ModifyNameTag(_interactNames.First());
+				var data = _interactDataSet.FindData(_interactNames.First());
+				_presenter.ModifyNameTag(data.showsName);
 			}
 			else{
 				_presenter.ModifyNameTag("無", false);

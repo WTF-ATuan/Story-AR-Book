@@ -13,6 +13,9 @@ namespace Core{
 
 		[ReadOnly] [HideInInspector] public int instanceID;
 
+		[TitleGroup("$name", "$instanceID", TitleAlignments.Split, boldTitle: true)]
+		public string showsName;
+
 		[ShowIf("tag", InteractTag.Teleport)] [BoxGroup("Teleport"), HideLabel]
 		public TeleportData teleportData;
 
