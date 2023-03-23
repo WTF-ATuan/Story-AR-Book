@@ -25,6 +25,7 @@ MonoBehaviour:
     - name: Bed
       tag: 3
       instanceID: 33400
+      showsName: "\u5E8A"
       teleportData:
         target: 
       interactAnimationData:
@@ -58,6 +59,7 @@ MonoBehaviour:
     - name: Book
       tag: 2
       instanceID: 33276
+      showsName: "\u66F8\u6AC3"
       teleportData:
         target: 
       interactAnimationData:
@@ -73,6 +75,7 @@ MonoBehaviour:
     - name: Bear
       tag: 3
       instanceID: 33526
+      showsName: "\u718A\u718A"
       teleportData:
         target: 
       interactAnimationData:
@@ -112,6 +115,7 @@ MonoBehaviour:
     - name: Stairs
       tag: 1
       instanceID: 58596
+      showsName: 
       teleportData:
         target: Stairs Target
       interactAnimationData:
@@ -127,6 +131,7 @@ MonoBehaviour:
     - name: Stairs Target
       tag: 1
       instanceID: 58446
+      showsName: 
       teleportData:
         target: Stairs
       interactAnimationData:
@@ -142,6 +147,7 @@ MonoBehaviour:
     - name: News
       tag: 2
       instanceID: 30256
+      showsName: 
       teleportData:
         target: 
       interactAnimationData:
@@ -157,6 +163,7 @@ MonoBehaviour:
     - name: Chair
       tag: 2
       instanceID: 30416
+      showsName: 
       teleportData:
         target: 
       interactAnimationData:
@@ -172,6 +179,7 @@ MonoBehaviour:
     - name: TV
       tag: 2
       instanceID: 17424
+      showsName: 
       teleportData:
         target: 
       interactAnimationData:
@@ -187,6 +195,7 @@ MonoBehaviour:
     - name: Fan
       tag: 2
       instanceID: 17462
+      showsName: 
       teleportData:
         target: 
       interactAnimationData:
@@ -208,6 +217,7 @@ MonoBehaviour:
     - name: Radio
       tag: 2
       instanceID: 30314
+      showsName: 
       teleportData:
         target: 
       interactAnimationData:
@@ -223,6 +233,7 @@ MonoBehaviour:
     - name: Wardrobe
       tag: 2
       instanceID: 30074
+      showsName: 
       teleportData:
         target: 
       interactAnimationData:
@@ -238,6 +249,7 @@ MonoBehaviour:
     - name: Alarm
       tag: 2
       instanceID: 27160
+      showsName: 
       teleportData:
         target: 
       interactAnimationData:
@@ -253,6 +265,7 @@ MonoBehaviour:
     - name: Lamp
       tag: 2
       instanceID: 27040
+      showsName: 
       teleportData:
         target: 
       interactAnimationData:
@@ -268,6 +281,7 @@ MonoBehaviour:
     - name: Phonograph
       tag: 2
       instanceID: 53764
+      showsName: 
       teleportData:
         target: 
       interactAnimationData:
@@ -283,6 +297,7 @@ MonoBehaviour:
     - name: 
       tag: 0
       instanceID: 0
+      showsName: 
       teleportData:
         target: 
       interactAnimationData:
