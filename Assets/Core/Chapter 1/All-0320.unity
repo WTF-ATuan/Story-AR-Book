@@ -6416,7 +6416,6 @@ MonoBehaviour:
   mobileCamera: {fileID: 1301381159}
   switchObjectList:
   - {fileID: 1430838686891101606}
-  - {fileID: 0}
   - {fileID: 108810910}
   - {fileID: 260262678}
 --- !u!4 &377188095
