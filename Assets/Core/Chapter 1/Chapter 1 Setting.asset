@@ -177,7 +177,7 @@ MonoBehaviour:
         target: 
       interactAnimationData:
         correctAnswer: 1
-        animationClip: {fileID: 0}
+        animationClip: {fileID: 7400000, guid: 57eacca419b2ba64b9fe47cabf435136, type: 2}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 0}
       storyGuide: 0
