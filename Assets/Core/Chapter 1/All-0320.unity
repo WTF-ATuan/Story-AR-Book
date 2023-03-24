@@ -9024,7 +9024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9033,18 +9033,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8bf519874805460489bede21c3df657c, type: 3}
-    m_FontSize: 50
+    m_FontSize: 46
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 51
+    m_MaxSize: 76
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5E8A"
+  m_Text: "\u6A13\u68AF(\u4E0A)"
 --- !u!222 &1221747210
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12667,6 +12667,13 @@ MonoBehaviour:
   - {fileID: 972135881}
   - {fileID: 49847570}
   - {fileID: 880053657}
+  - {fileID: 1520178126}
+  - {fileID: 472891931}
+  - {fileID: 971097180}
+  - {fileID: 1139773946}
+  - {fileID: 1459726082}
+  - {fileID: 1832980360}
+  - {fileID: 1730922842}
 --- !u!33 &1471542735839769301
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15301,7 +15308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420908877332406864}
   m_LocalRotation: {x: 0, y: 0.7072302, z: 0.7069834, w: 0}
-  m_LocalPosition: {x: -0.079568274, y: 0.21308388, z: -0.099906854}
+  m_LocalPosition: {x: -0.0796, y: 0.2112, z: -0.09949}
   m_LocalScale: {x: 60.000004, y: 60.000004, z: 60.000004}
   m_Children: []
   m_Father: {fileID: 4386233218871834212}

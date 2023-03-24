@@ -9,7 +9,10 @@ using UnityEngine.UI;
 namespace Core.Chapter_1{
 	public class InteractiveRoot : MonoBehaviour{
 		public bool invokeFromEvent = false;
-		[Required] [ChildGameObjectsOnly] [HideIf("invokeFromEvent")] public Image target;
+
+		[Required] [ChildGameObjectsOnly] [HideIf("invokeFromEvent")]
+		public Image target;
+
 		public UnityEvent targetFound;
 
 		private void Start(){
@@ -20,9 +23,12 @@ namespace Core.Chapter_1{
 			targetFound?.Invoke();
 			target.gameObject.SetActive(false);
 		}
+
 		public void PassLevel(){
 			targetFound?.Invoke();
-			target.gameObject.SetActive(false);
+			if(target){
+				target.gameObject.SetActive(false);
+			}
 		}
 	}
 }

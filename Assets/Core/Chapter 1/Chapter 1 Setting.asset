@@ -26,112 +26,112 @@ MonoBehaviour:
     replaceShowsName: 
     interactDataList:
     - name: Uniform
-      tag: 0
+      tag: 2
       instanceID: 17550
-      showsName: "(\u5716)\u5236\u670D"
+      showsName: "\u5236\u670D"
       teleportData:
         target: 
       interactAnimationData:
-        correctAnswer: 1
+        correctAnswer: 0
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 0}
+        interactiveRoot: {fileID: 9086131200153670961, guid: 49f3b46aedb6dcb4a8d80289561708a4, type: 3}
       storyGuide: 0
       storyGuideData:
         interact: 0
         showOnes: 0
         storyContext: []
     - name: Clock
-      tag: 0
+      tag: 2
       instanceID: 17254
-      showsName: "(\u5716)\u6642\u9418"
+      showsName: "\u6642\u9418"
       teleportData:
         target: 
       interactAnimationData:
-        correctAnswer: 1
+        correctAnswer: 0
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 0}
+        interactiveRoot: {fileID: 9086131200153670961, guid: 19cf077aea323704d92ce12b295e61f2, type: 3}
       storyGuide: 0
       storyGuideData:
         interact: 0
         showOnes: 0
         storyContext: []
     - name: Family
-      tag: 0
+      tag: 2
       instanceID: 17358
-      showsName: "(\u5716)\u7236\u5973"
+      showsName: "\u7236\u5973"
       teleportData:
         target: 
       interactAnimationData:
-        correctAnswer: 1
+        correctAnswer: 0
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 0}
+        interactiveRoot: {fileID: 9086131200153670961, guid: 96bab520cb52e064198ff746192d85d2, type: 3}
       storyGuide: 0
       storyGuideData:
         interact: 0
         showOnes: 0
         storyContext: []
     - name: Park
-      tag: 0
+      tag: 2
       instanceID: 17446
-      showsName: "(\u5716)\u516C\u5712"
+      showsName: "\u516C\u5712"
       teleportData:
         target: 
       interactAnimationData:
-        correctAnswer: 1
+        correctAnswer: 0
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 0}
+        interactiveRoot: {fileID: 9086131200153670961, guid: 532d5fb2d448cf443888897b351f09d9, type: 3}
       storyGuide: 0
       storyGuideData:
         interact: 0
         showOnes: 0
         storyContext: []
     - name: ToyBear
-      tag: 0
+      tag: 2
       instanceID: 17518
-      showsName: "(\u5716)\u73A9\u5177\u718A"
+      showsName: "\u73A9\u5177\u718A"
       teleportData:
         target: 
       interactAnimationData:
-        correctAnswer: 1
+        correctAnswer: 0
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 0}
+        interactiveRoot: {fileID: 9086131200153670961, guid: 7094005c794fab34c85df286a3fb0f3f, type: 3}
       storyGuide: 0
       storyGuideData:
         interact: 0
         showOnes: 0
         storyContext: []
     - name: Note
-      tag: 0
+      tag: 2
       instanceID: 17618
-      showsName: "(\u5716)\u7D19\u689D"
+      showsName: "\u7D19\u689D"
       teleportData:
         target: 
       interactAnimationData:
-        correctAnswer: 1
+        correctAnswer: 0
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 0}
+        interactiveRoot: {fileID: 9086131200153670961, guid: 482626c6562b47c46b951977a0d61e1b, type: 3}
       storyGuide: 0
       storyGuideData:
         interact: 0
         showOnes: 0
         storyContext: []
     - name: Backpack
-      tag: 0
+      tag: 2
       instanceID: 17578
-      showsName: "(\u5716)\u66F8\u5305"
+      showsName: "\u66F8\u5305"
       teleportData:
         target: 
       interactAnimationData:
-        correctAnswer: 1
+        correctAnswer: 0
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 0}
+        interactiveRoot: {fileID: 9086131200153670961, guid: d2c83efd97de8cc47bf3dfed5cde358e, type: 3}
       storyGuide: 0
       storyGuideData:
         interact: 0

@@ -20,20 +20,40 @@ namespace Core.Testing{
 
 		private void Start(){
 			_presenter.SubscribeFindIcon(Interact);
-			_interactRepository.RegisterAll(CompareData);
 			_interactRepository.RegisterAll(UpdateInteract);
 			_teleport = new Teleport(transform, _interactRepository);
 		}
 
 
-		private void CompareData(string objID, bool enterOrExit){
-			var interactData = _interactDataSet.FindData(objID);
-			if(interactData.tag == InteractTag.StoryGuide){
-				_storyRoot.Contact(interactData.storyGuideData);
+		private void UpdateInteract(string objID, bool enterOrExit){
+			if(enterOrExit){
+				_interactNames.Insert(0, objID);
+			}
+			else{
+				if(_interactNames.Contains(objID)){
+					_interactNames.Remove(objID);
+				}
 			}
 
-			_interactTag = interactData.tag;
-			_currentInteractData = interactData;
+			if(_interactNames.Count > 0){
+				var data = _interactDataSet.FindData(_interactNames.First());
+				CompareData(data);
+				_presenter.ModifyNameTag(data.showsName);
+			}
+			else{
+				_presenter.ModifyNameTag("無", false);
+			}
+
+			_presenter.SetFindState(_interactNames.Count > 0);
+		}
+
+		private void CompareData(InteractData data){
+			if(data.tag == InteractTag.StoryGuide){
+				_storyRoot.Contact(data.storyGuideData);
+			}
+
+			_interactTag = data.tag;
+			_currentInteractData = data;
 		}
 
 		private void Interact(){
@@ -56,27 +76,6 @@ namespace Core.Testing{
 				default:
 					throw new ArgumentOutOfRangeException();
 			}
-		}
-
-		private void UpdateInteract(string objID, bool enterOrExit){
-			if(enterOrExit){
-				_interactNames.Insert(0, objID);
-			}
-			else{
-				if(_interactNames.Contains(objID)){
-					_interactNames.Remove(objID);
-				}
-			}
-
-			if(_interactNames.Count > 0){
-				var data = _interactDataSet.FindData(_interactNames.First());
-				_presenter.ModifyNameTag(data.showsName);
-			}
-			else{
-				_presenter.ModifyNameTag("無", false);
-			}
-
-			_presenter.SetFindState(_interactNames.Count > 0);
 		}
 	}
 }
