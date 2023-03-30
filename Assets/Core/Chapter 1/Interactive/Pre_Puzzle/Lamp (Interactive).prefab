@@ -340,7 +340,6 @@ GameObject:
   - component: {fileID: 5654951799573386660}
   - component: {fileID: 2657468114539343918}
   - component: {fileID: 583003789460292366}
-  - component: {fileID: 4384513170941423072}
   - component: {fileID: 2085824288691302617}
   - component: {fileID: 4384513170941423073}
   m_Layer: 5
@@ -407,34 +406,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4384513170941423072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4384513170941423074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e05802191a4a4317ba1a3b4c48fe4ba1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invokeCount: 4
-  afterInvokeCount:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6039373869227684072}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &2085824288691302617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,37 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4166f43a636940d5bcb031c8d358e4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slideLeft:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4384513170941423073}
-        m_TargetAssemblyTypeName: Core.Chapter_1.SimpleRotator, Assembly-CSharp
-        m_MethodName: RotateOffsetZ
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 15
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  slideRight:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4384513170941423073}
-        m_TargetAssemblyTypeName: Core.Chapter_1.SimpleRotator, Assembly-CSharp
-        m_MethodName: RotateOffsetZ
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: -15
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  invokeCount: 4
+  invokeCount: 3
   afterInvokeCount:
     m_PersistentCalls:
       m_Calls:
