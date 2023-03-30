@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5020478484305675410}
+  - component: {fileID: 7963431885695777849}
+  - component: {fileID: 7061657161112258571}
   m_Layer: 0
   m_Name: Black
   m_TagString: Untagged
@@ -33,6 +35,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7963431885695777849
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721358555593094488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7061657161112258571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721358555593094488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2140765ce7a949d48bec4ac3c91220c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectRange: 0.08
 --- !u!1 &4924819462532130479
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,8 +87,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4924819462532130479}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.3921446, z: 0}
-  m_LocalScale: {x: 0.31841832, y: 0.32058072, z: 0.22979444}
+  m_LocalPosition: {x: 0, y: 0.34214455, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 5020478484305675410}
   m_RootOrder: 1
@@ -201,7 +229,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.1
       minScalar: 0.2
       maxCurve:
         serializedVersion: 2
@@ -899,7 +927,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 25
-      minScalar: 10
+      minScalar: 25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4862,7 +4890,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4924819462866895030}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2561446, z: 0}
+  m_LocalPosition: {x: 0, y: 0.20614463, z: 0}
   m_LocalScale: {x: 1.1374735, y: 1.1374735, z: 1.1374735}
   m_Children: []
   m_Father: {fileID: 5020478484305675410}
@@ -4959,7 +4987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 560de3ad1cc9c904db320b4a0940d768, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6561446
+      value: -0.3938554
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 560de3ad1cc9c904db320b4a0940d768, type: 3}
       propertyPath: m_LocalPosition.z
