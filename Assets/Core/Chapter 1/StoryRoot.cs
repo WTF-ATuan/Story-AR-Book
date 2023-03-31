@@ -11,7 +11,7 @@ namespace Core.Chapter_1{
 		[Inject] private readonly UIPresenter _presenter;
 
 		private List<StoryGuideData.StoryData> _currentStoryClone;
-		private readonly List<string> _idList = new List<string>();
+		private readonly List<string> _dataRecordList = new List<string>();
 
 		private UIMode _exitMode = UIMode.PlayMode;
 
@@ -46,13 +46,25 @@ namespace Core.Chapter_1{
 		}
 
 		private void ShowStory(StoryGuideData storyData, string objID){
-			if(storyData.showOnes && _idList.Contains(objID)){
+			if(storyData.showOnes && _dataRecordList.Contains(objID)){
 				return;
 			}
 
+			if(storyData.multiplex){
+				var count = _dataRecordList.Count(x => x == objID);
+				//if the count is bigger than the story context count, then use the last one
+				if(count >= storyData.storyContext.Count){
+					count = storyData.storyContext.Count - 1;
+				}
+
+				_currentStoryClone = new List<StoryGuideData.StoryData>(storyData.multiplexStoryContext[count]);
+			}
+			else{
+				_currentStoryClone = new List<StoryGuideData.StoryData>(storyData.storyContext);
+			}
+
 			_presenter.SwitchMode(UIMode.StoryMode);
-			_currentStoryClone = new List<StoryGuideData.StoryData>(storyData.storyContext);
-			_idList.Add(objID);
+			_dataRecordList.Add(objID);
 			NextStory();
 		}
 
