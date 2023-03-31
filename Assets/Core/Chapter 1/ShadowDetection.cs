@@ -29,8 +29,8 @@ namespace Core.Chapter_1{
 			// percentage is the distance between detectRange and DangerDistance detectRange is 100% and DangerDistance is 0%
 			var percentage = Mathf.Clamp01((distance - DangerDistance) / (detectRange - DangerDistance));
 			mainModule.startSpeed = Mathf.Lerp(0.1f, 0.3f, 1 - percentage);
-			mainModule.startSize = Mathf.Lerp(1.5f, 3.0f, 1 - percentage);
-			emission.rateOverTime = Mathf.Lerp(25f, 35f, 1 - percentage);
+			mainModule.startSize = Mathf.Lerp(1.5f, 2f, 1 - percentage);
+			emission.rateOverTime = Mathf.Lerp(25f, 30f, 1 - percentage);
 		}
 
 		private void OnDrawGizmos(){
