@@ -15,11 +15,7 @@ namespace Core{
 
 		[SerializeField] [FoldoutGroup("Replace")]
 		private string replaceShowsName;
-
-		[SerializeField] [ValueDropdown("GetDataReference")] [FoldoutGroup("Modify")] [HideLabel]
-		private InteractData modifyDataReference;
-
-
+		
 		[Searchable] [ListDrawerSettings(NumberOfItemsPerPage = 3, ShowItemCount = true)] [SerializeField]
 		private List<InteractData> interactDataList;
 
