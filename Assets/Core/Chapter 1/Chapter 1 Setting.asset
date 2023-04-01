@@ -24,6 +24,25 @@ MonoBehaviour:
     replaceID: 
     selectedObject: {fileID: 0}
     replaceShowsName: 
+    modifyDataReference:
+      name: Uniform
+      tag: 2
+      instanceID: 17550
+      showsName: "\u5236\u670D"
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 0
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 9086131200153670961, guid: 49f3b46aedb6dcb4a8d80289561708a4, type: 3}
+      storyGuide: 0
+      storyGuideData:
+        interact: 0
+        showOnes: 0
+        multiplex: 0
+        storyContext: []
+        multiplexStoryContext: []
     interactDataList:
     - name: Stairs
       tag: 1
@@ -42,6 +61,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Stairs Target
       tag: 1
       instanceID: 58446
@@ -59,6 +79,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Uniform
       tag: 2
       instanceID: 17550
@@ -76,6 +97,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Clock
       tag: 2
       instanceID: 17254
@@ -93,6 +115,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Family
       tag: 2
       instanceID: 17358
@@ -110,6 +133,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Park
       tag: 2
       instanceID: 17446
@@ -127,6 +151,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: ToyBear
       tag: 2
       instanceID: 17518
@@ -144,6 +169,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Note
       tag: 2
       instanceID: 17618
@@ -161,6 +187,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Backpack
       tag: 2
       instanceID: 17578
@@ -178,6 +205,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: BookCase
       tag: 2
       instanceID: 17330
@@ -195,6 +223,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: News
       tag: 2
       instanceID: 30256
@@ -212,6 +241,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Chair
       tag: 2
       instanceID: 30416
@@ -229,6 +259,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: TV
       tag: 2
       instanceID: 17424
@@ -246,6 +277,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Fan
       tag: 2
       instanceID: 17462
@@ -269,6 +301,7 @@ MonoBehaviour:
           storyText: "\u6E2C\u8A66\u7528456"
         - upOrDown: 0
           storyText: "\u6E2C\u8A66\u7528456"
+        multiplexStoryContext: []
     - name: Radio
       tag: 2
       instanceID: 30314
@@ -286,6 +319,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Wardrobe
       tag: 2
       instanceID: 30074
@@ -303,6 +337,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Alarm
       tag: 2
       instanceID: 27160
@@ -320,6 +355,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Lamp
       tag: 2
       instanceID: 27040
@@ -337,6 +373,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Phonograph
       tag: 2
       instanceID: 53764
@@ -354,6 +391,7 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
     - name: Bed
       tag: 3
       instanceID: 33400
@@ -389,6 +427,7 @@ MonoBehaviour:
           storyText: "\u300C\u77E5\u9053\u4E86\u300D\r"
         - upOrDown: 0
           storyText: "\u59D1\u4E14\u76F8\u4FE1\u4E00\u4E0B\u5427"
+        multiplexStoryContext: []
     - name: Bear
       tag: 3
       instanceID: 33526
@@ -404,10 +443,10 @@ MonoBehaviour:
       storyGuideData:
         interact: 1
         showOnes: 0
-        multiplex: 0
+        multiplex: 1
         storyContext:
         - upOrDown: 1
-          storyText: "\u300C\u55E8\u5C3C\u597D\u300D\r"
+          storyText: "\u300C\u55E8\u5C3C\u597D\u300D\u7B2C\u4E8C\u6B21"
         - upOrDown: 0
           storyText: "\u300C\u73A9\u5076\u6703\u8AAA\u8A71?\u300D"
         - upOrDown: 0
@@ -430,5 +469,56 @@ MonoBehaviour:
           storyText: "\u300C\u4E0D\u904E\u6211\u6703\u966A\u4F60\u4E00\u8D77\u627E\u7684\u300D"
         - upOrDown: 1
           storyText: "\u300C\u90A3\u5C31\u5F9E\u96FB\u98A8\u6247\u958B\u59CB?\u300D\r"
+        multiplexStoryContext:
+        - datas:
+          - upOrDown: 1
+            storyText: "\u300C\u55E8\u5C3C\u597D\u300D\u7B2C\u4E00\u6B21"
+          - upOrDown: 0
+            storyText: "\u300C\u73A9\u5076\u6703\u8AAA\u8A71?\u300D"
+          - upOrDown: 0
+            storyText: "\u300C\u7B49\u7B49\u4F60\u662F\u90A3\u500B\u8072\u97F3!?\u300D\r"
+          - upOrDown: 1
+            storyText: "\u300C\u963F\u88AB\u767C\u73FE\u4E86\u300D\r"
+          - upOrDown: 0
+            storyText: "\u300C\u4F60\u70BA\u4EC0\u9EBC\u8981\u5E6B\u6211?\u300D"
+          - upOrDown: 1
+            storyText: "\u300C\u9019\u4E0D\u662F\u91CD\u9EDE\u5427\u300D"
+          - upOrDown: 1
+            storyText: "\u300C\u4F60\u60F3\u77E5\u9053\u600E\u9EBC\u51FA\u53BB\u624D\u5C0D\u5427\u300D\r"
+          - upOrDown: 0
+            storyText: "\u300C\u2026\u2026\u300D"
+          - upOrDown: 0
+            storyText: "\u300C\u6211\u53EA\u77E5\u9053\u9ED1\u5F71\u61FC\u6015\u67D0\u7A2E\u8072\u97F3\u300D"
+          - upOrDown: 1
+            storyText: "\u300C\u5177\u9AD4\u662F\u4EC0\u9EBC\u6211\u8072\u97F3\u4E0D\u6E05\u695A\u300D\r"
+          - upOrDown: 1
+            storyText: "\u300C\u4E0D\u904E\u6211\u6703\u966A\u4F60\u4E00\u8D77\u627E\u7684\u300D"
+          - upOrDown: 1
+            storyText: "\u300C\u90A3\u5C31\u5F9E\u96FB\u98A8\u6247\u958B\u59CB?\u300D\r"
+        - datas:
+          - upOrDown: 1
+            storyText: "\u300C\u55E8\u5C3C\u597D\u300D\u7B2C\u4E8C\u6B21"
+          - upOrDown: 0
+            storyText: "\u300C\u73A9\u5076\u6703\u8AAA\u8A71?\u300D"
+          - upOrDown: 0
+            storyText: "\u300C\u7B49\u7B49\u4F60\u662F\u90A3\u500B\u8072\u97F3!?\u300D\r"
+          - upOrDown: 1
+            storyText: "\u300C\u963F\u88AB\u767C\u73FE\u4E86\u300D\r"
+          - upOrDown: 0
+            storyText: "\u300C\u4F60\u70BA\u4EC0\u9EBC\u8981\u5E6B\u6211?\u300D"
+          - upOrDown: 1
+            storyText: "\u300C\u9019\u4E0D\u662F\u91CD\u9EDE\u5427\u300D"
+          - upOrDown: 1
+            storyText: "\u300C\u4F60\u60F3\u77E5\u9053\u600E\u9EBC\u51FA\u53BB\u624D\u5C0D\u5427\u300D\r"
+          - upOrDown: 0
+            storyText: "\u300C\u2026\u2026\u300D"
+          - upOrDown: 0
+            storyText: "\u300C\u6211\u53EA\u77E5\u9053\u9ED1\u5F71\u61FC\u6015\u67D0\u7A2E\u8072\u97F3\u300D"
+          - upOrDown: 1
+            storyText: "\u300C\u5177\u9AD4\u662F\u4EC0\u9EBC\u6211\u8072\u97F3\u4E0D\u6E05\u695A\u300D\r"
+          - upOrDown: 1
+            storyText: "\u300C\u4E0D\u904E\u6211\u6703\u966A\u4F60\u4E00\u8D77\u627E\u7684\u300D"
+          - upOrDown: 1
+            storyText: "\u300C\u90A3\u5C31\u5F9E\u96FB\u98A8\u6247\u958B\u59CB?\u300D\r"
     tag: Interact
     gameObjects: []

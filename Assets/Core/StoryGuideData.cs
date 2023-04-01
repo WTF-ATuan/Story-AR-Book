@@ -15,10 +15,7 @@ namespace Core{
 		[InfoBox("if Enable Multiplex, the data will added to multiplexStoryContext", VisibleIf = "@multiplex")]
 		public List<StoryData> storyContext;
 
-		[ShowIf("@multiplex"), ReadOnly]
-		[ListDrawerSettings(NumberOfItemsPerPage = 1)]
-		[SerializeReference]
-		public List<List<StoryData>> multiplexStoryContext = new List<List<StoryData>>();
+		[ShowIf("@multiplex")] [ReadOnly] public List<MultipleStoryData> multiplexStoryContext;
 
 		private Color GetColor(){
 			return Color.gray;
@@ -27,12 +24,15 @@ namespace Core{
 
 		[Button("Add Story"), ShowIf("@multiplex")]
 		private void AddStory(){
-			multiplexStoryContext.Add(storyContext);
+			multiplexStoryContext ??= new List<MultipleStoryData>();
+			var storyDatas = storyContext.Select(storyData => new StoryData
+					{ storyText = storyData.storyText, upOrDown = storyData.upOrDown, }).ToList();
+			multiplexStoryContext.Add(new MultipleStoryData(storyDatas));
 		}
 
 		[Button("Remove Story"), ShowIf("@multiplex")]
 		private void RemoveStory(){
-			multiplexStoryContext.Remove(multiplexStoryContext.Last());
+			multiplexStoryContext?.Remove(multiplexStoryContext.Last());
 		}
 
 		[Serializable]
@@ -45,6 +45,15 @@ namespace Core{
 					new ValueDropdownItem("Up", true),
 					new ValueDropdownItem("Down", false),
 				};
+			}
+		}
+
+		[Serializable]
+		public class MultipleStoryData{
+			public List<StoryData> datas;
+
+			public MultipleStoryData(List<StoryData> datas){
+				this.datas = datas;
 			}
 		}
 	}

@@ -16,6 +16,9 @@ namespace Core{
 		[SerializeField] [FoldoutGroup("Replace")]
 		private string replaceShowsName;
 
+		[SerializeField] [ValueDropdown("GetDataReference")] [FoldoutGroup("Modify")] [HideLabel]
+		private InteractData modifyDataReference;
+
 
 		[Searchable] [ListDrawerSettings(NumberOfItemsPerPage = 3, ShowItemCount = true)] [SerializeField]
 		private List<InteractData> interactDataList;
@@ -78,6 +81,10 @@ namespace Core{
 
 		private List<ValueDropdownItem> GetData(){
 			return interactDataList.Select(data => new ValueDropdownItem(data.name, data.name)).ToList();
+		}
+
+		private List<ValueDropdownItem> GetDataReference(){
+			return interactDataList.Select(data => new ValueDropdownItem(data.name, data)).ToList();
 		}
 
 		[Button]

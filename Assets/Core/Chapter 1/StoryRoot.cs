@@ -57,7 +57,7 @@ namespace Core.Chapter_1{
 					count = storyData.storyContext.Count - 1;
 				}
 
-				_currentStoryClone = new List<StoryGuideData.StoryData>(storyData.multiplexStoryContext[count]);
+				_currentStoryClone = new List<StoryGuideData.StoryData>(storyData.multiplexStoryContext[count].datas);
 			}
 			else{
 				_currentStoryClone = new List<StoryGuideData.StoryData>(storyData.storyContext);
