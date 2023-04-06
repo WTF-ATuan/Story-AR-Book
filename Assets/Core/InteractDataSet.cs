@@ -15,8 +15,10 @@ namespace Core{
 
 		[SerializeField] [FoldoutGroup("Replace")]
 		private string replaceShowsName;
-		
-		[Searchable] [ListDrawerSettings(NumberOfItemsPerPage = 3, ShowItemCount = true)] [SerializeField]
+
+		[Searchable]
+		[ListDrawerSettings(NumberOfItemsPerPage = 3, ShowItemCount = true)]
+		[SerializeField]
 		private List<InteractData> interactDataList;
 
 		public InteractData FindData(string objID){
@@ -66,6 +68,17 @@ namespace Core{
 			}
 
 			gameObjects = Array.Empty<GameObject>();
+		}
+		[TitleGroup("Create With string")]
+		[Button]
+		private void CreateNewData(string dataName){
+			var interactData = new InteractData{
+				name = dataName,
+				instanceID = 0000
+			};
+			if(!interactDataList.Exists(x => x.name == interactData.name)){
+				interactDataList.Add(interactData);
+			}
 		}
 
 		private List<ValueDropdownItem> GetAllTag(){

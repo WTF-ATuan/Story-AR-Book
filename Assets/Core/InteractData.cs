@@ -53,4 +53,12 @@ namespace Core{
 		InteractAnimation,
 		StoryGuide,
 	}
+	
+	public class StoryEvent{
+		public string EventID;
+
+		public StoryEvent(string eventID){
+			EventID = eventID;
+		}
+	}
 }

@@ -99,10 +99,11 @@ namespace Core.Chapter_1{
 			levelAnimator.gameObject.SetActive(active);
 			levelAudio.gameObject.SetActive(active);
 		}
-		[Button]
-		public void CameraFade(){
+
+		public void CameraFade(Action onComplete = null){
 			cameraEffect.DOFade(1, 0.1f)
-					.OnComplete(() => cameraEffect.DOFade(0, 0.1f));
+					.OnComplete(() => cameraEffect.DOFade(0, 0.3f)
+							.OnComplete(() => onComplete?.Invoke()));
 		}
 	}
 

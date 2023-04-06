@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core.Chapter_1;
+using UniRx;
 using UnityEngine;
 using Zenject;
 
@@ -21,6 +22,11 @@ namespace Core.Testing{
 		private void Start(){
 			_presenter.SubscribeFindIcon(Interact);
 			_interactRepository.RegisterAll(UpdateInteract);
+			EventAggregator.OnEvent<StoryEvent>()
+					.Subscribe(x => {
+						var interactData = _interactDataSet.FindData(x.EventID);
+						CompareData(interactData);
+					});
 			_teleport = new Teleport(transform, _interactRepository);
 		}
 

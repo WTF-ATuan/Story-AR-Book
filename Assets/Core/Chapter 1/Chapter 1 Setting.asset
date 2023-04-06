@@ -24,25 +24,6 @@ MonoBehaviour:
     replaceID: 
     selectedObject: {fileID: 0}
     replaceShowsName: 
-    modifyDataReference:
-      name: Uniform
-      tag: 2
-      instanceID: 17550
-      showsName: "\u5236\u670D"
-      teleportData:
-        target: 
-      interactAnimationData:
-        correctAnswer: 0
-        animationClip: {fileID: 0}
-        audioClip: {fileID: 0}
-        interactiveRoot: {fileID: 9086131200153670961, guid: 49f3b46aedb6dcb4a8d80289561708a4, type: 3}
-      storyGuide: 0
-      storyGuideData:
-        interact: 0
-        showOnes: 0
-        multiplex: 0
-        storyContext: []
-        multiplexStoryContext: []
     interactDataList:
     - name: Stairs
       tag: 1
@@ -391,6 +372,28 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 0
         storyContext: []
+        multiplexStoryContext: []
+    - name: Scary
+      tag: 3
+      instanceID: 0
+      showsName: "\u9A5A\u5687"
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 1
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 0}
+      storyGuide: 0
+      storyGuideData:
+        interact: 0
+        showOnes: 0
+        multiplex: 0
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u300C\u597D\u53EF\u6015\uFF01\uFF01\u300D"
+        - upOrDown: 0
+          storyText: "\u300C\u770B\u4F86\u9084\u662F\u4E0D\u8981\u63A5\u8FD1\u4ED6\u597D\u4E86\u300D"
         multiplexStoryContext: []
     - name: Bed
       tag: 3

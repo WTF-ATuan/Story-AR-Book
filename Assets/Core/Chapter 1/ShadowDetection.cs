@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Zenject;
 
 namespace Core.Chapter_1{
@@ -23,7 +22,7 @@ namespace Core.Chapter_1{
 			var distance = Vector3.Distance(other.transform.position, transform.position);
 			if(distance <= DangerDistance && !_isDetecting){
 				Debug.Log("screen flash" + "do character animation");
-				_presenter.CameraFade();
+				_presenter.CameraFade(() => EventAggregator.Publish(new StoryEvent("Scary")));
 				_isDetecting = true;
 			}
 
