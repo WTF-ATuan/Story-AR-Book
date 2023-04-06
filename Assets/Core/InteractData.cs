@@ -55,7 +55,7 @@ namespace Core{
 	}
 	
 	public class StoryEvent{
-		public string EventID;
+		public readonly string EventID;
 
 		public StoryEvent(string eventID){
 			EventID = eventID;

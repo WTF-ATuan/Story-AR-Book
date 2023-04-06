@@ -43,6 +43,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Stairs Target
       tag: 1
       instanceID: 58446
@@ -61,6 +62,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Uniform
       tag: 2
       instanceID: 17550
@@ -79,6 +81,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Clock
       tag: 2
       instanceID: 17254
@@ -97,6 +100,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Family
       tag: 2
       instanceID: 17358
@@ -115,6 +119,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Park
       tag: 2
       instanceID: 17446
@@ -133,6 +138,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: ToyBear
       tag: 2
       instanceID: 17518
@@ -151,6 +157,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Note
       tag: 2
       instanceID: 17618
@@ -169,6 +176,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Backpack
       tag: 2
       instanceID: 17578
@@ -187,6 +195,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: BookCase
       tag: 2
       instanceID: 17330
@@ -205,6 +214,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: News
       tag: 2
       instanceID: 30256
@@ -223,6 +233,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Chair
       tag: 2
       instanceID: 30416
@@ -241,6 +252,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: TV
       tag: 2
       instanceID: 17424
@@ -259,6 +271,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Fan
       tag: 2
       instanceID: 17462
@@ -283,6 +296,7 @@ MonoBehaviour:
         - upOrDown: 0
           storyText: "\u6E2C\u8A66\u7528456"
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Radio
       tag: 2
       instanceID: 30314
@@ -301,6 +315,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Wardrobe
       tag: 2
       instanceID: 30074
@@ -319,6 +334,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Alarm
       tag: 2
       instanceID: 27160
@@ -337,6 +353,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Lamp
       tag: 2
       instanceID: 27040
@@ -355,6 +372,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Phonograph
       tag: 2
       instanceID: 53764
@@ -373,6 +391,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext: []
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Scary
       tag: 3
       instanceID: 0
@@ -388,13 +407,29 @@ MonoBehaviour:
       storyGuideData:
         interact: 0
         showOnes: 0
-        multiplex: 0
+        multiplex: 1
         storyContext:
         - upOrDown: 0
-          storyText: "\u300C\u597D\u53EF\u6015\uFF01\uFF01\u300D"
+          storyText: "\u300C\u8173\u5E95\u62B9\u6CB9\u5FEB\u8DD1\u554A\uFF01\uFF01\u300D"
         - upOrDown: 0
-          storyText: "\u300C\u770B\u4F86\u9084\u662F\u4E0D\u8981\u63A5\u8FD1\u4ED6\u597D\u4E86\u300D"
-        multiplexStoryContext: []
+          storyText: "\u300C\u4E0D\u8981\u9760\u4ED6\u592A\u8FD1\u597D\u4E86\u300D"
+        multiplexStoryContext:
+        - datas:
+          - upOrDown: 0
+            storyText: "\u300C\u597D\u53EF\u6015\uFF01\uFF01\u300D"
+          - upOrDown: 0
+            storyText: "\u300C\u770B\u4F86\u9084\u662F\u4E0D\u8981\u63A5\u8FD1\u4ED6\u597D\u4E86\u300D"
+        - datas:
+          - upOrDown: 0
+            storyText: "\u300C\u554A\u554A\u554A\uFF01\uFF01\u300D"
+          - upOrDown: 0
+            storyText: "\u300C\u9084\u662F\u4E0D\u8981\u9760\u4ED6\u592A\u8FD1\u597D\u4E86\uFF01\u300D"
+        - datas:
+          - upOrDown: 0
+            storyText: "\u300C\u8173\u5E95\u62B9\u6CB9\u5FEB\u8DD1\u554A\uFF01\uFF01\u300D"
+          - upOrDown: 0
+            storyText: "\u300C\u4E0D\u8981\u9760\u4ED6\u592A\u8FD1\u597D\u4E86\u300D"
+        randomIndex: 1
     - name: Bed
       tag: 3
       instanceID: 33400
@@ -431,6 +466,7 @@ MonoBehaviour:
         - upOrDown: 0
           storyText: "\u59D1\u4E14\u76F8\u4FE1\u4E00\u4E0B\u5427"
         multiplexStoryContext: []
+        randomIndex: 0
     - name: Bear
       tag: 3
       instanceID: 33526
@@ -523,5 +559,6 @@ MonoBehaviour:
             storyText: "\u300C\u4E0D\u904E\u6211\u6703\u966A\u4F60\u4E00\u8D77\u627E\u7684\u300D"
           - upOrDown: 1
             storyText: "\u300C\u90A3\u5C31\u5F9E\u96FB\u98A8\u6247\u958B\u59CB?\u300D\r"
+        randomIndex: 0
     tag: Interact
     gameObjects: []

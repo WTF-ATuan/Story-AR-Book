@@ -56,7 +56,10 @@ namespace Core.Chapter_1{
 				if(count >= storyData.storyContext.Count){
 					count = storyData.storyContext.Count - 1;
 				}
-
+				//random index between count and 0 
+				if(storyData.randomIndex){
+					count = Random.Range(0, count + 1);
+				}
 				_currentStoryClone = new List<StoryGuideData.StoryData>(storyData.multiplexStoryContext[count].datas);
 			}
 			else{

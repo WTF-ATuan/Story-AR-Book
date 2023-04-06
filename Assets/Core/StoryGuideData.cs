@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core{
 	[Serializable]
@@ -15,7 +16,8 @@ namespace Core{
 		[InfoBox("if Enable Multiplex, the data will added to multiplexStoryContext", VisibleIf = "@multiplex")]
 		public List<StoryData> storyContext;
 
-		[ShowIf("@multiplex")] [ReadOnly] public List<MultipleStoryData> multiplexStoryContext;
+		[ShowIf("@multiplex")] public List<MultipleStoryData> multiplexStoryContext;
+		[ShowIf("@multiplex")] public bool randomIndex;
 
 		private Color GetColor(){
 			return Color.gray;
@@ -29,12 +31,7 @@ namespace Core{
 					{ storyText = storyData.storyText, upOrDown = storyData.upOrDown, }).ToList();
 			multiplexStoryContext.Add(new MultipleStoryData(storyDatas));
 		}
-
-		[Button("Remove Story"), ShowIf("@multiplex")]
-		private void RemoveStory(){
-			multiplexStoryContext?.Remove(multiplexStoryContext.Last());
-		}
-
+		
 		[Serializable]
 		public class StoryData{
 			[ValueDropdown("GetUpDown")] public bool upOrDown;
