@@ -21,7 +21,6 @@ namespace Core.Chapter_1{
 			if(!other.CompareTag("Player")) return;
 			var distance = Vector3.Distance(other.transform.position, transform.position);
 			if(distance <= DangerDistance && !_isDetecting){
-				Debug.Log("screen flash" + "do character animation");
 				_presenter.CameraFade(() => EventAggregator.Publish(new StoryEvent("Scary")));
 				_isDetecting = true;
 			}
