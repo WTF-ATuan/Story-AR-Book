@@ -6,6 +6,7 @@ using Sirenix.OdinInspector;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Core.Chapter_1{
@@ -21,6 +22,7 @@ namespace Core.Chapter_1{
 		[FoldoutGroup("Story Mode")] public Text upStoryText;
 		[FoldoutGroup("Story Mode")] public Text downStoryText;
 		[FoldoutGroup("Story Mode")] public Image storyBackGround;
+		[FoldoutGroup("Story Mode")] public Image cameraEffect;
 		[FoldoutGroup("Goal")] public List<Image> completePartList;
 
 
@@ -96,6 +98,11 @@ namespace Core.Chapter_1{
 		public void SetLevelActive(bool active){
 			levelAnimator.gameObject.SetActive(active);
 			levelAudio.gameObject.SetActive(active);
+		}
+		[Button]
+		public void CameraFade(){
+			cameraEffect.DOFade(1, 0.1f)
+					.OnComplete(() => cameraEffect.DOFade(0, 0.1f));
 		}
 	}
 

@@ -1,22 +1,30 @@
 ﻿using System;
 using UnityEngine;
+using Zenject;
 
 namespace Core.Chapter_1{
 	public class ShadowDetection : MonoBehaviour{
 		private ParticleSystem _particle;
+		[Inject] private readonly UIPresenter _presenter;
 
 		private const float DangerDistance = 0.03f;
 		[SerializeField] private float detectRange = 0.08f;
+
+		private bool _isDetecting;
 
 		private void Start(){
 			_particle = GetComponentInChildren<ParticleSystem>();
 		}
 
+		private void OnTriggerExit(Collider other) => _isDetecting = false;
+
 		private void OnTriggerStay(Collider other){
 			if(!other.CompareTag("Player")) return;
 			var distance = Vector3.Distance(other.transform.position, transform.position);
-			if(distance <= DangerDistance){
-				Debug.Log($"screen flash" + "do character animation");
+			if(distance <= DangerDistance && !_isDetecting){
+				Debug.Log("screen flash" + "do character animation");
+				_presenter.CameraFade();
+				_isDetecting = true;
 			}
 
 			ScaleShadow(distance);
