@@ -1,7 +1,6 @@
 name: Build project
 
 on: [ push, pull_request ]
-workflow_dispatch: { }
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
