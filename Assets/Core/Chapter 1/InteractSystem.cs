@@ -67,7 +67,13 @@ namespace Core.Testing{
 				case InteractTag.InteractAnimation:{
 					_interactLevel.Interact(_currentInteractData.interactAnimationData);
 					if(_currentInteractData.storyGuide){
-						_storyRoot.InteractWithLevel(_currentInteractData.storyGuideData);
+						if(_currentInteractData.onFinish){
+							_interactLevel.OnCurrentLevelPass += () =>
+									_storyRoot.InteractWithLevel(_currentInteractData.storyGuideData);
+						}
+						else{
+							_storyRoot.InteractWithLevel(_currentInteractData.storyGuideData);
+						}
 					}
 
 					break;

@@ -25,6 +25,9 @@ namespace Core{
 		[ShowIf("tag", InteractTag.InteractAnimation)]
 		public bool storyGuide;
 
+		[ShowIf("tag", InteractTag.InteractAnimation)] [ShowIf("@storyGuide")]
+		public bool onFinish;
+
 		[ShowIf("IsShowStoryGuide")] [BoxGroup("StoryGuide"), HideLabel]
 		public StoryGuideData storyGuideData;
 
@@ -43,7 +46,6 @@ namespace Core{
 			}
 
 			return tag == InteractTag.StoryGuide;
-
 		}
 	}
 
@@ -53,7 +55,7 @@ namespace Core{
 		InteractAnimation,
 		StoryGuide,
 	}
-	
+
 	public class StoryEvent{
 		public readonly string EventID;
 

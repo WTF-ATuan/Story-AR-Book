@@ -37,6 +37,7 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 0}
       storyGuide: 0
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 0
@@ -56,6 +57,7 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 0}
       storyGuide: 0
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 0
@@ -75,6 +77,7 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 2393861171024899327, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
       storyGuide: 0
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 0
@@ -93,12 +96,15 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 9086131200153670961, guid: 49f3b46aedb6dcb4a8d80289561708a4, type: 3}
-      storyGuide: 0
+      storyGuide: 1
+      onFinish: 1
       storyGuideData:
         interact: 0
         showOnes: 0
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u300C\uFF2F\uFF2F\u570B\u5C0F\u5236\u670D\uFF1F\u300D"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Clock
@@ -112,12 +118,19 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 9086131200153670961, guid: 19cf077aea323704d92ce12b295e61f2, type: 3}
-      storyGuide: 0
+      storyGuide: 1
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 0
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u300C\u597D\u4E82\u2026\u2026\u300D\r"
+        - upOrDown: 0
+          storyText: "\u6C92\u8FA6\u6CD5\u8FA8\u8A8D\u4E0A\u9762\u7684\u5167\u5BB9\r"
+        - upOrDown: 0
+          storyText: "\u60F3\u5F04\u6E05\u695A\u53EA\u80FD\u5FA9\u539F\u4E86\r"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Family
@@ -131,12 +144,19 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 9086131200153670961, guid: 96bab520cb52e064198ff746192d85d2, type: 3}
-      storyGuide: 0
+      storyGuide: 1
+      onFinish: 1
       storyGuideData:
         interact: 0
         showOnes: 0
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u300C\u662F\u5F35\u5408\u7167\u300D\r"
+        - upOrDown: 0
+          storyText: "\u300C\u9019\u500B\u4EBA\u662F\u8AB0\u554A......\u300D\r"
+        - upOrDown: 0
+          storyText: "\u300C\u96E3\u9053\u4ED6\u662F\uFF01\uFF1F\u300D\r"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Park
@@ -150,12 +170,17 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 9086131200153670961, guid: 532d5fb2d448cf443888897b351f09d9, type: 3}
-      storyGuide: 0
+      storyGuide: 1
+      onFinish: 1
       storyGuideData:
         interact: 0
         showOnes: 0
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u300C\u9019\u500B\u5C0F\u5973\u5B69\u53C8\u51FA\u73FE\u4E86\u300D\r"
+        - upOrDown: 0
+          storyText: "\u300C\u9019\u500B\u516C\u5712\u6211\u8A18\u5F97\u4EE5\u524D\u597D\u50CF\u5F88\u5E38\u53BB......\u300D\r"
         multiplexStoryContext: []
         randomIndex: 0
     - name: ToyBear
@@ -169,12 +194,19 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 9086131200153670961, guid: 7094005c794fab34c85df286a3fb0f3f, type: 3}
-      storyGuide: 0
+      storyGuide: 1
+      onFinish: 1
       storyGuideData:
         interact: 0
         showOnes: 0
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u300C\u9019\u96BB\u718A\u662F\u5C0F\u5973\u5B69\u7684\uFF1F\u300D"
+        - upOrDown: 0
+          storyText: "\u300C\u718A\u5728\u6A13\u4E0B\uFF01\u300D\r"
+        - upOrDown: 0
+          storyText: "\u300C\u90A3\u5C0F\u5973\u5B69\u53BB\u54EA\u4E86\uFF1F\u300D\r"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Note
@@ -188,12 +220,17 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 9086131200153670961, guid: 482626c6562b47c46b951977a0d61e1b, type: 3}
-      storyGuide: 0
+      storyGuide: 1
+      onFinish: 1
       storyGuideData:
         interact: 0
         showOnes: 0
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u300C\u4ECA\u5929\u8A18\u5F97\u4F86\u63A5\u6211......\u300D\r"
+        - upOrDown: 0
+          storyText: "\u300C\u4EC0\u9EBC\u610F\u601D\uFF1F\u300D\r"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Backpack
@@ -207,12 +244,17 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 9086131200153670961, guid: d2c83efd97de8cc47bf3dfed5cde358e, type: 3}
-      storyGuide: 0
+      storyGuide: 1
+      onFinish: 1
       storyGuideData:
         interact: 0
         showOnes: 0
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u300C\u6843\u7D05\u8272\u7684\u66F8\u5305 ! \u300D"
+        - upOrDown: 0
+          storyText: "\u300C\u597D\u719F\u6089\u7684\u5370\u8C61..... \u300D"
         multiplexStoryContext: []
         randomIndex: 0
     - name: BookCase
@@ -227,6 +269,7 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 0}
       storyGuide: 0
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 0
@@ -245,12 +288,17 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 6771335898428096232, guid: 569f3d807e71ab84a915a44960768e89, type: 3}
-      storyGuide: 0
+      storyGuide: 1
+      onFinish: 1
       storyGuideData:
         interact: 0
         showOnes: 0
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u9019\u788E\u7247?!"
+        - upOrDown: 0
+          storyText: "\u6703\u6709\u4EC0\u9EBC\u7528\u8655\u5462?"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Chair
@@ -265,6 +313,7 @@ MonoBehaviour:
         audioClip: {fileID: 8300000, guid: cc270b5458b622740b67ac570b9f76a5, type: 3}
         interactiveRoot: {fileID: 0}
       storyGuide: 0
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 0
@@ -284,6 +333,7 @@ MonoBehaviour:
         audioClip: {fileID: 8300000, guid: 90e3f45c6b348fb4cb6fc64cab5b9693, type: 3}
         interactiveRoot: {fileID: 0}
       storyGuide: 0
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 0
@@ -303,6 +353,7 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 1526452321, guid: cf746d04b500e174e822ca8e67994318, type: 3}
       storyGuide: 1
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 1
@@ -328,6 +379,7 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 8686251698883289002, guid: 8dbc17bec02c8ac4393334a4d9a40427, type: 3}
       storyGuide: 0
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 0
@@ -347,6 +399,7 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 4534355535649463223, guid: cae65720a656588498fc97bf8e8f586b, type: 3}
       storyGuide: 0
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 0
@@ -366,6 +419,7 @@ MonoBehaviour:
         audioClip: {fileID: 8300000, guid: b977647cef4de4449ab344e755f7fc1b, type: 3}
         interactiveRoot: {fileID: 0}
       storyGuide: 0
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 0
@@ -385,6 +439,7 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 4276346525377725668, guid: e68775306608a904297a40250f7aa2f4, type: 3}
       storyGuide: 0
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 0
@@ -404,6 +459,7 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 8464487170352765991, guid: d59730d3272292a4a94eb74ce1de08cb, type: 3}
       storyGuide: 0
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 0
@@ -423,6 +479,7 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 0}
       storyGuide: 0
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 0
@@ -461,6 +518,7 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 0}
       storyGuide: 1
+      onFinish: 0
       storyGuideData:
         interact: 0
         showOnes: 1
@@ -498,6 +556,7 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 0}
       storyGuide: 0
+      onFinish: 0
       storyGuideData:
         interact: 1
         showOnes: 0

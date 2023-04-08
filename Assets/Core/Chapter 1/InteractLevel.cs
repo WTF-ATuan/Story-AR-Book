@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UniRx;
 using UniRx.Triggers;
@@ -10,8 +11,10 @@ namespace Core.Chapter_1{
 		[Inject] private readonly PlayerData _playerData;
 		[Inject] private readonly UIPresenter _presenter;
 		[SerializeField] private List<GameObject> startLoadingList;
-		
+
 		private List<GameObject> _levelRootList = new List<GameObject>();
+
+		public Action OnCurrentLevelPass;
 
 		private void Start(){
 			_presenter.exitButton.OnPointerClickAsObservable().Subscribe(x => ExitFocusMode());
@@ -27,6 +30,7 @@ namespace Core.Chapter_1{
 			else{
 				CreateOrOpenLevel(data.interactiveRoot);
 			}
+
 			_presenter.SwitchMode(UIMode.Focus);
 		}
 
@@ -45,6 +49,8 @@ namespace Core.Chapter_1{
 
 		private void PassLevel(string rootName){
 			_playerData.SaveSuccessResult(rootName);
+			OnCurrentLevelPass?.Invoke();
+			OnCurrentLevelPass = null;
 		}
 
 		private void ExitFocusMode(){
