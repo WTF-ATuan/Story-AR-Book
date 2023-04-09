@@ -57,7 +57,8 @@ namespace Core.Testing{
 		}
 
 		private void CompareData(InteractData data){
-			if(data.tag == InteractTag.StoryGuide){
+			if(data.tag == InteractTag.StoryGuide
+			   || data.storyGuide && data.onContact){
 				_storyRoot.Contact(data.storyGuideData);
 			}
 

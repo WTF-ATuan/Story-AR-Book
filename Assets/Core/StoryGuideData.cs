@@ -8,9 +8,9 @@ using UnityEngine.Serialization;
 namespace Core{
 	[Serializable]
 	public class StoryGuideData{
-		public bool interact;
-		public bool showOnes;
-		public bool multiplex;
+		[FoldoutGroup("Only story")] public bool interact;
+		[FoldoutGroup("Only story")] public bool showOnes;
+		[FoldoutGroup("Only story")] public bool multiplex;
 
 		[ListDrawerSettings(NumberOfItemsPerPage = 5, ElementColor = "GetColor")]
 		[InfoBox("if Enable Multiplex, the data will added to multiplexStoryContext", VisibleIf = "@multiplex")]
@@ -31,7 +31,7 @@ namespace Core{
 					{ storyText = storyData.storyText, upOrDown = storyData.upOrDown, }).ToList();
 			multiplexStoryContext.Add(new MultipleStoryData(storyDatas));
 		}
-		
+
 		[Serializable]
 		public class StoryData{
 			[ValueDropdown("GetUpDown")] public bool upOrDown;

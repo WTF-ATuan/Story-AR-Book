@@ -22,11 +22,13 @@ namespace Core{
 		[ShowIf("tag", InteractTag.InteractAnimation)] [BoxGroup("InteractAnimation"), HideLabel]
 		public InteractAnimationData interactAnimationData;
 
-		[ShowIf("tag", InteractTag.InteractAnimation)]
 		public bool storyGuide;
 
 		[ShowIf("tag", InteractTag.InteractAnimation)] [ShowIf("@storyGuide")]
 		public bool onFinish;
+
+		[ShowIf("tag", InteractTag.InteractAnimation)] [ShowIf("@storyGuide")]
+		public bool onContact;
 
 		[ShowIf("IsShowStoryGuide")] [BoxGroup("StoryGuide"), HideLabel]
 		public StoryGuideData storyGuideData;
@@ -41,11 +43,7 @@ namespace Core{
 		}
 
 		private bool IsShowStoryGuide(){
-			if(tag == InteractTag.InteractAnimation){
-				return storyGuide;
-			}
-
-			return tag == InteractTag.StoryGuide;
+			return tag == InteractTag.StoryGuide || storyGuide;
 		}
 	}
 
