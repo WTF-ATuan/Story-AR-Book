@@ -13,6 +13,7 @@ namespace Core.Testing{
 		[Inject] private readonly StoryRoot _storyRoot;
 		[Inject] private readonly InteractDataSet _interactDataSet;
 		[Inject] private readonly UIPresenter _presenter;
+		[Inject] private readonly OutlineRepository _outline;
 
 		private Teleport _teleport;
 		private InteractTag _interactTag;
@@ -45,9 +46,11 @@ namespace Core.Testing{
 				var data = _interactDataSet.FindData(_interactNames.First());
 				CompareData(data);
 				_presenter.ModifyNameTag(data.showsName);
+				_outline.ActiveOutline(data.name);
 			}
 			else{
 				_presenter.ModifyNameTag("無", false);
+				_outline.DisableAllOutline();
 			}
 
 			_presenter.SetFindState(_interactNames.Count > 0);
