@@ -9,7 +9,7 @@ namespace Core.Chapter_1{
 			DisableAllOutline();
 			var foundObject = outlineObjects.Find(x => x.name == id);
 			if(!foundObject){
-				throw new System.Exception($"can,t find {id} outline object");
+				return;
 			}
 
 			foundObject.SetActive(true);
@@ -17,7 +17,7 @@ namespace Core.Chapter_1{
 		public void DisableOutline(string id){
 			var foundObject = outlineObjects.Find(x => x.name == id);
 			if(!foundObject){
-				throw new System.Exception($"can,t find {id} outline object");
+				return;
 			}
 
 			foundObject.SetActive(false);

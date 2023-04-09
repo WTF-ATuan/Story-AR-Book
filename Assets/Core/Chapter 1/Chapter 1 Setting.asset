@@ -72,7 +72,19 @@ MonoBehaviour:
         - upOrDown: 1
           storyText: "\u300C\u600E\u9EBC\u4E86\u55CE\uFF1F\u300D"
         - upOrDown: 0
-          storyText: 
+          storyText: "\u300C\u6709\u7A2E\u65E2\u8996\u611F\u2026\u2026\u300D\r"
+        - upOrDown: 0
+          storyText: "\u9019\u88E1\u660E\u660E\u662F\u500B\u5947\u602A\u7684\u7A7A\u9593"
+        - upOrDown: 1
+          storyText: "\u300C\u770B\u4F86\u53EA\u5DEE\u4E00\u9EDE\u4E86\u2026\u2026\u300D\r"
+        - upOrDown: 0
+          storyText: "\u300C\uFF1F\u300D"
+        - upOrDown: 1
+          storyText: "\u300C\u6C92\u4E8B\u6C92\u4E8B\u300D"
+        - upOrDown: 0
+          storyText: "\u300C\u51FA\u53E3\u5C31\u8FD1\u5728\u773C\u524D\u4E86\u300D"
+        - upOrDown: 0
+          storyText: "\u300C\u5FEB\u53BB\u958B\u9580\u5427\u300D"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Exit
@@ -286,14 +298,22 @@ MonoBehaviour:
         animationClip: {fileID: 7400000, guid: 57eacca419b2ba64b9fe47cabf435136, type: 2}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 0}
-      storyGuide: 0
+      storyGuide: 1
       onFinish: 0
       onContact: 0
       storyGuideData:
         interact: 0
-        showOnes: 0
+        showOnes: 1
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u300C\u97F3\u6A02\u7642\u6CD5\u300D..."
+        - upOrDown: 0
+          storyText: "\u300C\u9000\u5316\u6027\u75BE\u75C5\u300D..."
+        - upOrDown: 0
+          storyText: "\u300C\u8166\u888B\u88E1\u6709\u8072\u97F3\u300D...?"
+        - upOrDown: 0
+          storyText: "\u9019\u4E9B\u90FD\u662F\u4EC0\u9EBC\u5947\u602A\u7684\u66F8\uFF1F"
         multiplexStoryContext: []
         randomIndex: 0
     - name: News
@@ -308,17 +328,15 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 6771335898428096232, guid: 569f3d807e71ab84a915a44960768e89, type: 3}
       storyGuide: 1
-      onFinish: 1
+      onFinish: 0
       onContact: 0
       storyGuideData:
         interact: 0
-        showOnes: 0
+        showOnes: 1
         multiplex: 0
         storyContext:
         - upOrDown: 0
-          storyText: "\u9019\u788E\u7247?!"
-        - upOrDown: 0
-          storyText: "\u6703\u6709\u4EC0\u9EBC\u7528\u8655\u5462?"
+          storyText: "\u9019\u662F\u4ECA\u5929\u7684\u5831\u7D19\u2026\u55CE?"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Chair
@@ -369,14 +387,20 @@ MonoBehaviour:
         animationClip: {fileID: 7400000, guid: 7e2765a82b0ff3d478908f983f136363, type: 2}
         audioClip: {fileID: 8300000, guid: 90e3f45c6b348fb4cb6fc64cab5b9693, type: 3}
         interactiveRoot: {fileID: 0}
-      storyGuide: 0
+      storyGuide: 1
       onFinish: 0
       onContact: 0
       storyGuideData:
         interact: 0
-        showOnes: 0
+        showOnes: 1
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u597D\u50CF\u58DE\u6389\u4E86"
+        - upOrDown: 0
+          storyText: "\u53EA\u5269\u6211\u5728\u770B\u800C\u5DF2"
+        - upOrDown: 0
+          storyText: "\u4E00\u76F4\u6C92\u6709\u4FEE\u2026"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Fan
@@ -417,14 +441,18 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 8686251698883289002, guid: 8dbc17bec02c8ac4393334a4d9a40427, type: 3}
-      storyGuide: 0
+      storyGuide: 1
       onFinish: 0
       onContact: 0
       storyGuideData:
         interact: 0
-        showOnes: 0
+        showOnes: 1
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u597D\u4E45\u6C92\u6709\u7528\u4E86..."
+        - upOrDown: 0
+          storyText: "\u5361\u5E36\u90FD\u627E\u4E0D\u5230\u4E86"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Wardrobe
@@ -438,14 +466,18 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 4534355535649463223, guid: cae65720a656588498fc97bf8e8f586b, type: 3}
-      storyGuide: 0
+      storyGuide: 1
       onFinish: 0
       onContact: 0
       storyGuideData:
         interact: 0
-        showOnes: 0
+        showOnes: 1
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u6211\u7684\u8863\u670D\u5462\uFF1F"
+        - upOrDown: 0
+          storyText: "\u662F\u88AB\u4EBA\u6536\u8D70\u4E86\u55CE\uFF1F"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Alarm
@@ -459,14 +491,16 @@ MonoBehaviour:
         animationClip: {fileID: 7400000, guid: a0432cba94791114ba55b2c27c51a423, type: 2}
         audioClip: {fileID: 8300000, guid: b977647cef4de4449ab344e755f7fc1b, type: 3}
         interactiveRoot: {fileID: 0}
-      storyGuide: 0
+      storyGuide: 1
       onFinish: 0
       onContact: 0
       storyGuideData:
         interact: 0
-        showOnes: 0
+        showOnes: 1
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u597D\u5435\uFF0C\u6211\u600E\u9EBC\u6C92\u95DC\u6389\u5462"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Lamp
@@ -501,14 +535,18 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 8464487170352765991, guid: d59730d3272292a4a94eb74ce1de08cb, type: 3}
-      storyGuide: 0
-      onFinish: 0
+      storyGuide: 1
+      onFinish: 1
       onContact: 0
       storyGuideData:
         interact: 0
         showOnes: 0
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u597D\u50CF\u6709\u4EC0\u9EBC\u6771\u897F\u6D88\u5931\u4E86"
+        - upOrDown: 0
+          storyText: "\u8D95\u7DCA\u53BB\u770B\u770B\u5427"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Scary
@@ -541,15 +579,30 @@ MonoBehaviour:
           - upOrDown: 0
             storyText: "\u300C\u770B\u4F86\u9084\u662F\u4E0D\u8981\u63A5\u8FD1\u4ED6\u597D\u4E86\u300D"
         - datas:
+          - upOrDown: 1
+            storyText: "\u300C\u4E0D\u51C6\u4E0A\u6A13\uFF01\uFF01\uFF01\u300D"
           - upOrDown: 0
-            storyText: "\u300C\u554A\u554A\u554A\uFF01\uFF01\u300D"
+            storyText: "\u300C\u5687\u6B7B\u4EBA\u4E86\uFF0C\u679C\u7136\u6C92\u8FA6\u6CD5\u8F15\u6613\u96E2\u958B\u300D\r\n"
           - upOrDown: 0
-            storyText: "\u300C\u9084\u662F\u4E0D\u8981\u9760\u4ED6\u592A\u8FD1\u597D\u4E86\uFF01\u300D"
+            storyText: "\u300C\u6211\u5011\u9084\u662F\u5148\u4F86\u770B\u770B\u5176\u4ED6\u5730\u65B9\u5427\u300D"
+          - upOrDown: 0
+            storyText: "<\u8A66\u8457\u63A2\u7D22\u7559\u8072\u6A5F>"
+        - datas:
+          - upOrDown: 1
+            storyText: "\u4F60\u8981\u5E79\u561B?"
+          - upOrDown: 0
+            storyText: "\u2026\u51FA\u53BB?"
+          - upOrDown: 0
+            storyText: "\u4E0D\u884C\uFF01\uFF01\uFF01"
+          - upOrDown: 0
+            storyText: "\u592A\u5147\u4E86\u5427\u2026"
         - datas:
           - upOrDown: 0
-            storyText: "\u300C\u8173\u5E95\u62B9\u6CB9\u5FEB\u8DD1\u554A\uFF01\uFF01\u300D"
+            storyText: "\u4E0D\u51C6\u4E0A\u53BB"
           - upOrDown: 0
-            storyText: "\u300C\u4E0D\u8981\u9760\u4ED6\u592A\u8FD1\u597D\u4E86\u300D"
+            storyText: "\u2026..."
+          - upOrDown: 0
+            storyText: "\u7D66\u6211\u56DE\u53BB"
         randomIndex: 1
     - name: Bed
       tag: 3
@@ -566,28 +619,12 @@ MonoBehaviour:
       onFinish: 0
       onContact: 0
       storyGuideData:
-        interact: 0
-        showOnes: 1
+        interact: 1
+        showOnes: 0
         multiplex: 0
         storyContext:
         - upOrDown: 0
-          storyText: "\u300C\u9019\u88E1\u662F\u2026\u2026?\u300D"
-        - upOrDown: 1
-          storyText: "\u300C\u563F\u4F60\u9192\u5566\u300D\r"
-        - upOrDown: 0
-          storyText: "\u300C\u4F60\u662F\u2026\u2026?\u300D"
-        - upOrDown: 1
-          storyText: "\u300C\u96D6\u7136\u6211\u4E0D\u77E5\u9053\u4F60\u70BA\u4EC0\u9EBC\u88AB\u95DC\u5728\u9019\u88E1\u300D"
-        - upOrDown: 1
-          storyText: "\u300C\u4E0D\u904E\u6211\u662F\u4F86\u5E6B\u4F60\u7684\u300D"
-        - upOrDown: 1
-          storyText: "\u300C\u7E3D\u4E4B\u60F3\u8981\u51FA\u53BB\u7684\u8A71\u300D\r"
-        - upOrDown: 1
-          storyText: "\u300C\u4E5F\u5F97\u5148\u627E\u5230\u80FD\u51FA\u53BB\u7684\u9580\u5427\u300D"
-        - upOrDown: 0
-          storyText: "\u300C\u77E5\u9053\u4E86\u300D\r"
-        - upOrDown: 0
-          storyText: "\u59D1\u4E14\u76F8\u4FE1\u4E00\u4E0B\u5427"
+          storyText: "\u73FE\u5728\u597D\u50CF\u4E0D\u662F\u7761\u89BA\u7684\u6642\u9593"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Bear
