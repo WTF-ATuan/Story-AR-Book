@@ -8832,6 +8832,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805349497}
   m_Mesh: {fileID: -7670247711816762793, guid: b91b9d0a89ae0374a91479d60f625021, type: 3}
+--- !u!1 &1823481712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1823481713}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1823481713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823481712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 602.50275, y: 1111.8265, z: -15.251568}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1831571900
 GameObject:
   m_ObjectHideFlags: 0
@@ -10215,6 +10245,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1466154679}
     m_Modifications:
+    - target: {fileID: 4806475792815470011, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: onPassPuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1823481712}
+    - target: {fileID: 4806475792815470011, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: onPassPuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806475792815470011, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: onPassPuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5286674015548850074, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
       propertyPath: m_Name
       value: Exit (Puzzle)
@@ -10331,6 +10373,34 @@ PrefabInstance:
       propertyPath: activePart.Array.data[6]
       value: 
       objectReference: {fileID: 1317313940}
+    - target: {fileID: 9021974727769713855, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: onPassPuzzle.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021974727769713855, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: onPassPuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021974727769713855, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: onPassPuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1823481712}
+    - target: {fileID: 9021974727769713855, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: onPassPuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021974727769713855, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: onPassPuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021974727769713855, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: onPassPuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021974727769713855, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: onPassPuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
 --- !u!4 &4852409372998626634

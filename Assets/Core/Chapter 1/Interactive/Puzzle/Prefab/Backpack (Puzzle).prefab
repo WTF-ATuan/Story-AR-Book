@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3c26e646f840fb9e3ef15758efb789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invokeFromEvent: 0
+  invokeFromEvent: 1
   target: {fileID: 6317825347848382231}
   targetFound:
     m_PersistentCalls:
@@ -84,6 +84,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 9086131200153670961}
+        m_TargetAssemblyTypeName: Core.Chapter_1.InteractiveRoot, Assembly-CSharp
+        m_MethodName: PassLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -982,6 +994,7 @@ GameObject:
   - component: {fileID: 1383071873344087738}
   - component: {fileID: 3253558296279705828}
   - component: {fileID: 6317825347848382231}
+  - component: {fileID: 8170690346127294991}
   m_Layer: 5
   m_Name: Target
   m_TagString: Untagged
@@ -1003,10 +1016,10 @@ RectTransform:
   m_Father: {fileID: 1620963964594243157}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 679, y: 768}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 173, y: -395}
+  m_SizeDelta: {x: 213, y: 431}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3253558296279705828
 CanvasRenderer:
@@ -1036,7 +1049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ee9d58bb9372eb84490e99f32fb4a136, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1046,3 +1059,40 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8170690346127294991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4318216648511858647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79da380f08694ed8a88721506c93a8b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showMore: 1
+  switchClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4318216648511858647}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  switchNegativeClick:
+    m_PersistentCalls:
+      m_Calls: []
+  pointDown:
+    m_PersistentCalls:
+      m_Calls: []
+  pointUp:
+    m_PersistentCalls:
+      m_Calls: []
