@@ -7813,7 +7813,7 @@ GameObject:
   - component: {fileID: 476483010}
   - component: {fileID: 476483009}
   m_Layer: 5
-  m_Name: News
+  m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17982,7 +17982,7 @@ GameObject:
   - component: {fileID: 1861008569}
   - component: {fileID: 1861008568}
   m_Layer: 5
-  m_Name: Lamp
+  m_Name: News
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
