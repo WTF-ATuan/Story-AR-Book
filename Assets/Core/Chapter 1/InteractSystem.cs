@@ -60,6 +60,7 @@ namespace Core.Testing{
 			if(data.tag == InteractTag.StoryGuide
 			   || data.storyGuide && data.onContact){
 				_storyRoot.Contact(data.storyGuideData);
+				EventAggregator.Publish(new StoryPresentEvent(data.name));
 			}
 
 			_interactTag = data.tag;

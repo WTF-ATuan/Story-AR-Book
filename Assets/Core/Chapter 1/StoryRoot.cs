@@ -90,4 +90,12 @@ namespace Core.Chapter_1{
 			_currentStoryClone.Remove(storyData);
 		}
 	}
+
+	public class StoryPresentEvent{
+		public string EventID;
+
+		public StoryPresentEvent(string eventID){
+			EventID = eventID;
+		}
+	}
 }
