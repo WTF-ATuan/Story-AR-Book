@@ -36,14 +36,16 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 0}
-      storyGuide: 0
+      storyGuide: 1
       onFinish: 0
-      onContact: 0
+      onContact: 1
       storyGuideData:
         interact: 0
-        showOnes: 0
+        showOnes: 1
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u300C\u9ED1\u5F71\u600E\u9EBC\u6D88\u5931\u4E86.....\u300D"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Stairs Target
@@ -143,7 +145,7 @@ MonoBehaviour:
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 9086131200153670961, guid: 19cf077aea323704d92ce12b295e61f2, type: 3}
       storyGuide: 1
-      onFinish: 0
+      onFinish: 1
       onContact: 0
       storyGuideData:
         interact: 0
@@ -151,11 +153,9 @@ MonoBehaviour:
         multiplex: 0
         storyContext:
         - upOrDown: 0
-          storyText: "\u300C\u597D\u4E82\u2026\u2026\u300D\r"
+          storyText: "\u300C\u4E0A\u9762\u7684\u6642\u9593\u662F4\u9EDE\u300D"
         - upOrDown: 0
-          storyText: "\u6C92\u8FA6\u6CD5\u8FA8\u8A8D\u4E0A\u9762\u7684\u5167\u5BB9\r"
-        - upOrDown: 0
-          storyText: "\u60F3\u5F04\u6E05\u695A\u53EA\u80FD\u5FA9\u539F\u4E86\r"
+          storyText: "\u300C\u662F\u4E0D\u662F\u6709\u4EC0\u9EBC\u4E8B\u60C5\u8981\u505A......\u300D"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Family
@@ -178,11 +178,11 @@ MonoBehaviour:
         multiplex: 0
         storyContext:
         - upOrDown: 0
-          storyText: "\u300C\u662F\u5F35\u5408\u7167\u300D\r"
+          storyText: "\u300C\u2026\u2026\u300D\r"
         - upOrDown: 0
           storyText: "\u300C\u9019\u500B\u4EBA\u662F\u8AB0\u554A......\u300D\r"
         - upOrDown: 0
-          storyText: "\u300C\u96E3\u9053\u4ED6\u662F\uFF01\uFF1F\u300D\r"
+          storyText: "\u300C\u6211\u5230\u5E95\u5FD8\u8A18\u4E86\u4EC0\u9EBC\u4E8B\u2026\u2026\u300D\r"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Park
@@ -423,11 +423,9 @@ MonoBehaviour:
         multiplex: 0
         storyContext:
         - upOrDown: 0
-          storyText: "\u6E2C\u8A66\u7528123"
-        - upOrDown: 1
-          storyText: "\u6E2C\u8A66\u7528456"
+          storyText: "\u300C\u611F\u89BA\u5F88\u4E45\u6C92\u4EBA\u7528\u4E86\u300D"
         - upOrDown: 0
-          storyText: "\u6E2C\u8A66\u7528456"
+          storyText: "\u300C\u4E0D\u77E5\u9053\u9084\u80FD\u4E0D\u80FD\u7528\u300D"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Radio
@@ -514,14 +512,18 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 4276346525377725668, guid: e68775306608a904297a40250f7aa2f4, type: 3}
-      storyGuide: 0
+      storyGuide: 1
       onFinish: 0
       onContact: 0
       storyGuideData:
         interact: 0
         showOnes: 0
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u300C\u597D\u50CF\u6C92\u6709\u4EE5\u524D\u4EAE\u4E86\u300D"
+        - upOrDown: 0
+          storyText: "\u300C\u662F\u4E0D\u662F\u6709\u6771\u897F\u5361\u5728\u88CF\u9762?\u300D"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Phonograph
@@ -544,9 +546,9 @@ MonoBehaviour:
         multiplex: 0
         storyContext:
         - upOrDown: 0
-          storyText: "\u597D\u50CF\u6709\u4EC0\u9EBC\u6771\u897F\u6D88\u5931\u4E86"
+          storyText: "\u300C\u539F\u4F86\u525B\u525B\u807D\u5230\u7684\u602A\u8072\u97F3\u5C31\u662F\u662F\u5B78\u6821\u7684\u6253\u9418\u8072\u300D"
         - upOrDown: 0
-          storyText: "\u8D95\u7DCA\u53BB\u770B\u770B\u5427"
+          storyText: "\u300C\u4F46\u70BA\u4EC0\u9EBC\u662F\u9019\u500B\u8072\u97F3\u5462\uFF1F\u300D"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Scary
@@ -646,81 +648,36 @@ MonoBehaviour:
         showOnes: 0
         multiplex: 1
         storyContext:
-        - upOrDown: 1
-          storyText: "\u300C\u55E8\u5C3C\u597D\u300D\u7B2C\u4E8C\u6B21"
         - upOrDown: 0
-          storyText: "\u300C\u73A9\u5076\u6703\u8AAA\u8A71?\u300D"
-        - upOrDown: 0
-          storyText: "\u300C\u7B49\u7B49\u4F60\u662F\u90A3\u500B\u8072\u97F3!?\u300D\r"
-        - upOrDown: 1
-          storyText: "\u300C\u963F\u88AB\u767C\u73FE\u4E86\u300D\r"
-        - upOrDown: 0
-          storyText: "\u300C\u4F60\u70BA\u4EC0\u9EBC\u8981\u5E6B\u6211?\u300D"
-        - upOrDown: 1
-          storyText: "\u300C\u9019\u4E0D\u662F\u91CD\u9EDE\u5427\u300D"
-        - upOrDown: 1
-          storyText: "\u300C\u4F60\u60F3\u77E5\u9053\u600E\u9EBC\u51FA\u53BB\u624D\u5C0D\u5427\u300D\r"
-        - upOrDown: 0
-          storyText: "\u300C\u2026\u2026\u300D"
-        - upOrDown: 0
-          storyText: "\u300C\u6211\u53EA\u77E5\u9053\u9ED1\u5F71\u61FC\u6015\u67D0\u7A2E\u8072\u97F3\u300D"
-        - upOrDown: 1
-          storyText: "\u300C\u5177\u9AD4\u662F\u4EC0\u9EBC\u6211\u8072\u97F3\u4E0D\u6E05\u695A\u300D\r"
-        - upOrDown: 1
-          storyText: "\u300C\u4E0D\u904E\u6211\u6703\u966A\u4F60\u4E00\u8D77\u627E\u7684\u300D"
-        - upOrDown: 1
-          storyText: "\u300C\u90A3\u5C31\u5F9E\u96FB\u98A8\u6247\u958B\u59CB?\u300D\r"
+          storyText: "\u300C\u5531\u7247\u788E\u7247\u662F\u602A\u8072\u97F3\u7684\u4F86\u6E90\u300D"
         multiplexStoryContext:
         - datas:
-          - upOrDown: 1
-            storyText: "\u300C\u55E8\u5C3C\u597D\u300D\u7B2C\u4E00\u6B21"
           - upOrDown: 0
-            storyText: "\u300C\u73A9\u5076\u6703\u8AAA\u8A71?\u300D"
-          - upOrDown: 0
-            storyText: "\u300C\u7B49\u7B49\u4F60\u662F\u90A3\u500B\u8072\u97F3!?\u300D\r"
-          - upOrDown: 1
-            storyText: "\u300C\u963F\u88AB\u767C\u73FE\u4E86\u300D\r"
-          - upOrDown: 0
-            storyText: "\u300C\u4F60\u70BA\u4EC0\u9EBC\u8981\u5E6B\u6211?\u300D"
-          - upOrDown: 1
-            storyText: "\u300C\u9019\u4E0D\u662F\u91CD\u9EDE\u5427\u300D"
-          - upOrDown: 1
-            storyText: "\u300C\u4F60\u60F3\u77E5\u9053\u600E\u9EBC\u51FA\u53BB\u624D\u5C0D\u5427\u300D\r"
-          - upOrDown: 0
-            storyText: "\u300C\u2026\u2026\u300D"
-          - upOrDown: 0
-            storyText: "\u300C\u6211\u53EA\u77E5\u9053\u9ED1\u5F71\u61FC\u6015\u67D0\u7A2E\u8072\u97F3\u300D"
-          - upOrDown: 1
-            storyText: "\u300C\u5177\u9AD4\u662F\u4EC0\u9EBC\u6211\u8072\u97F3\u4E0D\u6E05\u695A\u300D\r"
-          - upOrDown: 1
-            storyText: "\u300C\u4E0D\u904E\u6211\u6703\u966A\u4F60\u4E00\u8D77\u627E\u7684\u300D"
-          - upOrDown: 1
-            storyText: "\u300C\u90A3\u5C31\u5F9E\u96FB\u98A8\u6247\u958B\u59CB?\u300D\r"
+            storyText: "\u300C\u6BCF\u500B\u7269\u4EF6\u4E92\u52D5\u7684\u65B9\u5F0F\u90FD\u4E0D\u4E00\u6A23\u300D"
         - datas:
-          - upOrDown: 1
-            storyText: "\u300C\u55E8\u5C3C\u597D\u300D\u7B2C\u4E8C\u6B21"
           - upOrDown: 0
-            storyText: "\u300C\u73A9\u5076\u6703\u8AAA\u8A71?\u300D"
+            storyText: "\u300C\u4F60\u53EF\u4EE5\u8A66\u8A66\u96FB\u8996\u300D"
+        - datas:
           - upOrDown: 0
-            storyText: "\u300C\u7B49\u7B49\u4F60\u662F\u90A3\u500B\u8072\u97F3!?\u300D\r"
-          - upOrDown: 1
-            storyText: "\u300C\u963F\u88AB\u767C\u73FE\u4E86\u300D\r"
+            storyText: "\u300C\u4F60\u53EF\u4EE5\u8A66\u8A66\u8863\u6AC3\u300D"
+        - datas:
           - upOrDown: 0
-            storyText: "\u300C\u4F60\u70BA\u4EC0\u9EBC\u8981\u5E6B\u6211?\u300D"
-          - upOrDown: 1
-            storyText: "\u300C\u9019\u4E0D\u662F\u91CD\u9EDE\u5427\u300D"
-          - upOrDown: 1
-            storyText: "\u300C\u4F60\u60F3\u77E5\u9053\u600E\u9EBC\u51FA\u53BB\u624D\u5C0D\u5427\u300D\r"
+            storyText: "\u300C\u4F60\u53EF\u4EE5\u8A66\u8A66\u9B27\u9418\u300D"
+        - datas:
           - upOrDown: 0
-            storyText: "\u300C\u2026\u2026\u300D"
+            storyText: "\u300C\u4F60\u53EF\u4EE5\u8A66\u8A66\u5831\u7D19\u300D"
+        - datas:
           - upOrDown: 0
-            storyText: "\u300C\u6211\u53EA\u77E5\u9053\u9ED1\u5F71\u61FC\u6015\u67D0\u7A2E\u8072\u97F3\u300D"
-          - upOrDown: 1
-            storyText: "\u300C\u5177\u9AD4\u662F\u4EC0\u9EBC\u6211\u8072\u97F3\u4E0D\u6E05\u695A\u300D\r"
-          - upOrDown: 1
-            storyText: "\u300C\u4E0D\u904E\u6211\u6703\u966A\u4F60\u4E00\u8D77\u627E\u7684\u300D"
-          - upOrDown: 1
-            storyText: "\u300C\u90A3\u5C31\u5F9E\u96FB\u98A8\u6247\u958B\u59CB?\u300D\r"
-        randomIndex: 0
+            storyText: "\u300C\u4F60\u53EF\u4EE5\u8A66\u8A66\u6AAF\u71C8\u300D"
+        - datas:
+          - upOrDown: 0
+            storyText: "\u300C\u4F60\u53EF\u4EE5\u8A66\u8A66\u96FB\u98A8\u6247\u300D"
+        - datas:
+          - upOrDown: 0
+            storyText: "\u300C\u6709\u602A\u8072\u97F3\u7684\u624D\u662F\u8981\u627E\u7684\u7269\u54C1\u300D"
+        - datas:
+          - upOrDown: 0
+            storyText: "\u300C\u5531\u7247\u788E\u7247\u662F\u602A\u8072\u97F3\u7684\u4F86\u6E90\u300D"
+        randomIndex: 1
     tag: Interact
     gameObjects: []

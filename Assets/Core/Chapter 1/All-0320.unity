@@ -18733,6 +18733,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008521061}
     m_Modifications:
+    - target: {fileID: 2393861171024899327, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: targetFound.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2393861171024899327, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: targetFound.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2393861171024899327, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: targetFound.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 342815326}
+    - target: {fileID: 2393861171024899327, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: targetFound.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2393861171024899327, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: targetFound.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2393861171024899327, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: targetFound.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2393861171024899327, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: targetFound.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2393861171024899327, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
+      propertyPath: targetFound.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4806475792815470011, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
       propertyPath: onPassPuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
