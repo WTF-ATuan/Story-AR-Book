@@ -46,6 +46,8 @@ MonoBehaviour:
         storyContext:
         - upOrDown: 0
           storyText: "\u300C\u9ED1\u5F71\u600E\u9EBC\u6D88\u5931\u4E86.....\u300D"
+        - upOrDown: 0
+          storyText: "\u300C\u4E0D\u904E\u9019\u6A23\u5C31\u53EF\u4EE5\u4E0A\u6A13\u4E86\u300D"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Stairs Target
