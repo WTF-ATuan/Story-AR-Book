@@ -102,14 +102,16 @@ MonoBehaviour:
         animationClip: {fileID: 0}
         audioClip: {fileID: 0}
         interactiveRoot: {fileID: 2393861171024899327, guid: 489b7b2ca8e0935438ce04ea4e178196, type: 3}
-      storyGuide: 0
-      onFinish: 0
+      storyGuide: 1
+      onFinish: 1
       onContact: 0
       storyGuideData:
         interact: 0
         showOnes: 0
         multiplex: 0
-        storyContext: []
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u51FA\u9580\u5427\uFF01"
         multiplexStoryContext: []
         randomIndex: 0
     - name: Uniform
