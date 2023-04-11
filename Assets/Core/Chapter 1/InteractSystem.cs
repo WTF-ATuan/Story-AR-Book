@@ -59,8 +59,7 @@ namespace Core.Testing{
 		private void CompareData(InteractData data){
 			if(data.tag == InteractTag.StoryGuide
 			   || data.storyGuide && data.onContact){
-				_storyRoot.Contact(data.storyGuideData);
-				EventAggregator.Publish(new StoryPresentEvent(data.name));
+				_storyRoot.Contact(data.storyGuideData, data.name);
 			}
 
 			_interactTag = data.tag;
@@ -71,14 +70,15 @@ namespace Core.Testing{
 			switch(_interactTag){
 				case InteractTag.InteractAnimation:{
 					_interactLevel.Interact(_currentInteractData.interactAnimationData);
-					if(_currentInteractData.storyGuide){
-						if(_currentInteractData.onFinish){
-							_interactLevel.OnCurrentLevelPass += () =>
-									_storyRoot.InteractWithLevel(_currentInteractData.storyGuideData);
-						}
-						else{
-							_storyRoot.InteractWithLevel(_currentInteractData.storyGuideData);
-						}
+					if(!_currentInteractData.storyGuide) return;
+					
+					if(_currentInteractData.onFinish){
+						_interactLevel.OnCurrentLevelPass += () =>
+								_storyRoot.InteractWithLevel(_currentInteractData.storyGuideData);
+					}
+					else{
+						if(_currentInteractData.onContact) return;
+						_storyRoot.InteractWithLevel(_currentInteractData.storyGuideData);
 					}
 
 					break;

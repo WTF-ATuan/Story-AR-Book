@@ -19,13 +19,12 @@ namespace Core.Chapter_1{
 			_presenter.storyBackGround.OnPointerClickAsObservable().Subscribe(x => NextStory());
 		}
 
-		public void Contact(StoryGuideData data){
+		public void Contact(StoryGuideData data, string dataName){
 			if(data.interact){
 				return;
 			}
 
-			var dataID = data.GetHashCode();
-			ShowStory(data, dataID.ToString());
+			ShowStory(data, dataName);
 			_exitMode = UIMode.PlayMode;
 		}
 
@@ -50,16 +49,19 @@ namespace Core.Chapter_1{
 				return;
 			}
 
+			EventAggregator.Publish(new StoryPresentEvent(objID));
 			if(storyData.multiplex){
 				var count = _dataRecordList.Count(x => x == objID);
 				//if the count is bigger than the story context count, then use the last one
 				if(count >= storyData.storyContext.Count){
 					count = storyData.storyContext.Count - 1;
 				}
+
 				//random index between count and 0 
 				if(storyData.randomIndex){
 					count = Random.Range(0, count + 1);
 				}
+
 				_currentStoryClone = new List<StoryGuideData.StoryData>(storyData.multiplexStoryContext[count].datas);
 			}
 			else{
