@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c349619cca341d28cba4e9c9237bd3a, type: 3}
   m_Name: Chapter 1 Setting
   m_EditorClassIdentifier: 
-  platform: 1
+  platform: 0
   playerMoveData:
     <Acceleration>k__BackingField: 0.12
     <DeAcceleration>k__BackingField: 0.1
@@ -85,9 +85,9 @@ MonoBehaviour:
           storyText: "\u300C\uFF1F\u300D"
         - upOrDown: 1
           storyText: "\u300C\u6C92\u4E8B\u6C92\u4E8B\u300D"
-        - upOrDown: 0
+        - upOrDown: 1
           storyText: "\u300C\u51FA\u53E3\u5C31\u8FD1\u5728\u773C\u524D\u4E86\u300D"
-        - upOrDown: 0
+        - upOrDown: 1
           storyText: "\u300C\u5FEB\u53BB\u958B\u9580\u5427\u300D"
         multiplexStoryContext: []
         randomIndex: 0
@@ -550,7 +550,9 @@ MonoBehaviour:
         multiplex: 0
         storyContext:
         - upOrDown: 0
-          storyText: "\u300C\u539F\u4F86\u525B\u525B\u807D\u5230\u7684\u602A\u8072\u97F3\u5C31\u662F\u662F\u5B78\u6821\u7684\u6253\u9418\u8072\u300D"
+          storyText: "\u300C\u539F\u4F86\u525B\u525B\u807D\u5230\u7684\u602A\u8072\u97F3.......\u300D"
+        - upOrDown: 0
+          storyText: "\u300C\u5C31\u662F\u5B78\u6821\u7684\u6253\u9418\u8072\uFF01\u300D"
         - upOrDown: 0
           storyText: "\u300C\u4F46\u70BA\u4EC0\u9EBC\u662F\u9019\u500B\u8072\u97F3\u5462\uFF1F\u300D"
         multiplexStoryContext: []
@@ -591,8 +593,6 @@ MonoBehaviour:
             storyText: "\u300C\u5687\u6B7B\u4EBA\u4E86\uFF0C\u679C\u7136\u6C92\u8FA6\u6CD5\u8F15\u6613\u96E2\u958B\u300D\r\n"
           - upOrDown: 0
             storyText: "\u300C\u6211\u5011\u9084\u662F\u5148\u4F86\u770B\u770B\u5176\u4ED6\u5730\u65B9\u5427\u300D"
-          - upOrDown: 0
-            storyText: "<\u8A66\u8457\u63A2\u7D22\u7559\u8072\u6A5F>"
         - datas:
           - upOrDown: 1
             storyText: "\u4F60\u8981\u5E79\u561B?"
