@@ -13,6 +13,7 @@ namespace Core.Chapter_1{
 		[HorizontalGroup] [HideLabel] public UnityEvent afterInvokeCount;
 
 		private float _invokeTimes;
+		private bool _isInvoke;
 
 		public void OnPointerDown(PointerEventData eventData){
 			_pointerDownPos = eventData.position;
@@ -39,8 +40,9 @@ namespace Core.Chapter_1{
 				transform.DOLocalRotate(new Vector3(0, 0, -20), 0.25f);
 			}
 
-			if(_invokeTimes > invokeCount){
+			if(_invokeTimes > invokeCount && !_isInvoke){
 				afterInvokeCount?.Invoke();
+				_isInvoke = true;
 			}
 		}
 	}

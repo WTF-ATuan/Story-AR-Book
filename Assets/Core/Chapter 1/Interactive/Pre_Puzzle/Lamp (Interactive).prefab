@@ -341,7 +341,6 @@ GameObject:
   - component: {fileID: 2657468114539343918}
   - component: {fileID: 583003789460292366}
   - component: {fileID: 2085824288691302617}
-  - component: {fileID: 4384513170941423073}
   m_Layer: 5
   m_Name: Lamp 3 up (Slideable)
   m_TagString: Untagged
@@ -434,18 +433,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &4384513170941423073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4384513170941423074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 823cb8d0003d4940a1d53be03611724e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5386624048485932042
 GameObject:
   m_ObjectHideFlags: 0
