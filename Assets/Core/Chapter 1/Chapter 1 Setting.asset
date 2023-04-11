@@ -111,7 +111,7 @@ MonoBehaviour:
         multiplex: 0
         storyContext:
         - upOrDown: 0
-          storyText: "\u51FA\u9580\u5427\uFF01"
+          storyText: 
         multiplexStoryContext: []
         randomIndex: 0
     - name: Uniform

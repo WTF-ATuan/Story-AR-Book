@@ -71,10 +71,12 @@ namespace Core.Testing{
 				case InteractTag.InteractAnimation:{
 					_interactLevel.Interact(_currentInteractData.interactAnimationData);
 					if(!_currentInteractData.storyGuide) return;
-					
+
 					if(_currentInteractData.onFinish){
-						_interactLevel.OnCurrentLevelPass += () =>
-								_storyRoot.InteractWithLevel(_currentInteractData.storyGuideData);
+						_interactLevel.OnCurrentLevelPass += () => {
+							_storyRoot.InteractWithLevel(_currentInteractData.storyGuideData);
+							EventAggregator.Publish(new StoryPresentEvent(_currentInteractData.name));
+						};
 					}
 					else{
 						if(_currentInteractData.onContact) return;
