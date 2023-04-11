@@ -20663,7 +20663,7 @@ GameObject:
   - component: {fileID: 224045485}
   - component: {fileID: 224045484}
   m_Layer: 0
-  m_Name: Beardoll
+  m_Name: Bear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54322,7 +54322,7 @@ GameObject:
   - component: {fileID: 1028656097}
   - component: {fileID: 1028656096}
   m_Layer: 0
-  m_Name: Floorlamp
+  m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120239,7 +120239,7 @@ GameObject:
   - component: {fileID: 2015027450}
   - component: {fileID: 2015027449}
   m_Layer: 0
-  m_Name: Clock
+  m_Name: Alarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
