@@ -9,6 +9,7 @@ namespace Core{
 
 		private Rigidbody _rigidbody;
 		private Animator _animator;
+		private AudioSource _audio;
 		private Vector3 _movementDirection = Vector3.zero;
 
 		[Inject] private PlayerMoveData _moveData;
@@ -20,6 +21,7 @@ namespace Core{
 		private void Start(){
 			_rigidbody = GetComponent<Rigidbody>();
 			_animator = GetComponentInChildren<Animator>();
+			_audio = GetComponentInChildren<AudioSource>();
 			_startScaleX = transform.localScale.x;
 		}
 
@@ -28,6 +30,17 @@ namespace Core{
 			Move();
 			PlayAnimation();
 			FlipDirection();
+			FootStepSound();
+		}
+
+		private void FootStepSound(){
+			var isWalking = _movementDirection.magnitude > 0f;
+			if(isWalking && !_audio.isPlaying){
+				_audio.Play();
+			}
+			else if(!isWalking && _audio.isPlaying){
+				_audio.Stop();
+			}
 		}
 
 		private void CalculateMoveDirection(){
