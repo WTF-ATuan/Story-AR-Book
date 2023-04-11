@@ -11,6 +11,10 @@ namespace Core.Chapter_1{
 		public void TextTransition(Text text){
 			text.DOFade(0, 0.5f).OnComplete(() => text.transform.parent.gameObject.SetActive(false));
 		}
+		public void TextTransitionFadeIn(Text text){
+			text.DOFade(0, 0f);
+			text.DOFade(1, 1f);
+		}
 
 		//move image to offset
 		public void ImageMove(Image image, Vector2 offset){

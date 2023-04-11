@@ -53,10 +53,7 @@ namespace Core{
 				_movementDirection = Vector3.ClampMagnitude(_movementDirection, _moveData.MoveClamp);
 			}
 			else{
-				_movementDirection.x =
-						Mathf.MoveTowards(_movementDirection.x, 0, _moveData.DeAcceleration * Time.deltaTime);
-				_movementDirection.z =
-						Mathf.MoveTowards(_movementDirection.z, 0, _moveData.DeAcceleration * Time.deltaTime);
+				_movementDirection = Vector3.zero;
 			}
 		}
 
