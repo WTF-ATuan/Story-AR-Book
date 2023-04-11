@@ -38,6 +38,8 @@ namespace Core.Chapter_1{
 			var existLevel = _levelRootList.Find(x => x.name == root.name);
 			if(existLevel){
 				existLevel.SetActive(true);
+				existLevel.GetComponent<InteractiveRoot>()
+						.targetFound.AddListener(() => PassLevel(root.name));
 				return;
 			}
 
