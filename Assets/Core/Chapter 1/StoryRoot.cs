@@ -52,14 +52,12 @@ namespace Core.Chapter_1{
 			EventAggregator.Publish(new StoryPresentEvent(objID));
 			if(storyData.multiplex){
 				var count = _dataRecordList.Count(x => x == objID);
-				//if the count is bigger than the story context count, then use the last one
-				if(count >= storyData.storyContext.Count){
-					count = storyData.storyContext.Count - 1;
+				if(count >= storyData.multiplexStoryContext.Count){
+					count = storyData.multiplexStoryContext.Count - 1;
 				}
 
-				//random index between count and 0 
-				if(storyData.randomIndex){
-					count = Random.Range(0, count + 1);
+				if(storyData.randomIndex){	
+					count = Random.Range(0, storyData.multiplexStoryContext.Count + 1);
 				}
 
 				_currentStoryClone = new List<StoryGuideData.StoryData>(storyData.multiplexStoryContext[count].datas);
