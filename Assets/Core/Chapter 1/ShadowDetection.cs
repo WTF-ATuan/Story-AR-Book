@@ -6,7 +6,7 @@ namespace Core.Chapter_1{
 		private ParticleSystem _particle;
 		[Inject] private readonly UIPresenter _presenter;
 
-		private const float DangerDistance = 0.03f;
+		private const float DangerDistance = 0.04f;
 		[SerializeField] private float detectRange = 0.08f;
 
 		private bool _isDetecting;

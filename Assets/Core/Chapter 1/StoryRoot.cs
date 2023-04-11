@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UniRx;
 using UniRx.Triggers;
@@ -57,7 +56,7 @@ namespace Core.Chapter_1{
 				}
 
 				if(storyData.randomIndex){	
-					count = Random.Range(0, storyData.multiplexStoryContext.Count + 1);
+					count = Random.Range(0, storyData.multiplexStoryContext.Count);
 				}
 
 				_currentStoryClone = new List<StoryGuideData.StoryData>(storyData.multiplexStoryContext[count].datas);
