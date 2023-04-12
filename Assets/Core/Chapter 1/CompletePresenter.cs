@@ -3,8 +3,9 @@ using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using Vuforia;
 using Zenject;
+using Image = UnityEngine.UI.Image;
 
 namespace Core.Chapter_1{
 	public class CompletePresenter : MonoBehaviour{
@@ -12,6 +13,7 @@ namespace Core.Chapter_1{
 		[FoldoutGroup("Cheat")] public RectTransform cheatButton;
 		[FoldoutGroup("Cheat")] public Image stageOne;
 		[FoldoutGroup("Cheat")] public Image stageTwo;
+		[FoldoutGroup("Cheat")] public Image resetAR;
 
 		[Inject] private PlayerData _playerData;
 
@@ -21,6 +23,7 @@ namespace Core.Chapter_1{
 			});
 			stageOne.OnPointerClickAsObservable().Subscribe(CompleteStageOne);
 			stageTwo.OnPointerClickAsObservable().Subscribe(CompleteStageTwo);
+			resetAR.OnPointerClickAsObservable().Subscribe(ResetAreaTarget);
 		}
 
 		private void CompleteStageOne(PointerEventData obj){
@@ -40,6 +43,13 @@ namespace Core.Chapter_1{
 			_playerData.SaveSuccessResult("Park (Puzzle)");
 			_playerData.SaveSuccessResult("ToyBear (Puzzle)");
 			_playerData.SaveSuccessResult("Uniform (Puzzle)");
+			cheatButton.gameObject.SetActive(false);
+		}
+
+		private void ResetAreaTarget(PointerEventData obj){
+			var areaTargetBehaviour = FindObjectOfType<AreaTargetBehaviour>();
+			areaTargetBehaviour.gameObject.SetActive(false);
+			areaTargetBehaviour.gameObject.SetActive(true);
 			cheatButton.gameObject.SetActive(false);
 		}
 	}
