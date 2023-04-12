@@ -51,6 +51,7 @@ namespace Core.Testing{
 			else{
 				_presenter.ModifyNameTag("無", false);
 				_outline.DisableAllOutline();
+				_interactNames.Clear();
 			}
 
 			_presenter.SetFindState(_interactNames.Count > 0);
