@@ -19,9 +19,9 @@ namespace Core.Chapter_1.Interactive.Puzzle{
 			if(!_puzzleCheckList.Exists(x => x.Puzzle.Equals(data.Puzzle))) return;
 			var puzzleData = _puzzleCheckList.Find(x => x.Puzzle.Equals(data.Puzzle));
 			puzzleData.Complete = data.Complete;
-			if(!_puzzleCheckList.Exists(x => x.Complete == false)){
-				onPassPuzzle?.Invoke();
-			}
+			if(_puzzleCheckList.Exists(x => x.Complete == false)) return;
+			onPassPuzzle?.Invoke();
+			puzzles.ForEach(x => x.StateChanged -= OnPuzzleComplete);
 		}
 	}
 }
