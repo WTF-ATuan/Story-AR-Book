@@ -37,9 +37,7 @@ namespace Core.Testing{
 				_interactNames.Insert(0, objID);
 			}
 			else{
-				if(_interactNames.Contains(objID)){
-					_interactNames.Remove(objID);
-				}
+				_interactNames.Clear();
 			}
 
 			if(_interactNames.Count > 0){
@@ -51,7 +49,6 @@ namespace Core.Testing{
 			else{
 				_presenter.ModifyNameTag("無", false);
 				_outline.DisableAllOutline();
-				_interactNames.Clear();
 			}
 
 			_presenter.SetFindState(_interactNames.Count > 0);
@@ -93,6 +90,7 @@ namespace Core.Testing{
 					_storyRoot.Interact(_currentInteractData.storyGuideData);
 					break;
 
+				case InteractTag.None:
 				default:
 					throw new ArgumentOutOfRangeException();
 			}
