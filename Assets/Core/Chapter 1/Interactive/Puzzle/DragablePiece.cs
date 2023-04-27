@@ -49,5 +49,9 @@ namespace Core.Chapter_1.Interactive.Puzzle{
 			transform.localPosition = Vector3.zero;
 			_basePos = transform.localPosition;
 		}
+
+		public void UpdatePosition(){
+			_basePos = transform.localPosition;
+		}
 	}
 }
