@@ -12,9 +12,10 @@ using Random = UnityEngine.Random;
 namespace Core.Chapter_1.Interactive.Puzzle{
 	public class SwitchPuzzle : MonoBehaviour, IPuzzle{
 		private List<Image> _images;
-		[SerializeField] private List<Vector3> _piecePositions;
+		private List<Vector3> _piecePositions;
 		private Transform _currentEnterPiece;
 		private Transform _currentDragPiece;
+		public List<bool> pieceRandomPositions = new List<bool>(9);
 
 		private void Start(){
 			_images = new List<Image>(GetComponentsInChildren<Image>());
@@ -27,8 +28,15 @@ namespace Core.Chapter_1.Interactive.Puzzle{
 
 		private void RandomSwitchPosition(){
 			// random pick image and switch position with other image in _images 
-			foreach(var image in _images){
+			for(var index = 0; index < _images.Count; index++){
+				if(pieceRandomPositions[index]) continue;
+				var image = _images[index];
 				var randomIndex = Random.Range(0, _images.Count);
+				//if pieceRandomPositions[randomIndex] == true, then random again
+				while(pieceRandomPositions[randomIndex]){
+					randomIndex = Random.Range(0, _images.Count);
+				}
+
 				var imageTransform = image.transform;
 				(imageTransform.position, _images[randomIndex].transform.position) = (
 					_images[randomIndex].transform.position, imageTransform.position);
@@ -51,7 +59,7 @@ namespace Core.Chapter_1.Interactive.Puzzle{
 			var temp = _currentEnterPiece.position;
 			_currentEnterPiece.DOMove(_currentDragPiece.position, 0.2f);
 			_currentDragPiece.DOMove(temp, 0.2f).OnComplete(
-						() => StateChanged?.Invoke(new PuzzleData(this, Complete())));
+				() => StateChanged?.Invoke(new PuzzleData(this, Complete())));
 			_currentDragPiece.GetComponent<CanvasGroup>().alpha = 1f;
 		}
 

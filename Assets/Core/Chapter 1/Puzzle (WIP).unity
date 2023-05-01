@@ -11152,7 +11152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9918d92b12534b44b669810f5e5ffd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _piecePositions: []
+  pieceRandomPositions: 010000000100000001
 --- !u!4 &4256341136363792392
 Transform:
   m_ObjectHideFlags: 0
