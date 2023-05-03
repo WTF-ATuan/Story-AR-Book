@@ -15,7 +15,7 @@ namespace Core.Chapter_1.Interactive.Puzzle{
 		private List<Vector3> _piecePositions;
 		private Transform _currentEnterPiece;
 		private Transform _currentDragPiece;
-		public List<bool> pieceRandomPositions = new List<bool>(9);
+		public bool[] pieceRandomPositions = new bool[9];
 
 		private void Start(){
 			_images = new List<Image>(GetComponentsInChildren<Image>());
