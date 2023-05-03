@@ -25,6 +25,52 @@ MonoBehaviour:
     selectedObject: {fileID: 0}
     replaceShowsName: 
     interactDataList:
+    - name: Piano
+      tag: 2
+      instanceID: -242104
+      showsName: 
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 1
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 8300000, guid: a33138ffe56e0f54f9e8c8c71dbbf08c, type: 3}
+        interactiveRoot: {fileID: 0}
+      storyGuide: 0
+      onFinish: 0
+      onContact: 0
+      storyGuideData:
+        interact: 0
+        showOnes: 0
+        multiplex: 0
+        storyContext: []
+        multiplexStoryContext: []
+        randomIndex: 0
+    - name: Telephone
+      tag: 2
+      instanceID: -242082
+      showsName: 
+      teleportData:
+        target: 
+      interactAnimationData:
+        correctAnswer: 0
+        animationClip: {fileID: 0}
+        audioClip: {fileID: 0}
+        interactiveRoot: {fileID: 8464487170352765991, guid: a5e46e8a6a451d94caae4265476aa771, type: 3}
+      storyGuide: 1
+      onFinish: 1
+      onContact: 0
+      storyGuideData:
+        interact: 0
+        showOnes: 0
+        multiplex: 0
+        storyContext:
+        - upOrDown: 0
+          storyText: "\u300C\u2026\u771F\u5947\u602A\uFF0C\u525B\u525B\u4E0D\u662F\u6709\u4EBA\u6253\u4F86\u55CE\uFF1F\u300D"
+        - upOrDown: 0
+          storyText: "\u300C\u600E\u9EBC\u6C92\u8072\u97F3\u4E86\uFF1F\uFF01\u300D"
+        multiplexStoryContext: []
+        randomIndex: 0
     - name: Stairs
       tag: 1
       instanceID: 58596
@@ -682,6 +728,6 @@ MonoBehaviour:
         - datas:
           - upOrDown: 0
             storyText: "\u300C\u5531\u7247\u788E\u7247\u662F\u602A\u8072\u97F3\u7684\u4F86\u6E90\u300D"
-        randomIndex: 1
+        randomIndex: 0
     tag: Interact
     gameObjects: []
