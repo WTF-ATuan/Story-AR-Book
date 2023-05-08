@@ -93,6 +93,7 @@ namespace Core.Testing{
 					break;
 				case InteractTag.StoryGuide:
 					_storyRoot.Interact(_currentInteractData.storyGuideData);
+					EventAggregator.Publish(new StoryPresentEvent(_currentInteractData.name));
 					break;
 
 				default:
