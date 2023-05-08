@@ -34,10 +34,14 @@ namespace Core.Testing{
 
 		private void UpdateInteract(string objID, bool enterOrExit){
 			if(enterOrExit){
-				_interactNames.Insert(0, objID);
+				if(!_interactNames.Contains(objID)){
+					_interactNames.Insert(0, objID);
+				}
 			}
 			else{
-				_interactNames.Clear();
+				if(_interactNames.Contains(objID)){
+					_interactNames.Remove(objID);
+				}
 			}
 
 			if(_interactNames.Count > 0){
@@ -49,6 +53,7 @@ namespace Core.Testing{
 			else{
 				_presenter.ModifyNameTag("無", false);
 				_outline.DisableAllOutline();
+				_interactNames.Clear();
 			}
 
 			_presenter.SetFindState(_interactNames.Count > 0);
@@ -90,7 +95,6 @@ namespace Core.Testing{
 					_storyRoot.Interact(_currentInteractData.storyGuideData);
 					break;
 
-				case InteractTag.None:
 				default:
 					throw new ArgumentOutOfRangeException();
 			}
